@@ -1,0 +1,21 @@
+/* --------------------------------
+
+Generated using nucleoapp.com
+
+-------------------------------- */
+.icon {
+    display: inline-block;
+    background-image: url(../icons.svg);
+    background-repeat: no-repeat;
+    flex-shrink: 0;
+}
+
+.icon.icon-microphone {
+    background-position: -0px 0px;
+    height: 18px;
+    width: 18px;
+}
+
+.icon.icon-microphone:hover {
+    background-position: -18px 0px;
+} 
