@@ -26,6 +26,19 @@ Route::get('visitor/visitor-home', [VisitorHomeController::class, 'index'])->nam
 Route::get('/', function () {
 	return view('visitor/dashboard');
 });
+Route::get('/category', function () {
+	return view('visitor/category');
+});
+Route::get('/contact', function () {
+	return view('visitor/contact');
+});
+Route::get('/berita', function () {
+	return view('visitor/berita');
+});
+Route::get('/about', function () {
+	return view('visitor/about');
+});
+
 
 Route::group(['middleware' => 'auth'], function () {
 
