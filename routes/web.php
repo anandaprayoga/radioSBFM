@@ -74,6 +74,8 @@ Route::group(['middleware' => 'auth'], function () {
 
 
     Route::get('/logout', [SessionsController::class, 'destroy']);
+	Route::get('admin/user-profile', [InfoUserController::class, 'create']);
+	Route::post('user-profile', [InfoUserController::class, 'store']);
 	Route::get('/admin/user-profile', [InfoUserController::class, 'create']);
 	Route::post('/admin/user-profile', [InfoUserController::class, 'store']);
     Route::get('/login', function () {
