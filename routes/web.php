@@ -43,7 +43,6 @@ Route::get('/about', function () {
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/admin', [HomeController::class, 'home']);
-<<<<<<< HEAD
 	
 	Route::get('admin/dashboard', function () {
 		return view('admin/dashboard');
@@ -62,7 +61,8 @@ Route::group(['middleware' => 'auth'], function () {
 	})->name('kategori');
 
 	Route::get('admin/informasi', function () {
-=======
+		return view('admin/informasi');
+	})->name('informasi');
 	Route::get('/admin/dashboard', function () {
 		return view('admin/dashboard');
 	})->name('dashboard');
@@ -88,20 +88,16 @@ Route::group(['middleware' => 'auth'], function () {
 	})->name('kategori');
 
 	Route::get('/admin/informasi', function () {
->>>>>>> origin/master
 		return view('admin/informasi');
 	})->name('informasi');
 
 
 
     Route::get('/logout', [SessionsController::class, 'destroy']);
-<<<<<<< HEAD
 	Route::get('admin/user-profile', [InfoUserController::class, 'create']);
 	Route::post('user-profile', [InfoUserController::class, 'store']);
-=======
 	Route::get('/admin/user-profile', [InfoUserController::class, 'create']);
 	Route::post('/admin/user-profile', [InfoUserController::class, 'store']);
->>>>>>> origin/master
     Route::get('/login', function () {
 		return view('dashboard');
 	})->name('sign-up');
