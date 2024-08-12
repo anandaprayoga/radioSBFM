@@ -43,38 +43,31 @@ Route::get('/about', function () {
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/admin', [HomeController::class, 'home']);
-	Route::get('dashboard', function () {
+	
+	Route::get('admin/dashboard', function () {
 		return view('admin/dashboard');
 	})->name('dashboard');
 
-	Route::get('billing', function () {
-		return view('admin/billing');
-	})->name('billing');
-
-	Route::get('user-management', function () {
-		return view('admin/user-management');
-	})->name('user-management');
-
-	Route::get('broadcast', function () {
+	Route::get('admin/broadcast', function () {
 		return view('admin/broadcast');
 	})->name('broadcast');
 
-	Route::get('event', function () {
+	Route::get('admin/event', function () {
 		return view('admin/event');
 	})->name('event');
 
-	Route::get('kategori', function () {
+	Route::get('admin/kategori', function () {
 		return view('admin/kategori');
 	})->name('kategori');
 
-	Route::get('informasi', function () {
+	Route::get('admin/informasi', function () {
 		return view('admin/informasi');
 	})->name('informasi');
 
 
 
     Route::get('/logout', [SessionsController::class, 'destroy']);
-	Route::get('user-profile', [InfoUserController::class, 'create']);
+	Route::get('admin/user-profile', [InfoUserController::class, 'create']);
 	Route::post('user-profile', [InfoUserController::class, 'store']);
     Route::get('/login', function () {
 		return view('dashboard');
