@@ -43,6 +43,7 @@ Route::get('/about', function () {
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/admin', [HomeController::class, 'home']);
+<<<<<<< HEAD
 	
 	Route::get('admin/dashboard', function () {
 		return view('admin/dashboard');
@@ -61,14 +62,46 @@ Route::group(['middleware' => 'auth'], function () {
 	})->name('kategori');
 
 	Route::get('admin/informasi', function () {
+=======
+	Route::get('/admin/dashboard', function () {
+		return view('admin/dashboard');
+	})->name('dashboard');
+
+	Route::get('/admin/billing', function () {
+		return view('admin/billing');
+	})->name('billing');
+
+	Route::get('/admin/user-management', function () {
+		return view('admin/user-management');
+	})->name('user-management');
+
+	Route::get('/admin/broadcast', function () {
+		return view('admin/broadcast');
+	})->name('broadcast');
+
+	Route::get('/admin/event', function () {
+		return view('admin/event');
+	})->name('event');
+
+	Route::get('/admin/kategori', function () {
+		return view('admin/kategori');
+	})->name('kategori');
+
+	Route::get('/admin/informasi', function () {
+>>>>>>> origin/master
 		return view('admin/informasi');
 	})->name('informasi');
 
 
 
     Route::get('/logout', [SessionsController::class, 'destroy']);
+<<<<<<< HEAD
 	Route::get('admin/user-profile', [InfoUserController::class, 'create']);
 	Route::post('user-profile', [InfoUserController::class, 'store']);
+=======
+	Route::get('/admin/user-profile', [InfoUserController::class, 'create']);
+	Route::post('/admin/user-profile', [InfoUserController::class, 'store']);
+>>>>>>> origin/master
     Route::get('/login', function () {
 		return view('dashboard');
 	})->name('sign-up');
@@ -93,6 +126,6 @@ Route::group(['middleware' => 'guest'], function () {
 // 	Route::get('/', )
 // })
 
-Route::get('/login', function () {
+Route::get('/admin/login', function () {
     return view('session/login-session');
 })->name('login');
