@@ -51,12 +51,7 @@
                 </div>
             </main>
         @endif
-<<<<<<< HEAD
-        @include('components.fixed-plugin') 
-=======
-
+        @include('components.fixed-plugin')
         {{-- @include('components.fixed-plugin') --}}
-
->>>>>>> origin/master
     @endif
 @endsection

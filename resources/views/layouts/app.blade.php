@@ -70,6 +70,7 @@
     </div>
   @endif
     <!--   Core JS Files   -->
+  <script src="https://kit.fontawesome.com/268ca19cdb.js" crossorigin="anonymous"></script>
   <script src="../assets/js/core/popper.min.js"></script>
   <script src="../assets/js/core/bootstrap.min.js"></script>
   <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
