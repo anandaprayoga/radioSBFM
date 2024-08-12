@@ -30,9 +30,15 @@
   @endif
 
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <link rel="icon" type="image/png" sizes="76x76" href="../assets/img/sbfm-no-bg-outline.png">
   <title>
-    Soft UI Dashboard by Creative Tim
+    Admin | 
+    <?php
+      $path = Request::path();
+      $path_replaced = str_replace('admin/', '', $path);
+      $path_replaced = str_replace('-', ' ', $path_replaced);
+      echo ucwords($path_replaced);
+    ?>
   </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
