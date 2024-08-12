@@ -26,8 +26,13 @@ navLinks.style.left = "-100%";
 
 // sidebar submenu open close js code
 
-let jsArrow = document.querySelector(".js-arrow");
-jsArrow.onclick = function() {
+// let jsArrow = document.querySelector(".js-arrow",);
+// jsArrow.onclick = function() {
+//  navLinks.classList.toggle("show3");
+
+// }
+let submenu = document.querySelector(".submenu");
+submenu.onclick = function() {
  navLinks.classList.toggle("show3");
 
 }
@@ -35,6 +40,8 @@ let footerlink = document.querySelector(".sub-footer");
 let jsbotton = document.querySelector(".js-botton");
 jsbotton.onclick = function() {
   footerlink.classList.toggle("sub-footer");
-  jsbotton.style.color="rgb(83, 81, 81)";
+  jsbotton.style.color="white";
 
 }
+
+

@@ -13,7 +13,7 @@ class InfoUserController extends Controller
 
     public function create()
     {
-        return view('admin/user-profile');
+        return view('/admin/user-profile');
     }
 
     public function store(Request $request)
@@ -52,6 +52,6 @@ class InfoUserController extends Controller
         ]);
 
 
-        return redirect('admin/user-profile')->with('success','Profile updated successfully');
+        return redirect('/admin/user-profile')->with('success','Profile updated successfully');
     }
 }
