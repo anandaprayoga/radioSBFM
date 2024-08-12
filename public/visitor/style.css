@@ -338,13 +338,8 @@ nav .navbar .links li:hover .js-sub-menu {
   text-decoration: none;
   color: white;
 }
-<<<<<<< HEAD
 .bungkus::hover{
   cursor:pointer ;
-=======
-.bungkus:hover {
-  cursor: pointer;
->>>>>>> origin/master
 }
 .liveradio {
   width: 400px;

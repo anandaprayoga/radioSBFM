@@ -43,26 +43,6 @@ Route::get('/about', function () {
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/admin', [HomeController::class, 'home']);
-	
-	Route::get('admin/dashboard', function () {
-		return view('admin/dashboard');
-	})->name('dashboard');
-
-	Route::get('admin/broadcast', function () {
-		return view('admin/broadcast');
-	})->name('broadcast');
-
-	Route::get('admin/event', function () {
-		return view('admin/event');
-	})->name('event');
-
-	Route::get('admin/kategori', function () {
-		return view('admin/kategori');
-	})->name('kategori');
-
-	Route::get('admin/informasi', function () {
-		return view('admin/informasi');
-	})->name('informasi');
 	Route::get('/admin/dashboard', function () {
 		return view('admin/dashboard');
 	})->name('dashboard');
