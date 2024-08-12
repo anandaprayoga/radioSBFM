@@ -12,6 +12,10 @@
                         <div>
                             <h5 class="mb-0">Data Broadcast</h5>
                         </div>
+                        <!-- <div class="bg- border-radius-lg d-flex" style="margin-left: 550px;">
+                            <input type="text" class="form-control border-0 ps-3" style="height: 40px; margin-top:5px; margin-right: 5px;" placeholder="Type here...">
+                            <button class="btn bg-gradient-primary my-1 me-1">Search</button>
+                        </div> -->
                         <a href="#" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; New</a>
                     </div>
                 </div>
