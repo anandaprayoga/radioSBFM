@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
@@ -21,14 +21,14 @@ class InfoUserController extends Controller
 
         $attributes = request()->validate([
             'name' => ['required', 'max:50'],
-            'email' => ['required', 'email', 'max:50', Rule::unique('users')->ignore(Auth::user()->id)],
+            'email' => ['required', 'email', 'max:50', Rule::unique('users')->ignore(Auth::admin()->id)],
             'phone'     => ['max:50'],
             'location' => ['max:70'],
             'about_me'    => ['max:150'],
         ]);
-        if($request->get('email') != Auth::user()->email)
+        if($request->get('email') != Auth::admin()->email)
         {
-            if(env('IS_DEMO') && Auth::user()->id == 1)
+            if(env('IS_DEMO') && Auth::admin()->id == 1)
             {
                 return redirect()->back()->withErrors(['msg2' => 'You are in a demo version, you can\'t change the email address.']);
                 
@@ -37,12 +37,12 @@ class InfoUserController extends Controller
         }
         else{
             $attribute = request()->validate([
-                'email' => ['required', 'email', 'max:50', Rule::unique('users')->ignore(Auth::user()->id)],
+                'email' => ['required', 'email', 'max:50', Rule::unique('users')->ignore(Auth::admin()->id)],
             ]);
         }
         
         
-        User::where('id',Auth::user()->id)
+        Admin::where('id',Auth::admin()->id)
         ->update([
             'name'    => $attributes['name'],
             'email' => $attribute['email'],

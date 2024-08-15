@@ -11,9 +11,9 @@
             <div class="row gx-4">
                 <div class="col-auto">
                     <div class="avatar avatar-xl position-relative">
-                        <img src="../assets/img/bruce-mars.jpg" alt="..." class="w-100 border-radius-lg shadow-sm">
-                        {{-- <a href="javascript:;" class="btn btn-sm btn-icon-only bg-gradient-light position-absolute bottom-0 end-0 mb-n2 me-n2"> --}}
-                            <!-- <i class="fa fa-pen top-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Image"></i> -->
+                        <img src="../assets/img/blank-profile.png" alt="..." class="w-100 border-radius-lg shadow-sm">
+                        <a href="javascript:;" class="btn btn-sm btn-icon-only bg-gradient-light position-absolute bottom-0 end-0 mb-n2 me-n2">
+                            <i class="fa fa-pen top-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Image"></i>
                         </a>
                     </div>
                 </div>
@@ -23,7 +23,7 @@
                             {{ __('Alec Thompson') }}
                         </h5>
                         <p class="mb-0 font-weight-bold text-sm">
-                            {{ __(' CEO / Co-Founder') }}
+                            {{ __('Admin') }}
                         </p>
                     </div>
                 </div>

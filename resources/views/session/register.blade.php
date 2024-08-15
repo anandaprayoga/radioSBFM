@@ -69,8 +69,8 @@
               <form role="form text-left" method="POST" action="/register">
                 @csrf
                 <div class="mb-3">
-                  <input type="text" class="form-control" placeholder="Name" name="name" id="name" aria-label="Name" aria-describedby="name" value="{{ old('name') }}">
-                  @error('name')
+                  <input type="text" class="form-control" placeholder="Username" name="username" id="username" aria-label="Username" aria-describedby="username" value="{{ old('username') }}">
+                  @error('username')
                     <p class="text-danger text-xs mt-2">{{ $message }}</p>
                   @enderror
                 </div>
