@@ -215,8 +215,8 @@
             var cstrFreePlayerColor = '45b5ff';
           </script>
           <script type='text/javascript' src='//corscdn.caster.fm/freeplayer/FreePlanPlayerEmbed.js'></script>
-          <!--   DO NOT REMOVE THE LINKS BELOW, THEY  WILL BE HIDDEN (AND WILL HELP US A LOT)   -->
-          <a id='cstrFreePlayerBL1' href='//www.caster.fm/'>Free Shoutcast Hosting</a><a id='cstrFreePlayerBL2' href='//www.caster.fm/'>Radio Stream Hosting</a>
+          <a id='cstrFreePlayerBL1' href='//www.caster.fm/'>Free Shoutcast Hosting</a>
+          <a id='cstrFreePlayerBL2' href='//www.caster.fm/'>Radio Stream Hosting</a>
           <div id='cstrFreePlayerDiv'></div>
         </div>
         <!--=============== Rencent Post ===============-->
