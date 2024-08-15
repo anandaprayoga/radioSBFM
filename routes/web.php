@@ -39,62 +39,61 @@ Route::get('/about', function () {
 	return view('visitor/about');
 });
 
-
 Route::group(['middleware' => 'auth'], function () {
 
-    Route::get('/admin', [HomeController::class, 'home']);
+    Route::get('/admin', [HomeController::class, 'home'])->middleware('ip.whitelist');
 	Route::get('/admin/dashboard', function () {
 		return view('admin/dashboard');
-	})->name('dashboard');
+	})->name('dashboard')->middleware('ip.whitelist');
 
 	Route::get('/admin/billing', function () {
 		return view('admin/billing');
-	})->name('billing');
+	})->name('billing')->middleware('ip.whitelist');
 
 	Route::get('/admin/user-management', function () {
 		return view('admin/user-management');
-	})->name('user-management');
+	})->name('user-management')->middleware('ip.whitelist');
 
 	Route::get('/admin/broadcast', function () {
 		return view('admin/broadcast');
-	})->name('broadcast');
+	})->name('broadcast')->middleware('ip.whitelist');
 
 	Route::get('/admin/event', function () {
 		return view('admin/event');
-	})->name('event');
+	})->name('event')->middleware('ip.whitelist');
 
 	Route::get('/admin/kategori', function () {
 		return view('admin/kategori');
-	})->name('kategori');
+	})->name('kategori')->middleware('ip.whitelist');
 
 	Route::get('/admin/informasi', function () {
 		return view('admin/informasi');
-	})->name('informasi');
+	})->name('informasi')->middleware('ip.whitelist');
 
 
 
-    Route::get('/logout', [SessionsController::class, 'destroy']);
-	Route::get('admin/user-profile', [InfoUserController::class, 'create']);
-	Route::post('user-profile', [InfoUserController::class, 'store']);
-	Route::get('/admin/user-profile', [InfoUserController::class, 'create']);
-	Route::post('/admin/user-profile', [InfoUserController::class, 'store']);
+    Route::get('/logout', [SessionsController::class, 'destroy'])->middleware('ip.whitelist');
+	Route::get('admin/user-profile', [InfoUserController::class, 'create'])->middleware('ip.whitelist');
+	Route::post('user-profile', [InfoUserController::class, 'store'])->middleware('ip.whitelist');
+	Route::get('/admin/user-profile', [InfoUserController::class, 'create'])->middleware('ip.whitelist');
+	Route::post('/admin/user-profile', [InfoUserController::class, 'store'])->middleware('ip.whitelist');
     Route::get('/login', function () {
 		return view('dashboard');
-	})->name('sign-up');
+	})->name('sign-up')->middleware('ip.whitelist');
 });
 
 
 
 Route::group(['middleware' => 'guest'], function () {
 
-    Route::get('/register', [RegisterController::class, 'create']);
-    Route::post('/register', [RegisterController::class, 'store']);
-    Route::get('/login', [SessionsController::class, 'create']);
-    Route::post('/session', [SessionsController::class, 'store']);
-	Route::get('/login/forgot-password', [ResetController::class, 'create']);
-	Route::post('/forgot-password', [ResetController::class, 'sendEmail']);
-	Route::get('/reset-password/{token}', [ResetController::class, 'resetPass'])->name('password.reset');
-	Route::post('/reset-password', [ChangePasswordController::class, 'changePassword'])->name('password.update');
+    Route::get('/register', [RegisterController::class, 'create'])->middleware('ip.whitelist');
+    Route::post('/register', [RegisterController::class, 'store'])->middleware('ip.whitelist');
+    Route::get('/login', [SessionsController::class, 'create'])->middleware('ip.whitelist');
+    Route::post('/session', [SessionsController::class, 'store'])->middleware('ip.whitelist');
+	Route::get('/login/forgot-password', [ResetController::class, 'create'])->middleware('ip.whitelist');
+	Route::post('/forgot-password', [ResetController::class, 'sendEmail'])->middleware('ip.whitelist');
+	Route::get('/reset-password/{token}', [ResetController::class, 'resetPass'])->name('password.reset')->middleware('ip.whitelist');
+	Route::post('/reset-password', [ChangePasswordController::class, 'changePassword'])->name('password.update')->middleware('ip.whitelist');
 
 });
 
@@ -104,4 +103,8 @@ Route::group(['middleware' => 'guest'], function () {
 
 Route::get('/admin/login', function () {
     return view('session/login-session');
-})->name('login');
+})->name('login')->middleware('ip.whitelist');
+
+Route::get('/unauthorized', function () {
+    return view('errors.unauthorized');
+})->name('unauthorized');
