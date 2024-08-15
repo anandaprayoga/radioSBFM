@@ -11,22 +11,49 @@
             <div class="row gx-4">
                 <div class="col-auto">
                     <div class="avatar avatar-xl position-relative">
-                        <img src="../assets/img/blank-profile.png" alt="..." class="w-100 border-radius-lg shadow-sm">
-                        <a href="javascript:;" class="btn btn-sm btn-icon-only bg-gradient-light position-absolute bottom-0 end-0 mb-n2 me-n2">
-                            <i class="fa fa-pen top-0" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Image"></i>
+                        <img src="{{ auth()->user()->profile_image ? asset('storage/profile_images/' . auth()->user()->profile_image) : '../assets/img/blank-profile.png' }}" alt="..." class="w-100 border-radius-lg shadow-sm">
+                        <a href="javascript:;" data-bs-toggle="tooltip" data-bs-target="#editImageOm" class="btn btn-sm btn-icon-only bg-gradient-light position-absolute bottom-0 end-0 mb-n2 me-n2">
+                            <i class="fa fa-pen top-0" data-bs-placement="top" title="Edit Image"></i>
                         </a>
                     </div>
                 </div>
                 <div class="col-auto my-auto">
                     <div class="h-100">
                         <h5 class="mb-1">
-                            {{ __('Alec Thompson') }}
+                            @ {{ auth()->user()->username }}
                         </h5>
                         <p class="mb-0 font-weight-bold text-sm">
                             {{ __('Admin') }}
                         </p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal untuk mengedit gambar profil -->
+    <div class="modal fade" id="editImageModal" tabindex="-1" aria-labelledby="editImageModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editImageModalLabel">Edit Profile Image</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form method="POST" action="/admin/update-profile" enctype="multipart/form-data">
+                    @csrf
+                    @method('PUT')
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <input type="file" class="form-control" name="profile_image" id="profile_image" aria-label="Profile Image">
+                            @error('profile_image')
+                                <p class="text-danger text-xs mt-2">{{ $message }}</p>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -59,10 +86,10 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="user-name" class="form-control-label">{{ __('Full Name') }}</label>
-                                <div class="@error('user.name')border border-danger rounded-3 @enderror">
-                                    <input class="form-control" value="{{ auth()->user()->name }}" type="text" placeholder="Name" id="user-name" name="name">
-                                        @error('name')
+                                <label for="user-name" class="form-control-label">{{ __('Nama Lengkap') }}</label>
+                                <div class="@error('user.nama_admin')border border-danger rounded-3 @enderror">
+                                    <input class="form-control" type="text" value="{{ old('nama_admin', Auth::user()->nama_admin) }}" placeholder="Name" id="nama_admin" name="nama_admin">
+                                        @error('nama_admin')
                                             <p class="text-danger text-xs mt-2">{{ $message }}</p>
                                         @enderror
                                 </div>
@@ -83,10 +110,10 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="user.phone" class="form-control-label">{{ __('Phone') }}</label>
+                                <label for="user.phone" class="form-control-label">{{ __('No HP') }}</label>
                                 <div class="@error('user.phone')border border-danger rounded-3 @enderror">
-                                    <input class="form-control" type="tel" placeholder="40770888444" id="number" name="phone" value="{{ auth()->user()->phone }}">
-                                        @error('phone')
+                                    <input class="form-control" value="{{ auth()->user()->no_hp }}" type="tel" placeholder="08XXXXXXXXXX" id="number" name="no_hp" value="{{ auth()->user()->phone }}">
+                                        @error('no_hp')
                                             <p class="text-danger text-xs mt-2">{{ $message }}</p>
                                         @enderror
                                 </div>
@@ -94,9 +121,9 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="user.location" class="form-control-label">{{ __('Location') }}</label>
+                                <label for="user.location" class="form-control-label">{{ __('Alamat') }}</label>
                                 <div class="@error('user.location') border border-danger rounded-3 @enderror">
-                                    <input class="form-control" type="text" placeholder="Location" id="name" name="location" value="{{ auth()->user()->location }}">
+                                    <input class="form-control" type="text" value="{{ auth()->user()->alamat }}" placeholder="Alamat" id="name" name="alamat" value="{{ auth()->user()->location }}">
                                 </div>
                             </div>
                         </div>
@@ -104,7 +131,7 @@
                     <div class="form-group">
                         <label for="about">{{ 'About Me' }}</label>
                         <div class="@error('user.about')border border-danger rounded-3 @enderror">
-                            <textarea class="form-control" id="about" rows="3" placeholder="Say something about yourself" name="about_me">{{ auth()->user()->about_me }}</textarea>
+                            <textarea class="form-control" value="{{ auth()->user()->alamat }}" id="about" rows="3" placeholder="Say something about yourself" name="about_me">{{ auth()->user()->about_me }}</textarea>
                         </div>
                     </div>
                     <div class="d-flex justify-content-end">
