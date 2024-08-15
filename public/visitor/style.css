@@ -316,18 +316,18 @@ nav .navbar .links li:hover .js-sub-menu {
 
 @media (max-width: 768px) {
   .recentpost {
-    width: 351px;
+    width: 100%;
     height: 233px;
   }
   .liveradio {
     width: 350px !important;
   }
 }
-@media (min-width: 60px) {
+/* @media (min-width: 60px) {
   .postterbaru {
     width: 351px;
   }
-}
+} */
 .sub-footer {
   display: none;
 }
@@ -371,6 +371,13 @@ nav .navbar .links li:hover .js-sub-menu {
   opacity: 1;
   transform: translateZ(0);
   background-color: rgba(0, 0, 0, 0.5);
+}
+.fix-size{
+  width: 400px;
+  height: 250px;
+  object-fit: cover; /* Gambar akan memotong untuk mengisi area */
+  /* object-fit: contain;  Gambar akan ditampilkan sepenuhnya, dengan kemungkinan ada ruang kosong */
+  /* object-fit: fill; Gambar akan dipaksa sesuai ukuran kontainer */
 }
 
 /* .scroll-container {

@@ -52,7 +52,7 @@
       <div class="scroll-container">
         <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-3">
           <div class="col">
-            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg border-0">
+            <div href="#" class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg border-0">
               <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 animate-hover">
                 <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h3>
               </div>
@@ -60,7 +60,7 @@
           </div>
       
           <div class="col">
-            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg border-0">
+            <div  href="#" class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg border-0">
               <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 animate-hover">
                 <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Much longer title that wraps to multiple lines</h3>
               </div>
@@ -68,7 +68,7 @@
           </div>
       
           <div class="col">
-            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg border-0">
+            <div  href="#" class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg border-0">
               <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1 animate-hover">
                 <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Another longer title belongs here</h3>
               </div>
@@ -84,7 +84,7 @@
   <div class="row g-3">
     <div class="col-md-8">
       <h3 class="pb-4 mb-4 fst-italic border-bottom">
-        Update Berita
+        Berita Populer
       </h3>
       <div class="album py-2.5 bg-body-white">
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-2">
@@ -143,71 +143,11 @@
 
           </div>
         </div>
-        <!-- <div class="card mb-3 border-0" style="max-width: 1000px;">
-          <div class="row g-0">
-            <div class="col-md-4">
-              <img src="img/news.webp" class="img-fluid" alt="...">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <strong class="d-inline-block mb-2 text-success-emphasis">Design</strong>
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card mb-3 border-0" style="max-width: 1000px;">
-          <div class="row g-0">
-            <div class="col-md-4">
-              <img src="img/news.webp" class="img-fluid" alt="...">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <strong class="d-inline-block mb-2 text-success-emphasis">Design</strong>
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card mb-3 border-0" style="max-width: 1000px;">
-          <div class="row g-0">
-            <div class="col-md-4">
-              <img src="img/news.webp" class="img-fluid" alt="...">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <strong class="d-inline-block mb-2 text-success-emphasis">Design</strong>
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card mb-3 border-0" style="max-width: 100%;">
-          <div class="row g-0">
-            <div class="col-md-4">
-              <img src="img/news.webp" class="img-fluid" alt="...">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <strong class="d-inline-block mb-2 text-success-emphasis">Design</strong>
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-              </div>
-            </div>
-          </div>
-        </div> -->
     </div>
     <!--=============== Live Streaming ===============-->
     <div class="col-md-4">
       <div class="position-sticky" style="top: 2rem;">
-        <div class="p-0 mb-3 bg-body-white rounded liveradio">
+        <div class="p-0 mb-2 bg-body-white rounded">
           <h4 class="pb-3 mb-3 fst-italic border-bottom">Live Streaming </h4>
           <script type='text/javascript'>
             var cstrFreePlayerUid = 590582;
@@ -219,9 +159,8 @@
           <a id='cstrFreePlayerBL1' href='//www.caster.fm/'>Free Shoutcast Hosting</a><a id='cstrFreePlayerBL2' href='//www.caster.fm/'>Radio Stream Hosting</a>
           <div id='cstrFreePlayerDiv'></div>
         </div>
-        <!--=============== Rencent Post ===============-->
         <div>
-          <h4 class="pb-3 mb-3 fst-italic border-bottom">Berita Populer</h4>
+          <h4 class="pb-3 mb-2 fst-italic border-bottom">Recent posts</h4>
           <ul class="list-unstyled postterbaru">
             <li>
               <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-2 link-body-emphasis text-decoration-none" href="#">
@@ -252,9 +191,11 @@
             </li>
           </ul>
         </div>
+
       </div>
     </div>
   </div>
 </div>
 
 @endsection
+

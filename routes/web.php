@@ -38,6 +38,9 @@ Route::get('/berita', function () {
 Route::get('/about', function () {
 	return view('visitor/about');
 });
+Route::get('/search', function () {
+	return view('visitor/search');
+});
 
 
 Route::group(['middleware' => 'auth'], function () {
