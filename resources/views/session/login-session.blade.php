@@ -10,9 +10,9 @@
             <div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
               <div class="card card-plain mt-8">
                 <div class="card-header pb-0 text-left bg-transparent">
-                  <h3 class="font-weight-bolder text-info text-gradient">Welcome back</h3>
-                  <p class="mb-0">Create a new acount<br></p>
-                  <p class="mb-0">OR Sign in with these credentials:</p>
+                  <h3 class="font-weight-bolder text-info text-gradient">Masuk dashboard admin</h3>
+                  {{-- <p class="mb-0">Create a new acount<br></p>
+                  <p class="mb-0">OR Sign in with these credentials:</p> --}}
                   <p class="mb-0">Email <b>admin@gmail.com</b></p>
                   <p class="mb-0">Password <b>secret</b></p>
                 </div>
@@ -38,17 +38,17 @@
                       <label class="form-check-label" for="rememberMe">Remember me</label>
                     </div> --}}
                     <div class="text-center">
-                      <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">Sign in</button>
+                      <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">Masuk</button>
                     </div>
                   </form>
                 </div>
                 <div class="card-footer text-center pt-0 px-lg-2 px-1">
-                <small class="text-muted">Forgot you password? Reset you password 
-                  <a href="/login/forgot-password" class="text-info text-gradient font-weight-bold">here</a>
-                </small>
+                {{-- <small class="text-muted">Lupa password? Reset password 
+                  <a href="/login/forgot-password" class="text-info text-gradient font-weight-bold">di sini</a>
+                </small> --}}
                   <p class="mb-4 text-sm mx-auto">
-                    Don't have an account?
-                    <a href="../register" class="text-info text-gradient font-weight-bold">Sign up</a>
+                    Belum memiliki akun?
+                    <a href="../register" class="text-info text-gradient font-weight-bold">Daftar</a>
                   </p>
                 </div>
               </div>
