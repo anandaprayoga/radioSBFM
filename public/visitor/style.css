@@ -375,9 +375,7 @@ nav .navbar .links li:hover .js-sub-menu {
 .fix-size{
   width: 400px;
   height: 250px;
-  object-fit: cover; /* Gambar akan memotong untuk mengisi area */
-  /* object-fit: contain;  Gambar akan ditampilkan sepenuhnya, dengan kemungkinan ada ruang kosong */
-  /* object-fit: fill; Gambar akan dipaksa sesuai ukuran kontainer */
+  object-fit: cover;
 }
 
 /* .scroll-container {
