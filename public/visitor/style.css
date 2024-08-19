@@ -377,7 +377,74 @@ nav .navbar .links li:hover .js-sub-menu {
   height: 250px;
   object-fit: cover;
 }
+.sectionEvent {
+  text-align: center;
+  font-size: 24px; /* Sesuaikan ukuran font */
+  font-weight: bold; /* Jika Anda ingin teks lebih tebal */
+  margin-bottom: 20px; /* Jarak antara teks dan konten di bawahnya */
+  position: relative;
+}
 
+.sectionEvent::after {
+  content: '';
+  width: 70px; /* Panjang garis hijau */
+  height: 3px;  /* Ketebalan garis hijau */
+  background-color: #57e0ff; /* Warna hijau */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px; /* Jarak antara teks dan garis hijau */
+}
+.section {
+  font-size: 24px; /* Sesuaikan ukuran font */
+  font-weight: bold; /* Jika Anda ingin teks lebih tebal */
+  margin-bottom: 20px; /* Jarak antara teks dan konten di bawahnya */
+  position: relative;
+}
+
+.section::after {
+  content: '';
+  width: 100%; /* Panjang garis hijau */
+  height: 3px;  /* Ketebalan garis hijau */
+  background-color: #57e0ff; /* Warna hijau */
+  position: absolute;
+  left: 0;
+  bottom: -10px; /* Jarak antara teks dan garis hijau */
+}
+
+/* Hide scrollbars */
+.scrollable-row {
+  overflow-x: scroll;
+  scrollbar-width: none; /* Firefox */
+}
+.scrollable-row::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Arrow styles */
+.scroll-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 0.5rem;
+  cursor: pointer;
+  z-index: 10;
+  display: none; /* Hide arrows initially */
+}
+.left-arrow {
+  left: 0;
+}
+.right-arrow {
+  right: 0;
+}
+
+/* Show arrows on hover */
+.scroll-container:hover .scroll-arrow {
+  display: block;
+}
 /* .scroll-container {
   overflow-x: auto;
   white-space: nowrap;
