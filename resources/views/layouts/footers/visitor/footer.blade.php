@@ -3,43 +3,40 @@
       <div class="container">
         <footer  style="padding-top: 70px;">
           <div class="container">
-            <div class="row" style="padding-bottom: 100px;">
+            <div class="row" style="padding-bottom: 100px; display: flex; justify-content:space-around">
               <div class="col-md-4 mb-3">
                 <img width="170px" height="60px" src="{{ asset('visitor/img/sbfm1.png') }}" alt="">
                 <p class="py-3" style="text-align: justify;">Suara Bangkalan FM 92,1 Mhz adalah salah satu stasiun radio yang berapa pada daerah bangkalan</p>
               </div>
-              <div class="col-md-4 mb-3 px-3">
+              <div class="col-md-3  mb-3 px-3">
                 <h5>Menu Halaman</h5>
-                    <ul class="nav flex-column">
-                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Home</a></li>
-                      <li class="nav-item mb-2 js-botton">
-                        <div class="d-flex">
-                          <a class="nav-link p-0 text-white">Category</a>
-                          <i class='bx bxs-chevron-down arrow mt-1'></i>
-                        </div>
-                        <ul class="js-sub-menu sub-footer">
-                          <li class="lifooter"><a class="afooter" href="#">Dynamic Clock</a></li>
-                          <li class="lifooter"><a class="afooter" href="#">Form Validation</a></li>
-                          <li class="lifooter"><a class="afooter" href="#">Card Slider</a></li>
-                          <li class="lifooter"><a class="afooter" href="#">Complete Website</a></li>
-                        </ul>
-                      </li>
-                      
-                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">About Us</a></li>
-                      <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Contact</a></li>
+                <span style="border-bottom: 3px solid; display: block; width: 100px; color: #21d4fd; margin-bottom: 10px;"></span>
+                <ul class="nav flex-column">
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Home</a></li>
+                  <li class="nav-item mb-2 js-botton">
+                    <div class="d-flex">
+                      <a class="nav-link p-0 text-white">Category</a>
+                      <i class='bx bxs-chevron-down arrow mt-1'></i>
+                    </div>
+                    <ul class="js-sub-menu sub-footer" style="margin-left:-20px">
+                      <li class="lifooter"><a class="afooter" href="#">Dynamic Clock</a></li>
+                      <li class="lifooter"><a class="afooter" href="#">Form Validation</a></li>
+                      <li class="lifooter"><a class="afooter" href="#">Card Slider</a></li>
+                      <li class="lifooter"><a class="afooter" href="#">Complete Website</a></li>
                     </ul>
+                  </li>
+                  
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">About Us</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Contact</a></li>
+                </ul>
               </div>
               <div class="col-md-4 mb-3">
-                <form>
-                  <h5>Subscribe to our newsletter</h5>
-                  <p>Monthly digest of what's new and exciting from us.</p>
-                  <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-                    <label for="newsletter1" class="visually-hidden">Email address</label>
-                    <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
-                    <button class="btn text-white" type="button" style="background-color: rgb(67, 142, 255)">Subscribe</button>
-                  </div>
-                </form>
-              </div>
+                <h5>Information</h5>
+                <span style="border-bottom: 3px solid; display: block; width: 100px; color: #21d4fd; margin-bottom: 10px;"></span>
+                <p><span style="color:#21d4fd;">Alamat : </span>Jl. Jokotole No. 01, Kabupaten Bangkalan, Jawa Timur, 69119</p>
+                <p><span style="color:#21d4fd;">Email : </span>Aadmin@gmail.com</p>
+                <p><span style="color:#21d4fd;">No.Tlp : </span>0123456789</p>
+                
             </div>
           </div>
       
