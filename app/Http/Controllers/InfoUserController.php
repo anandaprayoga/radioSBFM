@@ -46,7 +46,7 @@ class InfoUserController extends Controller
                 'about_me' => $attributes['about_me'],
             ]);
 
-        return redirect('/admin/user-profile')->with('success', 'Profile updated successfully');
+        return redirect('/admin/user-profile')->with('success', 'Informasi profil berhasil diperbarui');
     }
 }
 

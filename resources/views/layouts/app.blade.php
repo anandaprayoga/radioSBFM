@@ -89,6 +89,25 @@
     }
   </script>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Mendapatkan elemen notifikasi
+        var alertSuccess = document.getElementById('alert-success');
+
+        // Jika elemen notifikasi ada
+        if (alertSuccess) {
+            // Tampilkan notifikasi
+            var alert = new bootstrap.Alert(alertSuccess);
+
+            // Setelah 5 detik (5000 milidetik), sembunyikan notifikasi
+            setTimeout(function () {
+                alert.close();
+            }, 5000);
+        }
+    });
+</script>
+
+
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
