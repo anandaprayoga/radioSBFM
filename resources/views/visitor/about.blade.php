@@ -62,7 +62,7 @@
                 <div class="card mb-3 border-0 shadow" style="max-width: 540px;">
                   <div class="row g-0">
                     <div class="col-md-4">
-                      <img src="{{ asset('visitor/img/trump.jpg') }}" class="img-fluid rounded-start" alt="...">
+                      <img src="{{ asset('visitor/img/trump.jpg') }}" class="img-fluid rounded" alt="...">
                     </div>
                     <div class="col-md-8">
                       <div class="card-body">

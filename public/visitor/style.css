@@ -358,7 +358,15 @@ nav .navbar .links li:hover .js-sub-menu {
   background-position: center;
   background-size: cover;
 }
+.card-cover:hover {
+  cursor: pointer;
+}
+.titleberita{
+  text-decoration: none;
+  color: black;
+  font-family: sans-serif;
 
+}
 .card-cover .animate-hover {
   opacity: 0;
   transform: translateZ(20px);
@@ -372,6 +380,14 @@ nav .navbar .links li:hover .js-sub-menu {
   transform: translateZ(0);
   background-color: rgba(0, 0, 0, 0.5);
 }
+@media (min-width: 768px){
+  .recentpost{
+    width: 130px;
+    height: 96px;
+    object-fit: cover;
+  }
+}
+
 .fix-size{
   width: 400px;
   height: 250px;
@@ -444,6 +460,13 @@ nav .navbar .links li:hover .js-sub-menu {
 /* Show arrows on hover */
 .scroll-container:hover .scroll-arrow {
   display: block;
+}
+@media (min-width: 768px){
+  .gambarberita{
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+  }
 }
 /* .scroll-container {
   overflow-x: auto;
