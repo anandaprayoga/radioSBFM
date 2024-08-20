@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('visitor/visitor-home', [VisitorHomeController::class, 'index'])->name('visitor/visitor-home');
+Route::get('/', [VisitorHomeController::class, 'index'])->name('visitor/dashboard');
 Route::get('/', function () {
 	return view('visitor/dashboard');
 });
@@ -59,9 +59,9 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('admin/user-management');
 	})->name('user-management')->middleware('ip.whitelist');
 
-	Route::get('/admin/broadcast', function () {
-		return view('admin/broadcast');
-	})->name('broadcast')->middleware('ip.whitelist');
+	Route::get('/admin/broadcaster', function () {
+		return view('admin/broadcaster');
+	})->name('broadcaster')->middleware('ip.whitelist');
 
 	Route::get('/admin/event', function () {
 		return view('admin/event');
@@ -115,3 +115,4 @@ Route::get('/unauthorized', function () {
 })->name('unauthorized');
 
 Route::post('/user-profile/update-photo', [ProfileController::class, 'updatePhoto'])->name('user-profile.updatePhoto');
+Route::resource('/admin/broadcaster', App\Http\Controllers\BroadcasterController::class);

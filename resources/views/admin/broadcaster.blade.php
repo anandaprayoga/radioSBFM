@@ -3,7 +3,6 @@
 @section('content')
 
 <div>
-
     <div class="row">
         <div class="col-12">
             <div class="card mb-4 mx-4">
@@ -45,15 +44,20 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @forelse ($broadcaster as $broadcaster)
+
+                                @empty
+
+                                @endforelse
                                 <tr>
-                                    <td class="ps-4">
+                                    {{-- <td class="ps-4">
                                         <p class="text-xs font-weight-bold mb-0">1</p>
+                                    </td> --}}
+                                    <td class="text-center">
+                                        <p class="text-xs font-weight-bold mb-0">{{ $broadcaster -> nama_broadcaster }}</p>
                                     </td>
                                     <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">Admin</p>
-                                    </td>
-                                    <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">admin@softui.com</p>
+                                        <p class="text-xs font-weight-bold mb-0">{{ $broadcaster -> no_hp }}</p>
                                     </td>
                                     <td class="text-center">
                                         <p class="text-xs font-weight-bold mb-0">Admin</p>
