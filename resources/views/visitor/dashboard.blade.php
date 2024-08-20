@@ -52,34 +52,34 @@
         <div class="scroll-container py-3 position-relative">
             <!-- Add "scrollable-row" class for custom scrolling -->
             <div class="scrollable-row row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-3  flex-nowrap">
-                <div class="col d-inline-block">
-                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-sm border-0">
-                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 animate-hover">
-                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col d-inline-block">
-                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-sm border-0">
-                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 animate-hover">
-                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Much longer title that wraps to multiple lines</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col d-inline-block">
-                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-sm border-0">
-                        <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1 animate-hover">
-                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Another longer title belongs here</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col d-inline-block">
-                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-sm border-0">
-                        <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1 animate-hover">
-                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Another longer title belongs here</h3>
-                        </div>
-                    </div>
-                </div>
+              <div class="col d-inline-block">
+                  <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-sm border-0 triggerModal">
+                      <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1 animate-hover">
+                          <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Title 1</h3>
+                      </div>
+                  </div>
+              </div>
+              <div class="col d-inline-block">
+                  <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-sm border-0 triggerModal">
+                      <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1 animate-hover">
+                          <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Title 1</h3>
+                      </div>
+                  </div>
+              </div>
+              <div class="col d-inline-block">
+                  <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-sm border-0 triggerModal">
+                      <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1 animate-hover">
+                          <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Title 1</h3>
+                      </div>
+                  </div>
+              </div>
+              <div class="col d-inline-block">
+                  <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-sm border-0 triggerModal">
+                      <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1 animate-hover">
+                          <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Title 1</h3>
+                      </div>
+                  </div>
+              </div>
                 
                 <!-- Add more cards here -->
             </div>
@@ -89,7 +89,7 @@
             <div class="scroll-arrow right-arrow">&#10095;</div>
         </div>
     </div>
-</div>
+  </div>
   <!--=============== News ===============-->
   <div class="row g-3 py-4">
     <div class="col-md-8 ">
@@ -101,7 +101,7 @@
                 <img src="{{ asset('visitor/img/about-us.jpg') }}" width="100%" height="230" class="card-img-top" alt="Your Image Alt Text">
                 <div class="card-body">
                   <strong class="d-inline-block mb-2 text-success-emphasis">Design</strong>
-                  <h3 class="mb-1">Post title</h3>
+                  <h3 class="mb-1"><a class="titleberita" href="{{ url('/berita') }}">Post title</a></h3>
                   <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <small class="text-body-secondary">10 November 2024</small>
@@ -114,7 +114,7 @@
                 <img src="{{ asset('visitor/img/about-us.jpg') }}" width="100%" height="230" class="card-img-top" alt="Your Image Alt Text">
                 <div class="card-body">
                   <strong class="d-inline-block mb-2 text-success-emphasis">Design</strong>
-                  <h3 class="mb-1">Post title</h3>
+                  <h3 class="mb-1"><a class="titleberita" href="{{ url('/berita') }}">Post title</a></h3>
                   <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <small class="text-body-secondary">10 November 2024</small>
@@ -127,7 +127,7 @@
                 <img src="{{ asset('visitor/img/about-us.jpg') }}" width="100%" height="230" class="card-img-top" alt="Your Image Alt Text">
                 <div class="card-body">
                   <strong class="d-inline-block mb-2 text-success-emphasis">Design</strong>
-                  <h3 class="mb-1">Post title</h3>
+                  <h3 class="mb-1"><a class="titleberita" href="{{ url('/berita') }}">Post title</a></h3>
                   <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <small class="text-body-secondary">10 November 2024</small>
@@ -140,7 +140,7 @@
                 <img src="{{ asset('visitor/img/about-us.jpg') }}" width="100%" height="230" class="card-img-top" alt="Your Image Alt Text">
                 <div class="card-body">
                   <strong class="d-inline-block mb-2 text-success-emphasis">Design</strong>
-                  <h3 class="mb-1">Post title</h3>
+                  <h3 class="mb-1"><a class="titleberita" href="{{ url('/berita') }}">Post title</a></h3>
                   <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <small class="text-body-secondary">10 November 2024</small>
@@ -169,31 +169,31 @@
           <div id='cstrFreePlayerDiv'></div>
         </div>
         <div>
-          <div class="section">Berita Terbaru</div>
+        <div class="section">Berita Terbaru</div>
           <ul class="list-unstyled postterbaru">
             <li>
-              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-2 link-body-emphasis text-decoration-none" href="#">
-                <img width="100%" height="96px" src="{{ asset('visitor/img/news.webp') }}" class="recentpost" alt="">
+              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-2 link-body-emphasis text-decoration-none" href="{{ url('/berita') }}">
+                <img src="{{ asset('visitor/img/news.webp') }}" class="recentpost" alt="">
                 <div class="col-lg-8">
-                  <h6 class="mb-0">Longer blog post title: This one has multiple lines!</h6>
+                  <h6 class="mb-0 titleberita">Longer blog post title: This one has multiple lines!</h6>
                   <small class="text-body-secondary">January 13, 2023</small>
                 </div>
               </a>
             </li>
             <li>
-              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
-                <img width="100%" height="96px" src="{{ asset('visitor/img/news.webp') }}" class="recentpost" alt="">
+              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="{{ url('/berita') }}">
+                <img src="{{ asset('visitor/img/news.webp') }}" class="recentpost" alt="">
                 <div class="col-lg-8">
-                  <h6 class="mb-0">Longer blog post title: This one has multiple lines!</h6>
+                  <h6 class="mb-0 titleberita">Longer blog post title: This one has multiple lines!</h6>
                   <small class="text-body-secondary">January 13, 2023</small>
                 </div>
               </a>
             </li>
             <li>
-              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
-                <img width="100%" height="96px" src="{{ asset('visitor/img/news.webp') }}" class="recentpost" alt="">
+              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="{{ url('/berita') }}">
+                <img src="{{ asset('visitor/img/news.webp') }}" class="recentpost" alt="">
                 <div class="col-lg-8">
-                  <h6 class="mb-0">Longer blog post title: This one has multiple lines!</h6>
+                  <h6 class="mb-0 titleberita">Longer blog post title: This one has multiple lines!</h6>
                   <small class="text-body-secondary">January 13, 2023</small>
                 </div>
               </a>
@@ -205,6 +205,34 @@
     </div>
   </div>
 </div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Pentingnya Dokumen Kependudukan</h5>
+              <!-- Close button for modal -->
+              <button type="button" class="btn-close" id="closeModal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body d-flex flex-column flex-md-row">
+              <!-- Image section -->
+              <div class="col-md-4 mb-3 mb-md-0">
+                  <img src="{{asset('visitor/img/event.jpeg')}}" class="img-fluid rounded-4" alt="Description Image">
+              </div>
+              <!-- Description section -->
+              <div class="col-md-8 p-3">
+                  <p>Dokumen Kependudukan seringkali menjadi syarat bagi masyarakat yang ingin mengakses dan mendapatkan layanan publik...</p>
+                  <ul>
+                      <li>Tanggal: Kamis, 25 Juli 2024</li>
+                      <li>Waktu: 09:00-10:00 WIB</li>
+                      <li>Pembicara: Agus Suharyono, S.AP.</li>
+                      <li>Host: Layinuvar (SBFM Announcer)</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
 
 @endsection
-

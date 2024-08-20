@@ -43,6 +43,8 @@ jsbotton.onclick = function() {
   jsbotton.style.color="white";
 
 }
+
+// scroll event
 // JavaScript to handle scrolling and dragging
 const scrollableRow = document.querySelector('.scrollable-row');
 const leftArrow = document.querySelector('.left-arrow');
@@ -85,6 +87,27 @@ scrollableRow.addEventListener('mousemove', (e) => {
     const x = e.pageX - scrollableRow.offsetLeft;
     const walk = (x - startX) * 1.5; // Scroll speed
     scrollableRow.scrollLeft = scrollLeft - walk;
+});
+
+// modal event
+document.addEventListener("DOMContentLoaded", function() {
+  const triggerModalElements = document.querySelectorAll(".triggerModal");
+  const exampleModal = new bootstrap.Modal(document.getElementById("exampleModal"), {
+      backdrop: true,
+      keyboard: true
+  });
+
+  // Show modal when any card is clicked
+  triggerModalElements.forEach(function(triggerModal) {
+      triggerModal.addEventListener("click", function() {
+          exampleModal.show();
+      });
+  });
+
+  // Close modal when "X" is clicked
+  document.getElementById("closeModal").addEventListener("click", function() {
+      exampleModal.hide();
+  });
 });
 
 // const myModal = document.getElementById('myModal')
