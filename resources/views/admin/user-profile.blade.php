@@ -54,7 +54,15 @@
                     @if ($errors->any())
                     <div class="mt-3  alert alert-primary alert-dismissible fade show" role="alert">
                         <span class="alert-text text-white">
-                            {{ $errors->first() }}</span>
+                            @foreach ($errors->get('photo') as $error)
+                                {{ $error }} <br>
+                            @endforeach
+                            @foreach ($errors->all() as $error)
+                                @if (!in_array($error, $errors->get('photo')))
+                                    {{ $error }} <br>
+                                @endif
+                            @endforeach
+                        </span>
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
                             <i class="fa fa-close" aria-hidden="true"></i>
                         </button>
@@ -144,9 +152,9 @@
                     <div class="mb-3">
                         <label for="photo" class="form-label">Pilih Foto Baru
                             <br>
-                            <a style="font-size: 10px; color: blue;">Format file: jpeg, png, jpeg</a>
+                            <a style="font-size: 10px; color: blue;">Format file: jpeg, png, jpg</a>
                             <br>
-                            <a style="font-size: 10px; color: blue;">Max. Resolusi: 1000px</a>
+                            <a style="font-size: 10px; color: blue;">Max. Ukuran: 2MB</a>
                         </label>
                         <input type="file" class="form-control" id="photo" name="photo" required>
                     </div>

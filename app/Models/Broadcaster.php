@@ -9,6 +9,8 @@ class Broadcaster extends Model
 {
     use HasFactory;
 
+    protected $table = 'broadcaster';
+
     protected $fillable = [
         'nama_broadcaster',
         'no_hp',

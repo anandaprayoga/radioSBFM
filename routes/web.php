@@ -8,6 +8,7 @@ use App\Http\Controllers\ResetController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\VisitorHomeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\BroadcasterController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
@@ -59,9 +60,7 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('admin/user-management');
 	})->name('user-management')->middleware('ip.whitelist');
 
-	Route::get('/admin/broadcaster', function () {
-		return view('admin/broadcaster');
-	})->name('broadcaster')->middleware('ip.whitelist');
+	Route::get('/admin/broadcaster', [BroadcasterController::class, 'index'])->name('broadcasters.index')->middleware('ip.whitelist');
 
 	Route::get('/admin/event', function () {
 		return view('admin/event');
@@ -115,4 +114,6 @@ Route::get('/unauthorized', function () {
 })->name('unauthorized');
 
 Route::post('/user-profile/update-photo', [ProfileController::class, 'updatePhoto'])->name('user-profile.updatePhoto');
-Route::resource('/admin/broadcaster', App\Http\Controllers\BroadcasterController::class);
+Route::post('/broadcaster/insert', [BroadcasterController::class, 'insertBroadcaster'])->name('broadcaster.insertBroadcaster');
+Route::delete('/admin/broadcaster/{id}', [BroadcasterController::class, 'destroy'])->name('broadcaster.destroy');
+Route::put('/admin/broadcaster/{id}', [BroadcasterController::class, 'update'])->name('broadcaster.update');
