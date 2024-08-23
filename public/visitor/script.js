@@ -44,71 +44,116 @@ jsbotton.onclick = function() {
 
 }
 
-// scroll event
-// JavaScript to handle scrolling and dragging
-const scrollableRow = document.querySelector('.scrollable-row');
-const leftArrow = document.querySelector('.left-arrow');
-const rightArrow = document.querySelector('.right-arrow');
+/* Created by Tivotal */
 
-// Scroll by clicking arrows
-rightArrow.addEventListener('click', () => {
-    scrollableRow.scrollBy({ left: 300, behavior: 'smooth' });
-});
+let carousel = document.querySelector(".carousel1");
+let btns = document.querySelectorAll(".wrapper i");
+let carouselChildren = [...carousel.children];
+let wrapper = document.querySelector(".wrapper");
 
-leftArrow.addEventListener('click', () => {
-    scrollableRow.scrollBy({ left: -300, behavior: 'smooth' });
-});
+//getting card width
+let cardWidth = carousel.querySelector(".card1").offsetWidth;
+let isDragging = false,
+  startX,
+  startScrollLeft,
+  isAutoPlay = true,
+  timeoutId;
 
-// Enable drag-to-scroll
-let isDown = false;
-let startX;
-let scrollLeft;
+// Mendapatkan jumlah kartu yang bisa muat di carousel sekaligus
+let cardsPerView = Math.round(carousel.offsetWidth / cardWidth);
 
-scrollableRow.addEventListener('mousedown', (e) => {
-    isDown = true;
-    scrollableRow.classList.add('active');
-    startX = e.pageX - scrollableRow.offsetLeft;
-    scrollLeft = scrollableRow.scrollLeft;
-});
+// Memastikan tidak menggandakan kartu jika jumlah kartu asli kurang dari atau sama dengan cardsPerView
+if (carouselChildren.length > cardsPerView) {
+  // Menyalin beberapa kartu terakhir ke awal carousel untuk scrolling tak terbatas
+  carouselChildren
+    .slice(-cardsPerView)
+    .reverse()
+    .forEach((card) => {
+      carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
+    });
 
-scrollableRow.addEventListener('mouseleave', () => {
-    isDown = false;
-    scrollableRow.classList.remove('active');
-});
-
-scrollableRow.addEventListener('mouseup', () => {
-    isDown = false;
-    scrollableRow.classList.remove('active');
-});
-
-scrollableRow.addEventListener('mousemove', (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - scrollableRow.offsetLeft;
-    const walk = (x - startX) * 1.5; // Scroll speed
-    scrollableRow.scrollLeft = scrollLeft - walk;
-});
-
-// modal event
-document.addEventListener("DOMContentLoaded", function() {
-  const triggerModalElements = document.querySelectorAll(".triggerModal");
-  const exampleModal = new bootstrap.Modal(document.getElementById("exampleModal"), {
-      backdrop: true,
-      keyboard: true
+  // Menyalin beberapa kartu pertama ke akhir carousel untuk scrolling tak terbatas
+  carouselChildren.slice(0, cardsPerView).forEach((card) => {
+    carousel.insertAdjacentHTML("beforeend", card.outerHTML);
   });
+} else {
+  // Jika jumlah kartu <= cardsPerView, tambahkan kelas untuk menempatkan kartu di tengah
+  carousel.classList.add("centered-carousel");
+}
 
-  // Show modal when any card is clicked
-  triggerModalElements.forEach(function(triggerModal) {
-      triggerModal.addEventListener("click", function() {
-          exampleModal.show();
-      });
-  });
 
-  // Close modal when "X" is clicked
-  document.getElementById("closeModal").addEventListener("click", function() {
-      exampleModal.hide();
+btns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    //if the clicked button id is left scrolling carousel towards left by card width else towards right by card width
+    carousel.scrollLeft += btn.id == "left" ? -cardWidth : cardWidth;
   });
 });
+
+let dragStart = (e) => {
+  isDragging = true;
+
+  carousel.classList.add("dragging");
+
+  //recording initial cursor and scroll position
+  startX = e.pageX;
+  startScrollLeft = carousel.scrollLeft;
+};
+
+let dragging = (e) => {
+  //returning here if the isDragging value is false
+  if (!isDragging) return;
+
+  //scrolling carousel according to mouse cursor
+  carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
+};
+
+let dragStop = () => {
+  isDragging = false;
+
+  carousel.classList.remove("dragging");
+};
+
+let infiniteScroll = () => {
+  //if the carousel is at begining, scroll to end
+  //else carousel at end , scroll to beginning
+  if (carousel.scrollLeft === 0) {
+    carousel.classList.add("no-transition");
+    carousel.scrollLeft = carousel.scrollWidth - 2 * carousel.offsetWidth;
+    carousel.classList.remove("no-transition");
+  } else if (
+    Math.ceil(carousel.scrollLeft) ===
+    carousel.scrollWidth - carousel.offsetWidth
+  ) {
+    carousel.classList.add("no-transition");
+    carousel.scrollLeft = carousel.offsetWidth;
+    carousel.classList.remove("no-transition");
+  }
+
+  //clearing timeout & starting auto play if the mouse is not hovering the carousel
+  clearTimeout(timeoutId);
+  if (!wrapper.matches(":hover")) autoPlay();
+};
+
+let autoPlay = () => {
+  //if the device is not mobile or tab, enabling auto play
+  if (window.innerWidth < 800 || !isAutoPlay) return; //returning if the device is not desktop & isAutoPlay is false
+
+  //autoplaying the carousel after every 2500 ms
+  timeoutId = setTimeout(() => {
+    carousel.scrollLeft += cardWidth;
+  }, 2500);
+};
+
+autoPlay();
+
+carousel.addEventListener("mousedown", dragStart);
+carousel.addEventListener("mousemove", dragging);
+document.addEventListener("mouseup", dragStop);
+carousel.addEventListener("scroll", infiniteScroll);
+
+//auto play will be active only when there is no hover on carousel
+wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
+wrapper.addEventListener("mouseleave", autoPlay);
 
 // const myModal = document.getElementById('myModal')
 // const myInput = document.getElementById('myInput')
