@@ -49,44 +49,58 @@
   <div class="row mb-2">
     <div class="container px-3 py-5 position-relative" id="custom-cards">
         <div class="sectionEvent">Event Program</div>
-        <div class="scroll-container py-3 position-relative">
-            <!-- Add "scrollable-row" class for custom scrolling -->
-            <div class="scrollable-row row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-3  flex-nowrap">
-              <div class="col d-inline-block">
-                  <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-sm border-0 triggerModal">
-                      <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1 animate-hover">
-                          <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Title 1</h3>
-                      </div>
+        <div class="slideevent py-3">
+          <div class="wrapper">
+            <i class="fas fa-angle-left" id="left"></i>
+            <ul class="carousel1">
+              <li class="card1" style="background-image: url('{{ asset('visitor/img/event.jpeg') }}');">
+                <div class="overlay">
+                  <div class="text-container">
+                      <h2>This is a second title</h2>
+                      <p>This is a second description</p>
                   </div>
-              </div>
-              <div class="col d-inline-block">
-                  <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-sm border-0 triggerModal">
-                      <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1 animate-hover">
-                          <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Title 1</h3>
-                      </div>
+                  <button class="detail-button" data-bs-toggle="modal" data-bs-target="#viewdetail">View Details</button>
+                </div>
+              </li>
+              <li class="card1" style="background-image: url('{{ asset('visitor/img/event.jpeg') }}');">
+                <div class="overlay">
+                  <div class="text-container">
+                      <h2>This is a second title</h2>
+                      <p>This is a second description</p>
                   </div>
-              </div>
-              <div class="col d-inline-block">
-                  <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-sm border-0 triggerModal">
-                      <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1 animate-hover">
-                          <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Title 1</h3>
-                      </div>
+                  <button class="detail-button" data-bs-toggle="modal" data-bs-target="#viewdetail">View Details</button>
+                </div>
+              </li>
+              <li class="card1" style="background-image: url('{{ asset('visitor/img/event.jpeg') }}');">
+                <div class="overlay">
+                  <div class="text-container">
+                      <h2>This is a second title</h2>
+                      <p>This is a second description</p>
                   </div>
-              </div>
-              <div class="col d-inline-block">
-                  <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-sm border-0 triggerModal">
-                      <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1 animate-hover">
-                          <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Title 1</h3>
-                      </div>
+                  <button class="detail-button" data-bs-toggle="modal" data-bs-target="#viewdetail">View Details</button>
+                </div>
+              </li>
+              <li class="card1" style="background-image: url('{{ asset('visitor/img/event.jpeg') }}');">
+                <div class="overlay">
+                  <div class="text-container">
+                      <h2>This is a second title</h2>
+                      <p>This is a second description</p>
                   </div>
-              </div>
-                
-                <!-- Add more cards here -->
-            </div>
-
-            <!-- Left and Right Arrows -->
-            <div class="scroll-arrow left-arrow">&#10094;</div>
-            <div class="scroll-arrow right-arrow">&#10095;</div>
+                  <button class="detail-button" data-bs-toggle="modal" data-bs-target="#viewdetail"l>View Details</button>
+                </div>
+              </li>
+              <li class="card1" style="background-image: url('{{ asset('visitor/img/event.jpeg') }}');">
+                <div class="overlay">
+                  <div class="text-container">
+                      <h2>This is a second title</h2>
+                      <p>This is a second description</p>
+                  </div>
+                  <button class="detail-button" data-bs-toggle="modal" data-bs-target="#viewdetail">View Details</button>
+                </div>
+              </li>
+            </ul>
+            <i class="fas fa-angle-right" id="right"></i>
+          </div>
         </div>
     </div>
   </div>
@@ -206,33 +220,31 @@
   </div>
 </div>
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-          <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Pentingnya Dokumen Kependudukan</h5>
-              <!-- Close button for modal -->
-              <button type="button" class="btn-close" id="closeModal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body d-flex flex-column flex-md-row">
-              <!-- Image section -->
-              <div class="col-md-4 mb-3 mb-md-0">
-                  <img src="{{asset('visitor/img/event.jpeg')}}" class="img-fluid rounded-4" alt="Description Image">
-              </div>
-              <!-- Description section -->
-              <div class="col-md-8 p-3">
-                  <p>Dokumen Kependudukan seringkali menjadi syarat bagi masyarakat yang ingin mengakses dan mendapatkan layanan publik...</p>
-                  <ul>
-                      <li>Tanggal: Kamis, 25 Juli 2024</li>
-                      <li>Waktu: 09:00-10:00 WIB</li>
-                      <li>Pembicara: Agus Suharyono, S.AP.</li>
-                      <li>Host: Layinuvar (SBFM Announcer)</li>
-                  </ul>
-              </div>
-          </div>
+<div class="modal fade" id="viewdetail" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Event Program</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-6 col-12">
+            <div class="image-container">
+              <img src="{{ asset('visitor/img/event.jpeg') }}" class="img-fluid" alt="Event Image">
+            </div>
+          </div>
+          <div class="col-md-6 col-12">
+            <h1>Event Title</h1>
+            <p>Here is the description of the event. It includes details that are important for the users to know.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
+
 
 
 @endsection
