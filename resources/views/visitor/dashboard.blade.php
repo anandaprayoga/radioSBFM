@@ -189,7 +189,7 @@
               <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-2 link-body-emphasis text-decoration-none" href="{{ url('/berita') }}">
                 <img src="{{ asset('visitor/img/news.webp') }}" class="recentpost" alt="">
                 <div class="col-lg-8">
-                  <h6 class="mb-0 titleberita">Longer blog post title: This one has multiple lines!</h6>
+                  <h6 class="mb-0">Longer blog post title: This one has multiple lines!</h6>
                   <small class="text-body-secondary">January 13, 2023</small>
                 </div>
               </a>
@@ -198,7 +198,7 @@
               <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="{{ url('/berita') }}">
                 <img src="{{ asset('visitor/img/news.webp') }}" class="recentpost" alt="">
                 <div class="col-lg-8">
-                  <h6 class="mb-0 titleberita">Longer blog post title: This one has multiple lines!</h6>
+                  <h6 class="mb-0">Longer blog post title: This one has multiple lines!</h6>
                   <small class="text-body-secondary">January 13, 2023</small>
                 </div>
               </a>
@@ -207,7 +207,7 @@
               <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="{{ url('/berita') }}">
                 <img src="{{ asset('visitor/img/news.webp') }}" class="recentpost" alt="">
                 <div class="col-lg-8">
-                  <h6 class="mb-0 titleberita">Longer blog post title: This one has multiple lines!</h6>
+                  <h6 class="mb-0">Longer blog post title: This one has multiple lines!</h6>
                   <small class="text-body-secondary">January 13, 2023</small>
                 </div>
               </a>
@@ -235,7 +235,7 @@
             </div>
           </div>
           <div class="col-md-6 col-12">
-            <h1>Event Title</h1>
+            <h3>Event Title</h3>
             <p>Here is the description of the event. It includes details that are important for the users to know.</p>
           </div>
         </div>

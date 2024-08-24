@@ -15,7 +15,7 @@
                   <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Home</a></li>
                   <li class="nav-item mb-2 js-botton">
                     <div class="d-flex">
-                      <a class="nav-link p-0 text-white">Category</a>
+                      <a class="nav-link p-0 text-white">News</a>
                       <i class='bx bxs-chevron-down arrow mt-1'></i>
                     </div>
                     <ul class="js-sub-menu sub-footer" style="margin-left:-20px">
@@ -28,6 +28,7 @@
                   
                   <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">About Us</a></li>
                   <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Contact</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Radio</a></li>
                 </ul>
               </div>
               <div class="col-md-4 mb-3">

@@ -43,6 +43,9 @@ Route::get('/about', function () {
 Route::get('/search', function () {
 	return view('visitor/search');
 });
+Route::get('/radio', function () {
+	return view('visitor/radio');
+});
 
 Route::group(['middleware' => 'auth'], function () {
 
