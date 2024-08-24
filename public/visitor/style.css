@@ -1,10 +1,12 @@
 /* Googlefont Poppins CDN Link */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Baloo 2", cursive;
+	font-size: 16px;
 }
 body {
   min-height: 100vh;
@@ -57,7 +59,7 @@ nav .navbar .links li a {
   text-decoration: none;
   white-space: nowrap;
   color: #fff;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 500;
 }
 .links li:hover .htmlcss-arrow,
@@ -352,13 +354,6 @@ nav .navbar .links li:hover .js-sub-menu {
   margin-top: 50px;
 }
 
-.titleberita{
-  text-decoration: none;
-  color: black;
-  font-family: sans-serif;
-
-}
-
 @media (min-width: 768px){
   .recentpost{
     width: 130px;
@@ -534,7 +529,6 @@ nav .navbar .links li:hover .js-sub-menu {
   margin: 0;
   font-size: 18px; /* Ukuran font yang lebih besar */
   font-weight: bold;
-  font-family: "Poppins", sans-serif;
 }
 
 .overlay p {
@@ -615,22 +609,139 @@ nav .navbar .links li:hover .js-sub-menu {
     margin-bottom: 10px;
   }
 }
-.modal-content h1{
-  font-family: "Poppins", sans-serif;
-  font-size: 30px;
 
-}
-/* .scroll-container {
-  overflow-x: auto;
-  white-space: nowrap;
+
+
+#boxes {
+  display: grid;
+  width: 100%;
+  margin-top: 30px;
 }
 
-.scroll-container .row {
+#player03 .controls {
   display: flex;
-  flex-wrap: nowrap;
+  justify-content: space-around;
 }
 
-.scroll-container .col {
-  display: inline-block;
-  float: none;
-} */
+.player {
+  background-color: #29295a;
+  width: 100%;
+  height: 300px;
+}
+
+.player img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.info {
+  color: #E1E1E6;
+}
+
+.info p {
+  opacity: 0.68;
+  font-size: 19px;
+}
+
+.info-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin: 50px 0px;
+  margin-left: 50px;
+}
+
+.player h1 {
+  font-size: 27px;
+  color: #E1E1E6;
+  padding-bottom: 7px;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+
+.play i {
+  font-size: 1.23rem;
+  height: 50px;
+  width: 50px;
+  background: #ff9900;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 50%;
+  cursor: pointer;
+  line-height: 50px;
+  text-align: center;
+  color: black;
+}
+
+.volume-slider {
+  width: 50%;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+/* Ubah warna track slider */
+.volume-slider::-webkit-slider-runnable-track {
+  background: #ffffff; /* Warna track slider */
+  border-radius: 15px;
+}
+
+/* Ubah warna thumb (tombol penggeser) */
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: #ff9900; /* Warna thumb */
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+@media (max-width: 670px) {
+  #boxes {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 500px;
+  }
+  .player {
+    height: 450px;
+  }
+
+  .info-wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    margin: 20px 0;
+  }
+
+  .info-wrapper img {
+    margin-bottom: 15px;
+  }
+
+  .info {
+    margin-bottom: 15px;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .volume-slider {
+    margin-left: 0;
+    width: 50%;
+    margin-top: 10px;
+  }
+}
+
