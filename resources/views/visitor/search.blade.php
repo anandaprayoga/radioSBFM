@@ -5,7 +5,7 @@
       <h3>Search :</h3>
       <h3 class="text-primary px-1">Olahraga</h3>
     </div>
-    <div class="search py-5">
+    <div class="search py-5 ">
         <div class="card mb-3 border-0 align-items-center" style="100%">
             <div class="row g-0">
                 <div class="col-md-4">
