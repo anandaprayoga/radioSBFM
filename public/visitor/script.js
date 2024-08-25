@@ -30,7 +30,7 @@ navLinks.style.left = "-100%";
 // jsArrow.onclick = function() {
 //  navLinks.classList.toggle("show3");
 
-// }
+// 
 let submenu = document.querySelector(".submenu");
 submenu.onclick = function() {
  navLinks.classList.toggle("show3");

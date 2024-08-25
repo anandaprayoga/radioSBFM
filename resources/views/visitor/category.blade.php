@@ -3,7 +3,10 @@
 @section('content')
 <div class="container">
   <div class="category py-5 text-center">
-      <h2>Category</h2>
+    <div class="d-flex justify-content-center sectionEvent">
+      <h3>Category :</h3>
+      <h3 class="text-primary px-1">Olahraga</h3>
+    </div>
   </div>
   <div class="album py-2.5 bg-body-white">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">

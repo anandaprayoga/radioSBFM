@@ -1,10 +1,11 @@
 @extends('layouts.user_type.visitor')
 @section('content')
 <div class="container py-5">
-    <div class="category text-center">
-        <h2>Search</h2>
+    <div class="d-flex justify-content-center sectionEvent category">
+      <h3>Search :</h3>
+      <h3 class="text-primary px-1">Olahraga</h3>
     </div>
-    <div class="card mb-3 border-0 align-items-center" style="100%">
+    <div class="card mb-3 border-0 align-items-center py-5" style="100%">
         <div class="row g-0">
             <div class="col-md-4">
                 <img src="{{ asset('visitor/img/news.webp') }}" class="img-fluid fix-size" alt="...">
