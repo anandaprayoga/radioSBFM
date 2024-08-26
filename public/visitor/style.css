@@ -384,7 +384,7 @@ nav .navbar .links li:hover .js-sub-menu {
   content: '';
   width: 70px; /* Panjang garis hijau */
   height: 3px;  /* Ketebalan garis hijau */
-  background-color: #57e0ff; /* Warna hijau */
+  background: linear-gradient(310deg, #2152ff, #21d4fd); /* Warna hijau */
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -401,7 +401,7 @@ nav .navbar .links li:hover .js-sub-menu {
   content: '';
   width: 100%; /* Panjang garis hijau */
   height: 3px;  /* Ketebalan garis hijau */
-  background-color: #57e0ff; /* Warna hijau */
+  background: linear-gradient(310deg, #2152ff, #21d4fd); /* Warna hijau */
   position: absolute;
   left: 0;
   bottom: -10px; /* Jarak antara teks dan garis hijau */
@@ -629,9 +629,12 @@ nav .navbar .links li:hover .js-sub-menu {
 }
 
 .player {
-  background-color: #29295a;
+  background-image: url("../../assets/img/curved-images/curved0.jpg");
   width: 100%;
   height: 300px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .player img {
@@ -878,4 +881,13 @@ header .buttons i:hover {
     padding: 0 13px;
     margin-top: 20px;
   }
+}
+.tombollive{
+  background: linear-gradient(310deg, #2152ff, #21d4fd); 
+  color: white; 
+  padding: 8px 18px; 
+  border-radius: 5px; 
+  text-align: center; 
+  text-decoration: none;
+  border: 0;
 }

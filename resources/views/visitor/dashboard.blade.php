@@ -172,15 +172,23 @@
       <div class="position-sticky" style="top: 2rem;">
         <div class="p-0 mb-2 bg-body-white rounded">
           <div class="section">Live Streaming</div>
-          <script type='text/javascript'>
-            var cstrFreePlayerUid = 590582;
-            var cstrFreePlayerTheme = 'color';
-            var cstrFreePlayerColor = '45b5ff';
-          </script>
-          <script type='text/javascript' src='//corscdn.caster.fm/freeplayer/FreePlanPlayerEmbed.js'></script>
-          <a id='cstrFreePlayerBL1' href='//www.caster.fm/'>Free Shoutcast Hosting</a>
-          <a id='cstrFreePlayerBL2' href='//www.caster.fm/'>Radio Stream Hosting</a>
-          <div id='cstrFreePlayerDiv'></div>
+          <div class="card shadow" style="border-radius: 15px; border: 0;">
+            <div class="card-body p-4">
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
+                    alt="Generic placeholder image" class="img-fluid" style="width: 140px; border-radius: 10px;">
+                </div>
+                <div class="flex-grow-1 ms-3">
+                  <h5 class="mb-1">Danny McLoan</h5>
+                  <p class="mb-2 pb-1">Host</p>
+                  <div class="d-flex pt-1">
+                    <a href="{{ url('/radio') }}" class="btn flex-grow-1 tombollive">Listen Now!</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div>
         <div class="section">Berita Terbaru</div>
