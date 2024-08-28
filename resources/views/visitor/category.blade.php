@@ -8,6 +8,16 @@
       <h3 class="text-primary px-1">Olahraga</h3>
     </div>
   </div>
+  <div class="dropdown py-3">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Tahun
+    </button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">2022</a></li>
+      <li><a class="dropdown-item" href="#">2023</a></li>
+      <li><a class="dropdown-item" href="#">2024</a></li>
+    </ul>
+  </div>
   <div class="album py-2.5 bg-body-white">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
         <div class="col">

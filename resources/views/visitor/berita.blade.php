@@ -27,7 +27,7 @@
         <div class="section">Berita Terbaru</div>
           <ul class="list-unstyled postterbaru">
             <li>
-              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-2 link-body-emphasis text-decoration-none" href="{{ url('/berita') }}">
+              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-bottom" href="{{ url('/berita') }}">
                 <img src="{{ asset('visitor/img/news.webp') }}" class="recentpost" alt="">
                 <div class="col-lg-8">
                   <h6 class="mb-0">Longer blog post title: This one has multiple lines!</h6>
@@ -36,7 +36,7 @@
               </a>
             </li>
             <li>
-              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="{{ url('/berita') }}">
+              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-bottom" href="{{ url('/berita') }}">
                 <img src="{{ asset('visitor/img/news.webp') }}" class="recentpost" alt="">
                 <div class="col-lg-8">
                   <h6 class="mb-0">Longer blog post title: This one has multiple lines!</h6>
@@ -45,7 +45,7 @@
               </a>
             </li>
             <li>
-              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="{{ url('/berita') }}">
+              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-bottom" href="{{ url('/berita') }}">
                 <img src="{{ asset('visitor/img/news.webp') }}" class="recentpost" alt="">
                 <div class="col-lg-8">
                   <h6 class="mb-0">Longer blog post title: This one has multiple lines!</h6>
