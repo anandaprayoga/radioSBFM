@@ -18,7 +18,7 @@ return new class extends Migration
             $table->date('tanggal_informasi');
             $table->text('isi_informasi');
             $table->string('gambar_informasi');
-            $table->boolean('status_informasi');
+            $table->string('status_informasi');
             $table->timestamp('tanggal_update');
             $table->timestamps();
         });

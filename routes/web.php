@@ -8,6 +8,10 @@ use App\Http\Controllers\ResetController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\VisitorHomeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\BroadcasterController;
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\EventController;
+use App\Http\Controllers\InformasiController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
@@ -49,7 +53,7 @@ Route::get('/radio', function () {
 
 Route::group(['middleware' => 'auth'], function () {
 
-    Route::get('/admin', [HomeController::class, 'home'])->middleware('ip.whitelist');
+	Route::get('/admin', [HomeController::class, 'home'])->middleware('ip.whitelist');
 	Route::get('/admin/dashboard', function () {
 		return view('admin/dashboard');
 	})->name('dashboard')->middleware('ip.whitelist');
@@ -62,30 +66,17 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('admin/user-management');
 	})->name('user-management')->middleware('ip.whitelist');
 
-	Route::get('/admin/broadcaster', function () {
-		return view('admin/broadcaster');
-	})->name('broadcaster')->middleware('ip.whitelist');
+	Route::get('/admin/broadcaster', [BroadcasterController::class, 'index'])->name('broadcasters.index')->middleware('ip.whitelist');
+	Route::get('/admin/event', [EventController::class, 'index'])->name('events.index')->middleware('ip.whitelist');
+	Route::get('/admin/kategori', [KategoriController::class, 'index'])->name('kategoris.index')->middleware('ip.whitelist');
+	Route::get('/admin/informasi', [InformasiController::class, 'index'])->name('informasis.index')->middleware('ip.whitelist');
 
-	Route::get('/admin/event', function () {
-		return view('admin/event');
-	})->name('event')->middleware('ip.whitelist');
-
-	Route::get('/admin/kategori', function () {
-		return view('admin/kategori');
-	})->name('kategori')->middleware('ip.whitelist');
-
-	Route::get('/admin/informasi', function () {
-		return view('admin/informasi');
-	})->name('informasi')->middleware('ip.whitelist');
-
-
-
-    Route::get('/logout', [SessionsController::class, 'destroy'])->middleware('ip.whitelist');
+	Route::get('/logout', [SessionsController::class, 'destroy'])->middleware('ip.whitelist');
 	Route::get('admin/user-profile', [InfoUserController::class, 'create'])->middleware('ip.whitelist');
 	Route::post('user-profile', [InfoUserController::class, 'store'])->middleware('ip.whitelist');
 	Route::get('/admin/user-profile', [InfoUserController::class, 'create'])->middleware('ip.whitelist');
 	Route::post('/admin/user-profile', [InfoUserController::class, 'store'])->middleware('ip.whitelist');
-    Route::get('/login', function () {
+	Route::get('/login', function () {
 		return view('dashboard');
 	})->name('sign-up')->middleware('ip.whitelist');
 });
@@ -94,15 +85,14 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::group(['middleware' => 'guest'], function () {
 
-    Route::get('/register', [RegisterController::class, 'create'])->middleware('ip.whitelist');
-    Route::post('/register', [RegisterController::class, 'store'])->middleware('ip.whitelist');
-    Route::get('/login', [SessionsController::class, 'create'])->middleware('ip.whitelist');
-    Route::post('/session', [SessionsController::class, 'store'])->middleware('ip.whitelist');
+	Route::get('/register', [RegisterController::class, 'create'])->middleware('ip.whitelist');
+	Route::post('/register', [RegisterController::class, 'store'])->middleware('ip.whitelist');
+	Route::get('/login', [SessionsController::class, 'create'])->middleware('ip.whitelist');
+	Route::post('/session', [SessionsController::class, 'store'])->middleware('ip.whitelist');
 	Route::get('/login/forgot-password', [ResetController::class, 'create'])->middleware('ip.whitelist');
 	Route::post('/forgot-password', [ResetController::class, 'sendEmail'])->middleware('ip.whitelist');
 	Route::get('/reset-password/{token}', [ResetController::class, 'resetPass'])->name('password.reset')->middleware('ip.whitelist');
 	Route::post('/reset-password', [ChangePasswordController::class, 'changePassword'])->name('password.update')->middleware('ip.whitelist');
-
 });
 
 // Route::group(['middleware' => 'user'], function () {
@@ -110,12 +100,27 @@ Route::group(['middleware' => 'guest'], function () {
 // })
 
 Route::get('/admin/login', function () {
-    return view('session/login-session');
+	return view('session/login-session');
 })->name('login')->middleware('ip.whitelist');
 
 Route::get('/unauthorized', function () {
-    return view('errors.unauthorized');
+	return view('errors.unauthorized');
 })->name('unauthorized');
 
 Route::post('/user-profile/update-photo', [ProfileController::class, 'updatePhoto'])->name('user-profile.updatePhoto');
-Route::resource('/admin/broadcaster', App\Http\Controllers\BroadcasterController::class);
+
+Route::post('/broadcaster/insert', [BroadcasterController::class, 'insertBroadcaster'])->name('broadcaster.insertBroadcaster');
+Route::delete('/admin/broadcaster/{id}', [BroadcasterController::class, 'destroy'])->name('broadcaster.destroy');
+Route::put('/admin/broadcaster/{id}', [BroadcasterController::class, 'update'])->name('broadcaster.update');
+
+Route::post('/kategori/insert', [KategoriController::class, 'insertKategori'])->name('kategori.insertKategori');
+Route::delete('/admin/kategori/{id}', [KategoriController::class, 'destroy'])->name('kategori.destroy');
+Route::put('/admin/kategori/{id}', [KategoriController::class, 'update'])->name('kategori.update');
+
+Route::post('/event/insert', [EventController::class, 'insertEvent'])->name('event.insertEvent');
+Route::delete('/admin/event/{id}', [EventController::class, 'destroy'])->name('event.destroy');
+Route::put('/admin/event/{id}', [EventController::class, 'update'])->name('event.update');
+
+Route::post('/informasi/insert', [InformasiController::class, 'insertInformasi'])->name('informasi.insertInformasi');
+Route::delete('/admin/informasi/{id}', [InformasiController::class, 'destroy'])->name('informasi.destroy');
+Route::put('/admin/informasi/{id}', [InformasiController::class, 'update'])->name('informasi.update');

@@ -11,9 +11,19 @@ class ProfileController extends Controller
 {
     public function updatePhoto(Request $request)
     {
-        // Validasi input file
+        // Validasi input file dengan pesan custom
         $request->validate([
-            'photo' => 'required|image|mimes:jpeg,png,jpg|max:1000',
+            'photo' => [
+                'required',
+                'image',
+                'mimes:jpeg,png,jpg',
+                'max:2048',
+            ],
+        ], [
+            'photo.required' => 'Anda harus mengunggah foto.',
+            'photo.image' => 'File harus berupa gambar.',
+            'photo.mimes' => 'File harus berformat jpeg, png, atau jpg.',
+            'photo.max' => 'Ukuran file maksimal adalah 2MB.',
         ]);
 
         // Dapatkan user saat ini
@@ -41,3 +51,4 @@ class ProfileController extends Controller
         return redirect()->back()->with('success', 'Foto berhasil diperbarui');
     }
 }
+
