@@ -12,10 +12,10 @@
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img src="{{ asset('visitor/img/about-us.jpg') }}" class="d-block w-100" alt="First slide">
-          <div class="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
-          <p>Some representative placeholder content for the first slide.</p>
-      </div>
+          <div class="carousel-caption d-flex flex-column justify-content-center align-items-center" style="top: 0; bottom: 0;">
+            <h5 class="text-center">First slide label</h5>
+            <p class="text-center">Some representative placeholder content for the first slide.</p>
+          </div>
         </div>
         <div class="carousel-item">
           <img src="{{ asset('visitor/img/about-us.jpg') }}" class="d-block w-100" alt="Second slide">
@@ -33,7 +33,7 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
-    
+
     <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
@@ -44,12 +44,13 @@
     </button>
   </div>
 </main>
+
 <div class="container py-4">
   <!--=============== Event ===============-->
   <div class="row mb-2">
-    <div class="container px-3 py-5 position-relative" id="custom-cards">
+    <div class="container px-3 py-4 position-relative" id="custom-cards">
         <div class="sectionEvent">Event Program</div>
-        <div class="slideevent py-3">
+        <div class="slideevent py-4">
           <div class="wrapper">
             <i class="fas fa-angle-left" id="left"></i>
             <ul class="carousel1">
@@ -107,7 +108,7 @@
   <!--=============== News ===============-->
   <div class="row g-3 py-4">
     <div class="col-md-8 ">
-      <div class="section">Berita Popular</div>
+      <div class="section">Berita Terbaru</div>
       <div class="album py-2.5 bg-body-white">
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-2">
             <div class="col">
@@ -190,39 +191,39 @@
             </div>
           </div>
         </div>
-        <div>
-        <div class="section">Berita Terbaru</div>
-          <ul class="list-unstyled postterbaru">
-            <li>
-              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-2 link-body-emphasis text-decoration-none" href="{{ url('/berita') }}">
-                <img src="{{ asset('visitor/img/news.webp') }}" class="recentpost" alt="">
-                <div class="col-lg-8">
-                  <h6 class="mb-0">Longer blog post title: This one has multiple lines!</h6>
-                  <small class="text-body-secondary">January 13, 2023</small>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="{{ url('/berita') }}">
-                <img src="{{ asset('visitor/img/news.webp') }}" class="recentpost" alt="">
-                <div class="col-lg-8">
-                  <h6 class="mb-0">Longer blog post title: This one has multiple lines!</h6>
-                  <small class="text-body-secondary">January 13, 2023</small>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="{{ url('/berita') }}">
-                <img src="{{ asset('visitor/img/news.webp') }}" class="recentpost" alt="">
-                <div class="col-lg-8">
-                  <h6 class="mb-0">Longer blog post title: This one has multiple lines!</h6>
-                  <small class="text-body-secondary">January 13, 2023</small>
-                </div>
-              </a>
-            </li>
-          </ul>
+        <div class="beritapopular py-4">
+          <div class="section">Berita Popular</div>
+            <ul class="list-unstyled postterbaru">
+              <li>
+                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-bottom" href="{{ url('/berita') }}">
+                  <img src="{{ asset('visitor/img/news.webp') }}" class="recentpost" alt="">
+                  <div class="col-lg-8">
+                    <h6 class="mb-0">Longer blog post title: This one has multiple lines!</h6>
+                    <small class="text-body-secondary">January 13, 2023</small>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-bottom" href="{{ url('/berita') }}">
+                  <img src="{{ asset('visitor/img/news.webp') }}" class="recentpost" alt="">
+                  <div class="col-lg-8">
+                    <h6 class="mb-0">Longer blog post title: This one has multiple lines!</h6>
+                    <small class="text-body-secondary">January 13, 2023</small>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-bottom" href="{{ url('/berita') }}">
+                  <img src="{{ asset('visitor/img/news.webp') }}" class="recentpost" alt="">
+                  <div class="col-lg-8">
+                    <h6 class="mb-0">Longer blog post title: This one has multiple lines!</h6>
+                    <small class="text-body-secondary">January 13, 2023</small>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-
       </div>
     </div>
   </div>
