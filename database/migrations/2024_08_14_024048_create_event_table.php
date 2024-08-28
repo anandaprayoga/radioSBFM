@@ -18,7 +18,7 @@ return new class extends Migration
             $table->date('tanggal_selesai');
             $table->text('keterangan');
             $table->string('gambar_event')->nullable();
-            $table->boolean('status_event');
+            $table->string('status_event');
             $table->timestamps();
         });
     }

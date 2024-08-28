@@ -48,19 +48,19 @@ class BroadcasterController extends Controller
     }
 
     public function update(Request $request, $id)
-{
-    $request->validate([
-        'nama_broadcaster' => 'required|string|max:255',
-        'no_hp' => 'required|string|max:15',
-        'tanggal_bergabung' => 'required|date',
-    ]);
+    {
+        $request->validate([
+            'nama_broadcaster' => 'required|string|max:255',
+            'no_hp' => 'required|string|max:15',
+            'tanggal_bergabung' => 'required|date',
+        ]);
 
-    $broadcaster = Broadcaster::findOrFail($id);
-    $broadcaster->nama_broadcaster = $request->nama_broadcaster;
-    $broadcaster->no_hp = $request->no_hp;
-    $broadcaster->tanggal_bergabung = $request->tanggal_bergabung;
-    $broadcaster->save();
+        $broadcaster = Broadcaster::findOrFail($id);
+        $broadcaster->nama_broadcaster = $request->nama_broadcaster;
+        $broadcaster->no_hp = $request->no_hp;
+        $broadcaster->tanggal_bergabung = $request->tanggal_bergabung;
+        $broadcaster->save();
 
-    return redirect()->back()->with('success', 'Data Broadcaster berhasil diperbarui');
-}
+        return redirect()->back()->with('success', 'Data Broadcaster berhasil diperbarui');
+    }
 }

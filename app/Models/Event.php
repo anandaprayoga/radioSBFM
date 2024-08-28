@@ -9,12 +9,17 @@ class Event extends Model
 {
     use HasFactory;
 
+    protected $table = 'event';
+
     protected $fillable = [
         'nama_event',
         'tanggal_mulai',
-        'tanggal_berakhir',
+        'tanggal_selesai',
         'keterangan',
         'gambar_event',
+    ];
+
+    protected $nullable = [
         'status_event',
     ];
 }
