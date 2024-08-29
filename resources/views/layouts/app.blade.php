@@ -40,7 +40,8 @@
         echo ucwords($path_replaced);
         ?>
     </title>
-    <link href="../css/quill-snow.css" rel="stylesheet" />
+    {{-- <link href="../css/quill-snow.css" rel="stylesheet" /> --}}
+    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet" />
     
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
