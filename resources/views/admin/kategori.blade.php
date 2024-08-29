@@ -11,6 +11,14 @@
                             <div>
                                 <h5 class="mb-0">Data Kategori</h5>
                             </div>
+
+                            {{-- Search --}}
+                            <form action="{{ route('kategoris.index') }}" method="GET" class="d-flex mb-3">
+                                <input class="form-control me-2" type="search" name="search" placeholder="Cari kategori..." aria-label="Search" value="{{ request('search') }}">
+                                <button class="btn btn-outline-primary" type="submit">Cari</button>
+                            </form>
+
+                            {{-- New Items --}}
                             <a href="#" data-bs-toggle="modal" data-bs-target="#updateKategoriModal" class="btn bg-gradient-primary btn-sm mb-0" type="button">
                                 +&nbsp; New
                             </a>
@@ -56,10 +64,13 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @php
+                                        $i = ($kategoris->currentPage() - 1) * $kategoris->perPage() + 1;
+                                    @endphp
                                     @forelse ($kategoris as $kategori)
                                         <tr>
                                             <td class="ps-4">
-                                                <p class="text-xs font-weight-bold mb-0">{{ $loop->iteration }}</p>
+                                                <p class="text-xs font-weight-bold mb-0">{{ $i++ }}</p>
                                             </td>
                                             <td class="text-center">
                                                 <p class="text-xs font-weight-bold mb-0">
@@ -90,6 +101,9 @@
 
                                 </tbody>
                             </table>
+                            <div class="d-flex justify-content-center mt-3">
+                                {{ $kategoris->links() }}
+                            </div>
                         </div>
                     </div>
                 </div>

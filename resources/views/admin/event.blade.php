@@ -11,6 +11,14 @@
                             <div>
                                 <h5 class="mb-0">Data Event</h5>
                             </div>
+
+                            {{-- Search --}}
+                            <form action="{{ route('events.index') }}" method="GET" class="d-flex mb-3">
+                                <input class="form-control me-2" type="search" name="search" placeholder="Cari event..." aria-label="Search" value="{{ request('search') }}">
+                                <button class="btn btn-outline-primary" type="submit">Cari</button>
+                            </form>
+
+                            {{-- New Items --}}
                             <a href="#" data-bs-toggle="modal" data-bs-target="#updateEventModal" class="btn bg-gradient-primary btn-sm mb-0" type="button">
                                 +&nbsp; Tambah Event Baru
                             </a>
@@ -51,10 +59,13 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @php
+                                        $i = ($events->currentPage() - 1) * $events->perPage() + 1;
+                                    @endphp
                                     @forelse ($events as $event)
                                         <tr>
                                             <td class="ps-4">
-                                                <p class="text-xs font-weight-bold mb-0">{{ $loop->iteration }}</p>
+                                                <p class="text-xs font-weight-bold mb-0">{{ $i++ }}</p>
                                             </td>
                                             <td class="text-center">
                                                 <img src="{{ asset('storage/' . $event->gambar_event) }}" alt="{{ $event->nama_event }}" width="100">
@@ -72,8 +83,9 @@
                                                     {{ $event->tanggal_selesai }}</p>
                                             </td>
                                             <td class="text-center">
-                                                <p class="text-xs font-weight-bold mb-0">
-                                                    {{ $event->keterangan }}</p>
+                                                <button type="button" class="btn btn-info btn-sm detail-button preview-button" data-bs-toggle="modal" data-bs-target="#detailEventModal" data-keterangan="{{ $event->keterangan }}">
+                                                    Lihat
+                                                </button>
                                             </td>
                                             <td class="text-center">
                                                 <p class="text-xs font-weight-bold mb-0">
@@ -114,6 +126,9 @@
                                     @endforelse
                                 </tbody>
                             </table>
+                            <div class="d-flex justify-content-center mt-3">
+                                {{ $events->links() }}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -201,7 +216,22 @@
                             <input type="file" class="form-control" id="edit_gambar_event" name="gambar_event" value="{{ old('gambar_event') }}">
                             {{-- <input type="hidden" id="edit_event_id" name="event_id"> --}}
                             <button type="submit" class="btn btn-primary">Update</button>
+                        </div>
                     </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="detailEventModal" tabindex="-1" aria-labelledby="detailEventModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detailEventModalLabel">Keterangan Event</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="modalEventContent"></div>
                 </div>
             </div>
         </div>
@@ -234,22 +264,15 @@
                     document.getElementById('edit_event_id').value = id;
                 });
             });
-        });
-    </script>
-    <!-- Initialize Quill editor -->
-    <script>
-        const quill = new Quill('#editor', {
-            modules: {
-                toolbar: [
-                    [{
-                        header: [1, 2, 3, false]
-                    }],
-                    ['bold', 'italic', 'underline'],
-                    ['image', 'code-block'],
-                ],
-            },
-            placeholder: 'Compose an epic...',
-            theme: 'snow', // or 'bubble'
+            document.querySelectorAll('.preview-button').forEach(button => {
+                button.addEventListener('click', function() {
+                    const keterangan = this.getAttribute('data-keterangan');
+
+                    document.getElementById('modalEventContent').innerHTML = keterangan;
+                    const detailModal = new bootstrap.Modal(document.getElementById('detailEventModal'));
+                    detailModal.show();
+                });
+            });
         });
     </script>
 @endsection

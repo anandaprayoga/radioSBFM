@@ -9,9 +9,16 @@ use Illuminate\Support\Facades\Storage;
 
 class InformasiController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $informasis = Informasi::all();
+        $query = Informasi::query();
+
+        // Jika ada input pencarian, tambahkan filter ke query
+        if ($request->filled('search')) {
+            $search = $request->input('search');
+            $query->where('judul_informasi', 'like', "%{$search}%")->orWhere('isi_informasi', 'like', "%{$search}%");
+        }
+        $informasis = $query->paginate(5);
         $kategoris = Kategori::all();
 
         // Mengirim data ke view
