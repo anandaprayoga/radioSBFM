@@ -25,6 +25,18 @@ class InformasiController extends Controller
         return view('admin.informasi', compact('informasis', 'kategoris'));
     }
 
+    public function dashboard()
+    {
+        $informasis = Informasi::all();
+        $kategoris = Kategori::all();
+
+        // Kirim data ke tampilan 'other_view'
+        return view('visitor.dashboard', [
+            'informasis' => $informasis,
+            'kategoris' => $kategoris
+        ]);
+    }
+
     public function insertInformasi(Request $request)
     {
         // Validasi input

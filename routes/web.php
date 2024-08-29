@@ -28,10 +28,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [VisitorHomeController::class, 'index'])->name('visitor/dashboard');
-Route::get('/', function () {
-	return view('visitor/dashboard');
-});
+Route::get('/', [InformasiController::class, 'dashboard'])->name('informasis.dashboard')->middleware('ip.whitelist');
 Route::get('/category', function () {
 	return view('visitor/category');
 });
