@@ -7,10 +7,18 @@ use App\Models\Broadcaster;
 
 class BroadcasterController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        $query = Broadcaster::query();
+
+        // Jika ada input pencarian, tambahkan filter ke query
+        if ($request->filled('search')) {
+            $search = $request->input('search');
+            $query->where('nama_broadcaster', 'like', "%{$search}%");
+        }
+
         // Mengambil semua data broadcasters
-        $broadcasters = Broadcaster::all();
+        $broadcasters = $query->paginate(5);
 
         // Mengirim data ke view
         return view('admin.broadcaster', compact('broadcasters'));

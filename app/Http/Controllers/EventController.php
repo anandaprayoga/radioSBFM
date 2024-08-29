@@ -9,10 +9,17 @@ use Carbon\Carbon;
 
 class EventController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        $query = Event::query();
+
+        // Jika ada input pencarian, tambahkan filter ke query
+        if ($request->filled('search')) {
+            $search = $request->input('search');
+            $query->where('nama_event', 'like', "%{$search}%")->orWhere('keterangan', 'like', "%{$search}%");
+        }
         // Mengambil semua data Events
-        $events = Event::all();
+        $events = $query->paginate(5);
 
         // Mengirim data ke view
         return view('admin.event', compact('events'));

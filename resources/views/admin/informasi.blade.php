@@ -10,6 +10,14 @@
                             <div>
                                 <h5 class="mb-0">Data Informasi</h5>
                             </div>
+
+                            {{-- Search --}}
+                            <form action="{{ route('informasis.index') }}" method="GET" class="d-flex mb-3">
+                                <input class="form-control me-2" type="search" name="search" placeholder="Cari informasi..." aria-label="Search" value="{{ request('search') }}">
+                                <button class="btn btn-outline-primary" type="submit">Cari</button>
+                            </form>
+
+                            {{-- New Items --}}
                             <a href="#" data-bs-toggle="modal" data-bs-target="#updateInformasiModal" class="btn bg-gradient-primary btn-sm mb-0" type="button">
                                 +&nbsp; Tambah Informasi Baru
                             </a>
@@ -23,16 +31,16 @@
                                 @endforeach
                                 <thead>
                                     <tr>
-                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                             No
                                         </th>
-                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                             Gambar Informasi
                                         </th>
-                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                             Judul Informasi
                                         </th>
-                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                             Kategori
                                         </th>
                                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
@@ -47,10 +55,13 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @php
+                                        $i = ($informasis->currentPage() - 1) * $informasis->perPage() + 1;
+                                    @endphp
                                     @forelse ($informasis as $informasi)
                                         <tr>
-                                            <td class="ps-4">
-                                                <p class="text-xs font-weight-bold mb-0">{{ $loop->iteration }}</p>
+                                            <td class="text-center">
+                                                <p class="text-xs font-weight-bold mb-0">{{ $i++ }}</p>
                                             </td>
                                             <td class="text-center">
                                                 <img src="{{ asset('storage/' . $informasi->gambar_informasi) }}" alt="{{ $informasi->judul_informasi }}" width="100">
@@ -65,8 +76,9 @@
                                                 </p>
                                             </td>
                                             <td class="text-center">
-                                                <p class="text-xs font-weight-bold mb-0">
-                                                    {{ $informasi->isi_informasi }}</p>
+                                                <button type="button" class="btn btn-info btn-sm detail-button preview-button" data-bs-toggle="modal" data-bs-target="#detailInformasiModal" data-isi_informasi="{{ $informasi->isi_informasi }}">
+                                                    Isi Informasi
+                                                </button>
                                             </td>
                                             <td class="text-center">
                                                 <p class="text-xs font-weight-bold mb-0">
@@ -97,6 +109,9 @@
 
                                 </tbody>
                             </table>
+                            <div class="d-flex justify-content-center mt-3">
+                                {{ $informasis->links() }}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -141,7 +156,7 @@
                         </div> --}}
                         <div class="mb-3">
                             <label for="isi_informasi" class="form-label">Isi Informasi</label>
-                            <input type="text" class="form-control" id="isi_informasi" name="isi_informasi" required>
+                            <input type="text" class="form-control" id="editor" name="isi_informasi" required>
                         </div>
 
                         <div class="mb-3">
@@ -202,7 +217,8 @@
                         </div> --}}
                         <div class="mb-3">
                             <label for="edit_isi_informasi" class="form-label">Isi Informasi</label>
-                            <input type="text" class="form-control" id="edit_isi_informasi" name="isi_informasi" value="{{ old('isi_informasi') }}" required>
+                            <input type="hidden" id="edit_isi_informasi" name="isi_informasi" required>
+                            <div id="quill-editor-container">{!! old('isi_informasi', $informasi->isi_informasi ?? '') !!}</div>
                         </div>
 
                         <div class="mb-3">
@@ -216,57 +232,118 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="detailInformasiModal" tabindex="-1" aria-labelledby="detailInformasiModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detailInformasiModalLabel">Detail Informasi</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="modalInformasiContent"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 @section('scripts')
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            const toolbarOptions = [
+                ['bold', 'italic', 'underline', 'strike'], // toggled buttons
+                ['blockquote', 'code-block'],
+                ['link', 'image', 'video', 'formula'],
+
+                [{
+                    'header': 1
+                }, {
+                    'header': 2
+                }], // custom button values
+                [{
+                    'list': 'ordered'
+                }, {
+                    'list': 'bullet'
+                }, {
+                    'list': 'check'
+                }],
+                [{
+                    'script': 'sub'
+                }, {
+                    'script': 'super'
+                }], // superscript/subscript
+                [{
+                    'indent': '-1'
+                }, {
+                    'indent': '+1'
+                }], // outdent/indent
+                [{
+                    'direction': 'rtl'
+                }], // text direction
+
+                [{
+                    'size': ['small', false, 'large', 'huge']
+                }], // custom dropdown
+                [{
+                    'header': [1, 2, 3, 4, 5, 6, false]
+                }],
+
+                [{
+                    'color': []
+                }, {
+                    'background': []
+                }], // dropdown with defaults from theme
+                [{
+                    'font': []
+                }],
+                [{
+                    'align': []
+                }],
+
+                ['clean'] // remove formatting button
+            ];
+            const quillEditorContainer = document.getElementById('quill-editor-container');
+            let quillEditor = new Quill(quillEditorContainer, {
+                modules: {
+                    toolbar: toolbarOptions
+                },
+                placeholder: 'Ketik di sini...',
+                theme: 'snow',
+            });
+
             document.querySelectorAll('.edit-button').forEach(button => {
                 button.addEventListener('click', function() {
-
                     const id = this.getAttribute('data-id');
                     const id_kategori = this.getAttribute('data-id_kategori');
                     const judul_informasi = this.getAttribute('data-judul_informasi');
-                    const tanggal_informasi = this.getAttribute('data-tanggal_informasi');
-                    const tanggal_update = this.getAttribute('data-tanggal_update');
                     const isi_informasi = this.getAttribute('data-isi_informasi');
                     const gambar_informasi = this.getAttribute('data-gambar_informasi');
 
-                    // Update form action URL
                     const form = document.getElementById('editInformasiForm');
                     form.action = `/admin/informasi/${id}`;
-
-                    // Update form inputs
                     document.getElementById('edit_judul_informasi').value = judul_informasi;
-                    document.getElementById('edit_tanggal_informasi').value = tanggal_informasi;
-                    document.getElementById('edit_tanggal_update').value = tanggal_update;
-                    document.getElementById('edit_isi_informasi').value = isi_informasi;
-                    document.getElementById('edit_gambar_informasi').value = gambar_informasi;
                     document.getElementById('edit_kategori').value = id_kategori;
+                    document.getElementById('edit_isi_informasi').value = isi_informasi;
 
+                    // Kosongkan Quill Editor sebelum diisi
+                    quillEditor.root.innerHTML = '';
+                    quillEditor.clipboard.dangerouslyPasteHTML(isi_informasi);
+
+                    quillEditor.on('text-change', function() {
+                        document.getElementById('edit_isi_informasi').value = quillEditor.root.innerHTML;
+                    });
                 });
             });
-        });
-    </script>
-    <!-- Initialize Quill editor -->
-    <script>
-        const quill1 = new Quill('#edit_isi_informasi', {
-            placeholder: 'Compose an epic...',
-            theme: 'snow', // or 'bubble'
-        });
-    </script>
-    <script>
-        const quill2 = new Quill('#isi_informasi', {
-            modules: {
-                toolbar: [
-                    [{
-                        header: [1, 2, 3, false]
-                    }],
-                    ['bold', 'italic', 'underline'],
-                    ['code-block'],
-                ],
-            },
-            placeholder: 'Compose an epic...',
-            theme: 'snow', // or 'bubble'
+
+            document.querySelectorAll('.preview-button').forEach(button => {
+                button.addEventListener('click', function() {
+                    const isi_informasi = this.getAttribute('data-isi_informasi');
+
+                    document.getElementById('modalInformasiContent').innerHTML = isi_informasi;
+                    const detailModal = new bootstrap.Modal(document.getElementById('detailInformasiModal'));
+                    detailModal.show();
+                });
+            });
         });
     </script>
 @endsection

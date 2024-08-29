@@ -7,10 +7,18 @@ use App\Models\Kategori;
 
 class KategoriController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        $query = Kategori::query();
+
+        // Jika ada input pencarian, tambahkan filter ke query
+        if ($request->filled('search')) {
+            $search = $request->input('search');
+            $query->where('nama_kategori', 'like', "%{$search}%");
+        }
+        
         // Mengambil semua data Kategoris
-        $kategoris = Kategori::all();
+        $kategoris = $query->paginate(5);
 
         // Mengirim data ke view
         return view('admin.kategori', compact('kategoris'));
