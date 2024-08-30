@@ -6,22 +6,25 @@
             <div class="col-12">
                 <div class="card mb-4 mx-4">
                     <div class="card-header pb-0">
-                        <div class="d-flex flex-row justify-content-between">
-                            <div>
-                                <h5 class="mb-0">Data Informasi</h5>
+                        <div class="row">
+                            <!-- Title -->
+                            <div class="col-12">
+                                <h5 class="mb-3">Data Broadcast</h5>
                             </div>
 
-                            {{-- Search --}}
-                            <form action="{{ route('informasis.index') }}" method="GET" class="d-flex mb-3">
-                                <input class="form-control me-2" type="search" name="search" placeholder="Cari informasi..." aria-label="Search" value="{{ request('search') }}">
-                                <button class="btn btn-outline-primary" type="submit">Cari</button>
-                            </form>
-
-                            {{-- New Items --}}
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#updateInformasiModal" class="btn bg-gradient-primary btn-sm mb-0" type="button">
-                                +&nbsp; Tambah Informasi Baru
-                            </a>
-                        </div>
+                            <!-- Form and New Button -->
+                            <div class="col-12 d-flex flex-column flex-md-row justify-content-between align-items-start mb-3">
+                                {{-- Search --}}
+                                <form action="{{ route('informasis.index') }}" method="GET" class="d-flex mb-3">
+                                    <input style="height: 40px;" class="form-control me-2" type="search" name="search" placeholder="Cari broadcaster..." aria-label="Search" value="{{ request('search') }}">
+                                    <button style="height: 40px;" class="btn btn-outline-primary" type="submit">Cari</button>
+                                </form>
+                                {{-- New Items --}}
+                                <a style="height: 40px;" href="#" data-bs-toggle="modal" data-bs-target="#updateInformasiModal" class="btn bg-gradient-primary btn-sm mb-0" type="button">
+                                    +&nbsp; New
+                                </a>
+                            </div>
+                        </div>    
                     </div>
                     <div class="card-body px-0 pt-0 pb-2">
                         <div class="table-responsive p-0">
@@ -91,7 +94,7 @@
                                                 <form action="{{ route('informasi.destroy', $informasi->id) }}" method="POST" style="display:inline;">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-link text-danger p-0" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');">
+                                                    <button type="submit" class="btn btn-link text-danger p-0 my-auto" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');">
                                                         <i class="cursor-pointer fas fa-trash text-secondary"></i>
                                                     </button>
                                                 </form>
