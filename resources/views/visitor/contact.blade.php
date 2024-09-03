@@ -19,9 +19,10 @@
           </div>
           <div class="col">
               <p class="fw-bold">Info Kontak</p>
-              <p>person@gmail.com
-              <p>info@gmail.com</p>
-              <p>Telp: +62 888 1111 8888</p>
+              <p>radiobangkalan@gmail.com</p>
+              <p>Telp: (031) - 3096434</p>
+              <p>Telp Seluler - WA: 0821-4199-3836</p>
+
           </div>
       </div>
   </div>
