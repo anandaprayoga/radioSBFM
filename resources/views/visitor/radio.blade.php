@@ -23,55 +23,31 @@
         </div>    
     </div>   
 </div>
-<div class="container px-3 py-5 position-relative" id="custom-cards">
-    <div class="sectionEvent">Gallery Foto</div>
-    <div class="lightbox">
-      <div class="wrapper1">
-        <header>
-          <div class="details">
-            <i class="uil uil-camera"></i>
-            <span>Image Preview</span>
-          </div>
-          <div class="buttons"><i class="fa-solid fa-xmark"></i></div>
-        </header>
-        <div class="preview-img">
-          <div class="img"><img src="" alt="preview-img"></div>
-        </div>
-      </div>
+<div class="sticky-menu-container">
+  <div class="inner-menu closed">
+    <ul class="menu-list">
+      <li class="menu-item">
+        <span class="item-icon">
+          <a href=""><i class="fa-regular fa-circle-question fa-xl" style="color: #ffffff;"></i></a>
+        </span>
+        <span class="item-text"><a href="">Quetion</a></span></li>
+      <li class="menu-item">
+        <span class="item-icon">
+          <a href="">
+            <i class="fa-solid fa-music fa-xl" style="color: #ffffff;"></i>
+          </a>
+          
+        </span>
+        <span class="item-text"><a href=""> Request Music</a></span>
+      </li>
+    </ul>
+  </div>
+  <div class="outer-button">
+    <div class="icon-container">
+      <i class="fa-solid fa-xmark close-icon" style="color: #ffffff;"></i>
+      <i class="fa-regular fa-paper-plane arrow-icon" style="color: #ffffff;"></i>
     </div>
-    <section class="gallery">
-      <ul class="images">
-        <li class="img"><img src="{{ asset('visitor/img/event.jpeg') }}" alt="img"></li>
-        <li class="img"><img src="{{ asset('visitor/img/event.jpeg') }}" alt="img"></li>
-        <li class="img"><img src="{{ asset('visitor/img/event.jpeg') }}" alt="img"></li>
-        <li class="img"><img src="{{ asset('visitor/img/event.jpeg') }}" alt="img"></li>
-        <li class="img"><img src="{{ asset('visitor/img/event.jpeg') }}" alt="img"></li>
-        <li class="img"><img src="{{ asset('visitor/img/trump.jpg') }}" alt="img"></li>
-        <li class="img"><img src="{{ asset('visitor/img/podcast.png') }}" alt="img"></li>
-        <li class="img"><img src="{{ asset('visitor/img/about-us.jpg') }}" alt="img"></li>
-        <li class="img"><img src="{{ asset('visitor/img/event.jpeg') }}" alt="img"></li>
-        <li class="img"><img src="{{ asset('visitor/img/trump.jpg') }}" alt="img"></li>
-        <li class="img"><img src="{{ asset('visitor/img/podcast.png') }}" alt="img"></li>
-        <li class="img"><img src="{{ asset('visitor/img/about-us.jpg') }}" alt="img"></li>
-        <li class="img"><img src="{{ asset('visitor/img/event.jpeg') }}" alt="img"></li>
-        <li class="img"><img src="{{ asset('visitor/img/trump.jpg') }}" alt="img"></li>
-        <li class="img"><img src="{{ asset('visitor/img/podcast.png') }}" alt="img"></li>
-        <li class="img"><img src="{{ asset('visitor/img/about-us.jpg') }}" alt="img"></li>
-      </ul>
-    </section>
-    <div class="py-5">
-      <ul class="pagination justify-content-center">
-          <li class="page-item">
-            <a class="page-link" href="#">Previous</a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#">Next</a>
-          </li>
-        </ul>
-    </div>
+  </div>
 </div>
 
 <script>
@@ -97,27 +73,68 @@
             audio.volume = volumeControl.value;
         });
     });
-    const allImages = document.querySelectorAll(".images .img");
-    const lightbox = document.querySelector(".lightbox");
-    const closeImgBtn = lightbox.querySelector(".fa-solid");
+    
+    console.clear();
+    var isAnimating = false;
+    var isOpen = false;
+    var button = document.querySelector(".sticky-menu-container .outer-button");
+    var menu = document.querySelector(".sticky-menu-container .inner-menu");
+    var closeIcon = document.querySelector(".sticky-menu-container .outer-button .close-icon");
+    var arrowIcon = document.querySelector(".sticky-menu-container .outer-button .arrow-icon");
+    var menuItems = document.querySelectorAll(".sticky-menu-container .inner-menu > .menu-list > .menu-item");
 
-    allImages.forEach(img => {
-        // Calling showLightBox function with passing clicked img src as argument
-        img.addEventListener("click", () => showLightbox(img.querySelector("img").src));
+    var itemTexts = document.querySelectorAll(".sticky-menu-container .inner-menu > .menu-list > .menu-item > .item-text");
+
+    button.addEventListener("click", function(){
+      if(isAnimating) return;
+      this.classList.add("clicked");
+      menu.classList.toggle("closed");
+      
+      if(isOpen){
+        closeIcon.classList.remove("show");
+        closeIcon.classList.add("hide");
+        arrowIcon.classList.remove("hide");
+        arrowIcon.classList.add("show");
+        menuItems.forEach(function(item){
+          console.log(item);
+          item.classList.add("text-hides");
+        });
+        itemTexts.forEach(function(text, index){
+            setTimeout(function(){
+              text.classList.remove("text-in");
+            });
+        });
+        isOpen = false;
+      }
+      else{
+        closeIcon.classList.remove("hide");
+        closeIcon.classList.add("show");
+        arrowIcon.classList.remove("show");
+        arrowIcon.classList.add("hide");
+        menuItems.forEach(function(item){
+          console.log(item);
+          item.classList.remove("text-hides");
+        });
+        itemTexts.forEach(function(text, index){
+            setTimeout(function(){
+              text.classList.add("text-in");
+            }, index*150);
+        });
+        isOpen = true;
+      }
+      
     });
 
-    const showLightbox = (img) => {
-        // Showing lightbox and updating img source
-        lightbox.querySelector("img").src = img;
-        lightbox.classList.add("show");
-        document.body.style.overflow = "hidden";
-    }
-
-    closeImgBtn.addEventListener("click", () => {
-        // Hiding lightbox on close icon click
-        lightbox.classList.remove("show");
-        document.body.style.overflow = "auto";
+    button.addEventListener("animationstart", function(event){
+      isAnimating = true;
     });
+
+    button.addEventListener("animationend", function(event){
+      isAnimating = false;
+      this.classList.remove("clicked");
+    });
+
+
 
 </script>
 @endsection
