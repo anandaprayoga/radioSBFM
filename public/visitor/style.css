@@ -721,7 +721,7 @@ nav .navbar .links li:hover .js-sub-menu {
     height: 500px;
   }
   .player {
-    height: 450px;
+    height: 470px;
   }
 
   .info-wrapper {
@@ -963,6 +963,100 @@ cite {
     content: '”';
     right: -1rem;
     bottom: 1rem;
+  }
+}
+
+.row1 {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0em 1em;
+  text-align: center;
+}
+.column1 {
+  width: 100%;
+  padding: 0.5em 0;
+}
+h1 {
+  width: 100%;
+  text-align: center;
+  font-size: 3.5em;
+  color: #1f003b;
+}
+.cardteam {
+  box-shadow: 0 0 2.4em rgba(25, 0, 58, 0.1);
+  padding: 1em 1em;
+  border-radius: 0.6em;
+  color: #1f003b;
+  cursor: pointer;
+  transition: 0.3s;
+  background-color: #ffffff;
+}
+.cardteam .img-container {
+  width: 10em;
+  height: 10em;
+  background-color: #21d4fd;
+  padding: 0.3em;
+  border-radius: 50%;
+  margin: 0 auto 2em auto;
+}
+.cardteam img {
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+
+}
+.cardteam h3 {
+  font-weight: 500;
+  text-align: center;
+}
+.cardteam p {
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+}
+.icons {
+  width: 50%;
+  min-width: 180px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.cardteam a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.4em;
+}
+.cardteam:hover {
+  background: linear-gradient(310deg, #2152ff, #21d4fd);
+  color: #ffffff;
+}
+.cardteam:hover .img-container {
+  transform: scale(1.15);
+}
+@media screen and (min-width: 768px) {
+  section {
+    padding: 1em 7em;
+  }
+}
+@media screen and (min-width: 992px) {
+  section {
+    padding: 1em;
+  }
+  .cardteam {
+    padding: 3.5em 1em;
+    margin-top: 30px;
+  }
+  .column1 {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    padding: 0 1em;
+  }
+}
+@media screen and (max-width: 992px) {
+  .cardteam {
+    padding: 3.5em 1em;
+    margin-top: 30px;
   }
 }
 

@@ -80,79 +80,206 @@
       </div>
     </div>
   </div>
-
-  <div class="row">
-    <div class="container">
-      <div class="col">
-        <h3 class="pb-3 mb-3">Staff Suara Bangkalan FM</h3>
-        <div class="album bg-body-white">
-            <div class="row  row-cols-sm-2 row-cols-md-2 g-3">
-              <div class="col">
-                <div class="card mb-3 border-0 shadow" style="max-width: 540px;">
-                  <div class="row g-0">
-                    <div class="col-md-4">
-                      <img src="{{ asset('visitor/img/trump.jpg') }}" class="img-fluid rounded" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card mb-3 border-0 shadow" style="max-width: 540px;">
-                  <div class="row g-0">
-                    <div class="col-md-4">
-                      <img src="{{ asset('visitor/img/trump.jpg') }}" class="img-fluid rounded-start" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card mb-3 border-0 shadow" style="max-width: 540px;">
-                  <div class="row g-0">
-                    <div class="col-md-4">
-                      <img src="{{ asset('visitor/img/trump.jpg') }}" class="img-fluid rounded-start" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card mb-3 border-0 shadow" style="max-width: 540px;">
-                  <div class="row g-0">
-                    <div class="col-md-4">
-                      <img src="{{ asset('visitor/img/trump.jpg') }}" class="img-fluid rounded-start" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                      <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-            </div>
+  <section>
+    <h2 class="pb-2">Team Broadcaster</h2>
+    <div class="row1">
+      <!-- Column 1-->
+      <div class="column1">
+        <div class="cardteam">
+          <div class="img-container">
+            <img src="{{ asset('visitor/img/broadcaster/Bang Aryan.jpg') }}" />
           </div>
+          <h3>Bang Aryan</h3>
+          <p>Broadcaster</p>
+          <div class="icons">
+            <a href="#">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="#">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Column 2-->
+      <div class="column1">
+        <div class="cardteam">
+          <div class="img-container">
+            <img src="{{ asset('visitor/img/broadcaster/Abah Yaqin.jpg') }}" />
+          </div>
+          <h3>Abah Yaqin</h3>
+          <p>Broadcaster</p>
+          <div class="icons">
+            <a href="#">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="#">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Column 3-->
+      <div class="column1">
+        <div class="cardteam">
+          <div class="img-container">
+            <img src="{{ asset('visitor/img/broadcaster/Bang Udin.jpg') }}" />
+          </div>
+          <h3>Bang Udin</h3>
+          <p>Broadcaster</p>
+          <div class="icons">
+            <a href="#">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="#">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-
+    <div class="row1">
+      <!-- Column 1-->
+      <div class="column1">
+        <div class="cardteam">
+          <div class="img-container">
+            <img src="{{ asset('visitor/img/broadcaster/Mbak Lela.jpg') }}" />
+          </div>
+          <h3>Mbak Lela</h3>
+          <p>Broadcaster</p>
+          <div class="icons">
+            <a href="#">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="#">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Column 2-->
+      <div class="column1">
+        <div class="cardteam">
+          <div class="img-container">
+            <img src="{{ asset('visitor/img/broadcaster/Layi.jpg') }}" />
+          </div>
+          <h3>Kak Layi</h3>
+          <p>Broadcaster</p>
+          <div class="icons">
+            <a href="#">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="#">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Column 3-->
+      <div class="column1">
+        <div class="cardteam">
+          <div class="img-container">
+            <img src="{{ asset('visitor/img/broadcaster/Kak Zizi.jpg') }}" />
+          </div>
+          <h3>Kak Zizi</h3>
+          <p>Broadcaster</p>
+          <div class="icons">
+            <a href="#">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="#">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row1">
+      <!-- Column 1-->
+      <div class="column1">
+        <div class="cardteam">
+          <div class="img-container">
+            <img src="{{ asset('visitor/img/broadcaster/Bang Ithonk.jpg') }}" />
+          </div>
+          <h3>Bang Ithonk</h3>
+          <p>Broadcaster</p>
+          <div class="icons">
+            <a href="#">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="#">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Column 2-->
+      <div class="column1">
+        <div class="cardteam">
+          <div class="img-container">
+            <img src="{{ asset('visitor/img/broadcaster/Bung Rosiman.jpg') }}" />
+          </div>
+          <h3>Bung Rosiman</h3>
+          <p>Broadcaster</p>
+          <div class="icons">
+            <a href="#">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="#">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="#">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 @endsection
