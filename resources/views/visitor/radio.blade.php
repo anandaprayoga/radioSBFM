@@ -5,9 +5,10 @@
         <div id="player03"  class="player horizontal">
             <div class="container">
                 <div class="info-wrapper">
-                    <img src="https://cdn.pixabay.com/photo/2017/08/05/22/29/gorilla-2586193_1280.jpg" alt="LogoMusicImage">
+                    <img src="{{ asset('visitor/img/broadcaster/Bang Ithonk.jpg') }}" alt="LogoMusicImage">
                     <div class="info">
                         <h1>Suara Bangkalan FM 92,1 Mhz</h1>
+                        <h5 class="mb-2">Bang Ithonk</h5>
                         <i class="fas fa-calendar-alt mr-2"></i> Mon, May 25th 2020
                         <div class="controls">
                             <div class="play" id="play-pause">

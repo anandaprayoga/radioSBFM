@@ -115,7 +115,7 @@
               <div class="card shadow-sm">
                 <img src="{{ asset('visitor/img/about-us.jpg') }}" width="100%" height="230" class="card-img-top" alt="Your Image Alt Text">
                 <div class="card-body">
-                  <strong class="d-inline-block mb-2 text-success-emphasis">Design</strong>
+                  <strong class="d-inline-block mb-2 text-info">Design</strong>
                   <h3 class="mb-1"><a class="titleberita" href="{{ url('/berita') }}">Post title</a></h3>
                   <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                   <div class="d-flex justify-content-between align-items-center">
@@ -128,7 +128,7 @@
               <div class="card shadow-sm">
                 <img src="{{ asset('visitor/img/about-us.jpg') }}" width="100%" height="230" class="card-img-top" alt="Your Image Alt Text">
                 <div class="card-body">
-                  <strong class="d-inline-block mb-2 text-success-emphasis">Design</strong>
+                  <strong class="d-inline-block mb-2 text-info">Design</strong>
                   <h3 class="mb-1"><a class="titleberita" href="{{ url('/berita') }}">Post title</a></h3>
                   <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                   <div class="d-flex justify-content-between align-items-center">
@@ -141,7 +141,7 @@
               <div class="card shadow-sm">
                 <img src="{{ asset('visitor/img/about-us.jpg') }}" width="100%" height="230" class="card-img-top" alt="Your Image Alt Text">
                 <div class="card-body">
-                  <strong class="d-inline-block mb-2 text-success-emphasis">Design</strong>
+                  <strong class="d-inline-block mb-2 text-info">Design</strong>
                   <h3 class="mb-1"><a class="titleberita" href="{{ url('/berita') }}">Post title</a></h3>
                   <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                   <div class="d-flex justify-content-between align-items-center">
@@ -154,7 +154,7 @@
               <div class="card shadow-sm">
                 <img src="{{ asset('visitor/img/about-us.jpg') }}" width="100%" height="230" class="card-img-top" alt="Your Image Alt Text">
                 <div class="card-body">
-                  <strong class="d-inline-block mb-2 text-success-emphasis">Design</strong>
+                  <strong class="d-inline-block mb-2 text-info">Design</strong>
                   <h3 class="mb-1"><a class="titleberita" href="{{ url('/berita') }}">Post title</a></h3>
                   <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                   <div class="d-flex justify-content-between align-items-center">
@@ -163,8 +163,6 @@
                 </div>
               </div>
             </div>
-            
-
           </div>
         </div>
     </div>
@@ -177,11 +175,11 @@
             <div class="card-body p-4">
               <div class="d-flex">
                 <div class="flex-shrink-0">
-                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
+                  <img src="{{ asset('visitor/img/broadcaster/Bang Ithonk.jpg') }}"
                     alt="Generic placeholder image" class="img-fluid" style="width: 140px; border-radius: 10px;">
                 </div>
                 <div class="flex-grow-1 ms-3">
-                  <h5 class="mb-1">Danny McLoan</h5>
+                  <h5 class="mb-1">Bang Ithonk</h5>
                   <p class="mb-2 pb-1">Host</p>
                   <div class="d-flex pt-1">
                     <a href="{{ url('/radio') }}" class="btn flex-grow-1 tombollive">Listen Now!</a>
