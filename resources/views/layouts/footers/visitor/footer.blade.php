@@ -12,23 +12,24 @@
                 <h5>Menu Halaman</h5>
                 <span style="border-bottom: 3px solid; display: block; width: 100px; color: #21d4fd; margin-bottom: 10px;"></span>
                 <ul class="nav flex-column">
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Home</a></li>
+                  <li class="nav-item mb-2"><a href="{{ url('/') }}" class="nav-link p-0 text-white">Home</a></li>
                   <li class="nav-item mb-2 js-botton">
                     <div class="d-flex">
                       <a class="nav-link p-0 text-white">Berita</a>
                       <i class='bx bxs-chevron-down arrow mt-1'></i>
                     </div>
                     <ul class="js-sub-menu sub-footer" style="margin-left:-20px">
-                      <li class="lifooter"><a class="afooter" href="#">Category</a></li>
-                      <li class="lifooter"><a class="afooter" href="#">Category</a></li>
-                      <li class="lifooter"><a class="afooter" href="#">Category</a></li>
-                      <li class="lifooter"><a class="afooter" href="#">Category</a></li>
+                      <li class="lifooter"><a class="afooter" href="{{ url('/category') }}">Category</a></li>
+                      <li class="lifooter"><a class="afooter" href="{{ url('/category') }}">Category</a></li>
+                      <li class="lifooter"><a class="afooter" href="{{ url('/category') }}">Category</a></li>
+                      <li class="lifooter"><a class="afooter" href="{{ url('/category') }}">Category</a></li>
                     </ul>
                   </li>
                   
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Profil</a></li>
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Kontak</a></li>
-                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Radio</a></li>
+                  <li class="nav-item mb-2"><a href="{{ url('/about') }}" class="nav-link p-0 text-white">Profil</a></li>
+                  <li class="nav-item mb-2"><a href="{{ url('/contact') }}" class="nav-link p-0 text-white">Kontak</a></li>
+                  <li class="nav-item mb-2"><a href="{{ url('/galeri') }}" class="nav-link p-0 text-white">Galeri</a></li>
+                  <li class="nav-item mb-2"><a href="{{ url('/radio') }}" class="nav-link p-0 text-white">Radio</a></li>
                 </ul>
               </div>
               <div class="col-md-2 mb-3">
