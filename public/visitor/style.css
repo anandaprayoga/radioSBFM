@@ -1357,6 +1357,9 @@ transform: translateX(calc(var(--button-radius) / -2)) translateY(calc(var(--but
   }
 }
 
-/* 
-https://www.instagram.com/p/ByuNUGkAVHk/ 
-*/
+/* image fix berita */
+.img-berita{
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+}

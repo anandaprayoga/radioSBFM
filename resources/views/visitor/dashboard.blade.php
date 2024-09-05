@@ -171,7 +171,7 @@
       <div class="position-sticky" style="top: 2rem;">
         <div class="p-0 mb-2 bg-body-white rounded">
           <div class="section">Live Streaming</div>
-          <div class="card shadow" style="border-radius: 15px; border: 0;">
+          <div class="card" style="border-radius: 15px; border: 0; box-shadow: 0 0 2.4em rgba(25, 0, 58, 0.1);">
             <div class="card-body p-4">
               <div class="d-flex">
                 <div class="flex-shrink-0">
