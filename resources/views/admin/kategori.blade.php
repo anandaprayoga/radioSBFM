@@ -119,7 +119,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="editKategoriForm" action="{{ route('kategori.update', 0) }}" method="POST">
+                    <form id="editKategoriForm" action="{{ route('kategori.update', 0) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         {{-- <div class="mb-3">

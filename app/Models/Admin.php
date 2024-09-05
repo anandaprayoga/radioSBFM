@@ -22,6 +22,7 @@ class Admin extends Authenticatable
         'no_hp',
         'alamat',
         'about_me',
-        'profile_image'
+        'profile_image',
+        'peran',
     ];
 }

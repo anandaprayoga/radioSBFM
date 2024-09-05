@@ -15,5 +15,10 @@ class Broadcaster extends Model
         'nama_broadcaster',
         'no_hp',
         'tanggal_bergabung',
+        'broadcaster_image',
+    ];
+
+    protected $nullable = [
+        'status_broadcaster',
     ];
 }

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Broadcaster;
+use Carbon\Carbon;
 
 class BroadcasterController extends Controller
 {
@@ -31,13 +33,17 @@ class BroadcasterController extends Controller
             'nama_broadcaster' => 'required|string|max:255',
             'no_hp' => 'required|string|max:15',
             'tanggal_bergabung' => 'required|date',
+            'broadcaster_image' => 'image|mimes:jpeg,jpg,png|max:50000',
         ]);
 
         // Menyimpan data ke database
         $broadcaster = new Broadcaster();
         $broadcaster->nama_broadcaster = $request->nama_broadcaster;
         $broadcaster->no_hp = $request->no_hp;
-        $broadcaster->tanggal_bergabung = $request->tanggal_bergabung;
+        $broadcaster->tanggal_bergabung = \Carbon\Carbon::parse($request->tanggal_bergabung)->format('Y-m-d');
+
+        $broadcaster->broadcaster_image = $request->file('broadcaster_image')->store('Broadcaster', 'public');
+
         $broadcaster->save();
 
         return redirect()->back()->with('success', 'Data Broadcaster berhasil ditambahkan');
@@ -61,12 +67,27 @@ class BroadcasterController extends Controller
             'nama_broadcaster' => 'required|string|max:255',
             'no_hp' => 'required|string|max:15',
             'tanggal_bergabung' => 'required|date',
+            'broadcaster_image' => 'nullable|image|max:50000',
         ]);
 
         $broadcaster = Broadcaster::findOrFail($id);
         $broadcaster->nama_broadcaster = $request->nama_broadcaster;
         $broadcaster->no_hp = $request->no_hp;
         $broadcaster->tanggal_bergabung = $request->tanggal_bergabung;
+
+        // Check if new image file is uploaded
+        if ($request->hasFile('broadcaster_image')) {
+            // Hapus gambar lama jika ada
+            if ($broadcaster->broadcaster_image && Storage::exists('public/' . $broadcaster->broadcaster_image)) {
+                Storage::delete('public/' . $broadcaster->broadcaster_image);
+            }
+
+            // Upload gambar baru
+            $fileName = time() . '.' . $request->broadcaster_image->extension();
+            $request->broadcaster_image->storeAs('public/Broadcaster', $fileName);
+            $broadcaster->broadcaster_image = 'Broadcaster/' . $fileName;
+        }
+
         $broadcaster->save();
 
         return redirect()->back()->with('success', 'Data Broadcaster berhasil diperbarui');
