@@ -9,12 +9,12 @@
                     <div class="info">
                         <h1>Suara Bangkalan FM 92,1 Mhz</h1>
                         <h5 class="mb-2">Bang Ithonk</h5>
-                        <i class="fas fa-calendar-alt mr-2"></i> Mon, May 25th 2020
+                        <i class="fas fa-calendar-alt mr-2"></i> <span id="current-date"></span>
                         <div class="controls">
                             <div class="play" id="play-pause">
                                 <i class="fa-solid fa-play" id="left"></i>
                             </div>
-                            <input id="volume-control" type="range" min="0" max="1" step="0.01" value="1" class="volume-slider">
+                            <input type="range" class="form-range volume-slider" id="volume-control" min="0" max="1" step="0.01" value="1">
                         </div>
                     </div>
                 </div>
@@ -25,8 +25,8 @@
 </div>
 <div class="container py-5 py-lg-11 position-relative z-index-1">
     <div class="row">
-        <div class="col-lg-5 mb-5 mb-lg-0">
-            <h5 class="mb-4 aos-init aos-animate" data-aos="fade-up">Jadwal Radio SBFM </h5>
+        <div class="col-lg-4 mb-5 mb-lg-0">
+            <h5 class="mb-4 aos-init aos-animate" data-aos="fade-up">Jadwal Program Radio SBFM </h5>
             <div class="nav nav-pills flex-column aos-init aos-animate" id="myTab" role="tablist" data-aos="fade-up">
               <button class="nav-link px-4 text-start mb-3" id="d1-tab" data-bs-toggle="tab" data-bs-target="#day1" type="button" role="tab" aria-controls="day1" aria-selected="false">
                   <span class="d-block fs-5 fw-bold">Senin</span>
@@ -58,7 +58,7 @@
           </div>
         </div>
         
-        <div class="col-lg-7 col-xl-6">
+        <div class="col-lg-8 col-xl-8">
             <div data-aos="fade-up" class="tab-content aos-init aos-animate" id="myTabContent">
                 <div class="tab-pane fade" id="day1" role="tabpanel" aria-labelledby="d1-tab">
                     <ul class="pt-4 list-unstyled mb-0">
@@ -68,7 +68,11 @@
                             </span>
                             <div class="flex-grow-1 ps-4 border-start border-3">
                                 <h4>Morning News</h4>
-                                <h5 class="text-info">Layi</h5>
+                                <div class="d-flex align-items-center">
+                                    <i class="fa-solid fa-headset fa-lg mb-2 mx-1"></i>
+                                    <h5 class="text-info">Layi</h5>
+                                </div>
+                                
                                 <p class="mb-0">
                                     Lagu Pop Kreatif Indonesia dan Mancanegara (Berita Lokal Bangkalan + Prakiraan Cuaca)
                                 </p>
@@ -80,9 +84,13 @@
                             </span>
                             <div class="flex-grow-1 ps-4 border-start border-3">
                                 <h4>Dapil</h4>
-                                <h5 class="text-info">Lela</h5>
+                                <div class="d-flex align-items-center">
+                                    <i class="fa-solid fa-headset fa-lg mb-2 mx-1"></i>
+                                    <h5 class="text-info">Lela</h5>
+                                </div>
+                                
                                 <p class="mb-0">
-                                    Lagi Dangdut Rancak + Pilihan (Berita Ringan)
+                                    Lagu Dangdut Rancak + Pilihan (Berita Ringan)
                                 </p>
                             </div>
                         </li>
@@ -92,7 +100,10 @@
                             </span>
                             <div class="flex-grow-1 ps-4 border-start border-3">
                                 <h4>Goyang Pantura</h4>
-                                <h5 class="text-info">Layi</h5>
+                                <div class="d-flex align-items-center">
+                                    <i class="fa-solid fa-headset fa-lg mb-2 mx-1"></i>
+                                    <h5 class="text-info">Layi</h5>
+                                </div>
                                 <p class="mb-0">
                                 Lagu Dangdut Madura + Dangdut Biasa (Berita Budaya + Wisata Bangkalan)
                                 </p>
@@ -104,7 +115,11 @@
                             </span>
                             <div class="flex-grow-1 ps-4 border-start border-3">
                                 <h4>Syair Pujangga atau Serabi</h4>
-                                <h5 class="text-info">Faisol</h5>
+                                <div class="d-flex align-items-center">
+                                    <i class="fa-solid fa-headset fa-lg mb-2 mx-1"></i>
+                                    <h5 class="text-info">Faisol</h5>
+                                </div>
+                                
                                 <p class="mb-0">
                                     Lagu Pop Indonesia + Mancanegara, Berita Kesehatan, Berita Ringan, Berita Dunia, Berita Nasional dan Remaja (Milenial)
                                 </p>
@@ -121,7 +136,11 @@
                             </span>
                             <div class="flex-grow-1 ps-4 border-start border-3">
                                 <h4>Morning News</h4>
-                                <h5 class="text-info">Aryan, Layi</h5>
+                                <div class="d-flex align-items-center">
+                                    <i class="fa-solid fa-headset fa-lg mb-2 mx-1"></i>
+                                    <h5 class="text-info">Aryan, Layi</h5>
+                                </div>
+                                
                                 <p class="mb-0">
                                     Lagu Pop Kreatif Indonesia dan Mancanegara (Berita Lokal Bangkalan + Prakiraan Cuaca)
                                 </p>
@@ -133,9 +152,13 @@
                             </span>
                             <div class="flex-grow-1 ps-4 border-start border-3">
                                 <h4>Dapil</h4>
-                                <h5 class="text-info">Lela</h5>
+                                <div class="d-flex align-items-center">
+                                    <i class="fa-solid fa-headset fa-lg mb-2 mx-1"></i>
+                                    <h5 class="text-info">Lela</h5>
+                                </div>
+                                
                                 <p class="mb-0">
-                                    Lagi Dangdut Rancak + Pilihan (Berita Ringan)
+                                    Lagu Dangdut Rancak + Pilihan (Berita Ringan)
                                 </p>
                             </div>
                         </li>
@@ -145,7 +168,10 @@
                             </span>
                             <div class="flex-grow-1 ps-4 border-start border-3">
                                 <h4>Goyang Pantura</h4>
-                                <h5 class="text-info">Layi</h5>
+                                <div class="d-flex align-items-center">
+                                    <i class="fa-solid fa-headset fa-lg mb-2 mx-1"></i>
+                                    <h5 class="text-info">M. Yaqin</h5>
+                                </div>
                                 <p class="mb-0">
                                 Lagu Dangdut Madura + Dangdut Biasa (Berita Budaya + Wisata Bangkalan)
                                 </p>
@@ -157,7 +183,10 @@
                             </span>
                             <div class="flex-grow-1 ps-4 border-start border-3">
                                 <h4>Syair Pujangga atau Serabi</h4>
-                                <h5 class="text-info">Udin</h5>
+                                <div class="d-flex align-items-center">
+                                    <i class="fa-solid fa-headset fa-lg mb-2 mx-1"></i>
+                                    <h5 class="text-info">Udin</h5>
+                                </div>
                                 <p class="mb-0">
                                     Lagu Pop Indonesia + Mancanegara, Berita Kesehatan, Berita Ringan, Berita Dunia, Berita Nasional dan Remaja (Milenial)
                                 </p>
@@ -173,7 +202,10 @@
                             </span>
                             <div class="flex-grow-1 ps-4 border-start border-3">
                                 <h4>Morning News</h4>
-                                <h5 class="text-info">Aryan, Layi</h5>
+                                <div class="d-flex align-items-center">
+                                    <i class="fa-solid fa-headset fa-lg mb-2 mx-1"></i>
+                                    <h5 class="text-info">Aryan, Layi</h5>
+                                </div>
                                 <p class="mb-0">
                                     Lagu Pop Kreatif Indonesia dan Mancanegara (Berita Lokal Bangkalan + Prakiraan Cuaca)
                                 </p>
@@ -185,9 +217,12 @@
                             </span>
                             <div class="flex-grow-1 ps-4 border-start border-3">
                                 <h4>Dapil</h4>
-                                <h5 class="text-info">Lela</h5>
+                                <div class="d-flex align-items-center">
+                                    <i class="fa-solid fa-headset fa-lg mb-2 mx-1"></i>
+                                    <h5 class="text-info">Lela</h5>
+                                </div>
                                 <p class="mb-0">
-                                    Lagi Dangdut Rancak + Pilihan (Berita Ringan)
+                                    Lagu Dangdut Rancak + Pilihan (Berita Ringan)
                                 </p>
                             </div>
                         </li>
@@ -197,7 +232,10 @@
                             </span>
                             <div class="flex-grow-1 ps-4 border-start border-3">
                                 <h4>Goyang Pantura</h4>
-                                <h5 class="text-info">Layi</h5>
+                                <div class="d-flex align-items-center">
+                                    <i class="fa-solid fa-headset fa-lg mb-2 mx-1"></i>
+                                    <h5 class="text-info">M. Yaqin</h5>
+                                </div>
                                 <p class="mb-0">
                                 Lagu Dangdut Madura + Dangdut Biasa (Berita Budaya + Wisata Bangkalan)
                                 </p>
@@ -209,7 +247,11 @@
                             </span>
                             <div class="flex-grow-1 ps-4 border-start border-3">
                                 <h4>Syair Pujangga atau Serabi</h4>
-                                <h5 class="text-info">Faisol</h5>
+                                <div class="d-flex align-items-center">
+                                    <i class="fa-solid fa-headset fa-lg mb-2 mx-1"></i>
+                                    <h5 class="text-info">Faisol</h5>
+                                </div>
+                                
                                 <p class="mb-0">
                                     Lagu Pop Indonesia + Mancanegara, Berita Kesehatan, Berita Ringan, Berita Dunia, Berita Nasional dan Remaja (Milenial)
                                 </p>
@@ -225,7 +267,11 @@
                             </span>
                             <div class="flex-grow-1 ps-4 border-start border-3">
                                 <h4>Morning News</h4>
-                                <h5 class="text-info">Aryan, Layi</h5>
+                                <div class="d-flex align-items-center">
+                                    <i class="fa-solid fa-headset fa-lg mb-2 mx-1"></i>
+                                    <h5 class="text-info">Aryan, Layi</h5>
+                                </div>
+                                
                                 <p class="mb-0">
                                     Lagu Pop Kreatif Indonesia dan Mancanegara (Berita Lokal Bangkalan + Prakiraan Cuaca)
                                 </p>
@@ -237,9 +283,13 @@
                             </span>
                             <div class="flex-grow-1 ps-4 border-start border-3">
                                 <h4>Dapil</h4>
-                                <h5 class="text-info">Lela</h5>
+                                <div class="d-flex align-items-center">
+                                    <i class="fa-solid fa-headset fa-lg mb-2 mx-1"></i>
+                                    <h5 class="text-info">Lela</h5>
+                                </div>
+                                
                                 <p class="mb-0">
-                                    Lagi Dangdut Rancak + Pilihan (Berita Ringan)
+                                    Lagu Dangdut Rancak + Pilihan (Berita Ringan)
                                 </p>
                             </div>
                         </li>
@@ -249,7 +299,11 @@
                             </span>
                             <div class="flex-grow-1 ps-4 border-start border-3">
                                 <h4>Goyang Pantura</h4>
-                                <h5 class="text-info">Layi</h5>
+                                <div class="d-flex align-items-center">
+                                    <i class="fa-solid fa-headset fa-lg mb-2 mx-1"></i>
+                                    <h5 class="text-info">M. Yaqin</h5>
+                                </div>
+                            
                                 <p class="mb-0">
                                 Lagu Dangdut Madura + Dangdut Biasa (Berita Budaya + Wisata Bangkalan)
                                 </p>
@@ -261,7 +315,11 @@
                             </span>
                             <div class="flex-grow-1 ps-4 border-start border-3">
                                 <h4>Syair Pujangga atau Serabi</h4>
-                                <h5 class="text-info">Udin</h5>
+                                <div class="d-flex align-items-center">
+                                    <i class="fa-solid fa-headset fa-lg mb-2 mx-1"></i>
+                                    <h5 class="text-info">Udin</h5>
+                                </div>
+                                
                                 <p class="mb-0">
                                     Lagu Pop Indonesia + Mancanegara, Berita Kesehatan, Berita Ringan, Berita Dunia, Berita Nasional dan Remaja (Milenial)
                                 </p>
@@ -277,7 +335,11 @@
                             </span>
                             <div class="flex-grow-1 ps-4 border-start border-3">
                                 <h4>Morning News</h4>
-                                <h5 class="text-info">Layi</h5>
+                                <div class="d-flex align-items-center">
+                                    <i class="fa-solid fa-headset fa-lg mb-2 mx-1"></i>
+                                    <h5 class="text-info">Layi</h5>
+                                </div>
+                                
                                 <p class="mb-0">
                                     Lagu Pop Kreatif Indonesia dan Mancanegara (Berita Lokal Bangkalan + Prakiraan Cuaca)
                                 </p>
@@ -289,7 +351,11 @@
                             </span>
                             <div class="flex-grow-1 ps-4 border-start border-3">
                                 <h4>Dapil</h4>
-                                <h5 class="text-info">Aisah</h5>
+                                <div class="d-flex align-items-center">
+                                    <i class="fa-solid fa-headset fa-lg mb-2 mx-1"></i>
+                                    <h5 class="text-info">Aisah</h5>
+                                </div>
+                                
                                 <p class="mb-0">
                                     Lagi Dangdut Rancak + Pilihan (Berita Ringan)
                                 </p>
@@ -301,7 +367,11 @@
                             </span>
                             <div class="flex-grow-1 ps-4 border-start border-3">
                                 <h4>Goyang Pantura</h4>
-                                <h5 class="text-info">Layi</h5>
+                                <div class="d-flex align-items-center">
+                                    <i class="fa-solid fa-headset fa-lg mb-2 mx-1"></i>
+                                    <h5 class="text-info">M. Yaqin</h5>
+                                </div>
+                            
                                 <p class="mb-0">
                                 Lagu Dangdut Madura + Dangdut Biasa (Berita Budaya + Wisata Bangkalan)
                                 </p>
@@ -313,7 +383,11 @@
                             </span>
                             <div class="flex-grow-1 ps-4 border-start border-3">
                                 <h4>Syair Pujangga atau Serabi</h4>
-                                <h5 class="text-info">Faisol</h5>
+                                <div class="d-flex align-items-center">
+                                    <i class="fa-solid fa-headset fa-lg mb-2 mx-1"></i>
+                                    <h5 class="text-info">Faisol</h5>
+                                </div>
+                                
                                 <p class="mb-0">
                                     Lagu Pop Indonesia + Mancanegara, Berita Kesehatan, Berita Ringan, Berita Dunia, Berita Nasional dan Remaja (Milenial)
                                 </p>
@@ -329,7 +403,11 @@
                             </span>
                             <div class="flex-grow-1 ps-4 border-start border-3">
                                 <h4>Morning News On The Weekend</h4>
-                                <h5 class="text-info">Aryan</h5>
+                                <div class="d-flex align-items-center">
+                                    <i class="fa-solid fa-headset fa-lg mb-2 mx-1"></i>
+                                    <h5 class="text-info">Aryan</h5>
+                                </div>
+                                
                                 <p class="mb-0">
                                     Lagu Pop Indonesia dan Mancanegara (Self Improvement Info-Info Pengembangan Diri dan Skill)
                                 </p>
@@ -341,7 +419,11 @@
                             </span>
                             <div class="flex-grow-1 ps-4 border-start border-3">
                                 <h4>Pik-R</h4>
-                                <h5 class="text-info">Aisah</h5>
+                                <div class="d-flex align-items-center">
+                                    <i class="fa-solid fa-headset fa-lg mb-2 mx-1"></i>
+                                    <h5 class="text-info">Aisah</h5>
+                                </div>
+                                
                                 <p class="mb-0">
                                     Lagu Pop Nostalgia + Pop Mancanegara (Berita Ringan, Info, Tips, dan Berita Nasional)
                                 </p>
@@ -353,7 +435,11 @@
                             </span>
                             <div class="flex-grow-1 ps-4 border-start border-3">
                                 <h4>Dangdut + Bollywood</h4>
-                                <h5 class="text-info">Udin</h5>
+                                <div class="d-flex align-items-center">
+                                    <i class="fa-solid fa-headset fa-lg mb-2 mx-1"></i>
+                                    <h5 class="text-info">Udin</h5>
+                                </div>
+                                
                                 <p class="mb-0">
                                 14:00-16:00 WIB (Lagu Dangdut Disco + Rancak + Koplo) <br>
                                 16:00-17:00 WIB (Lagu Bollywood)
@@ -366,7 +452,11 @@
                             </span>
                             <div class="flex-grow-1 ps-4 border-start border-3">
                                 <h4>Syair Pujangga atau Serabi</h4>
-                                <h5 class="text-info">Faisol</h5>
+                                <div class="d-flex align-items-center">
+                                    <i class="fa-solid fa-headset fa-lg mb-2 mx-1"></i>
+                                    <h5 class="text-info">Faisol</h5>
+                                </div>
+                                
                                 <p class="mb-0">
                                     Lagu Pop Indonesia + Mancanegara (Curhat Wa, IG)
                                 </p>
@@ -382,7 +472,11 @@
                             </span>
                             <div class="flex-grow-1 ps-4 border-start border-3">
                                 <h4>Morning News On The Weekend</h4>
-                                <h5 class="text-info">Aryan</h5>
+                                <div class="d-flex align-items-center">
+                                    <i class="fa-solid fa-headset fa-lg mb-2 mx-1"></i>
+                                    <h5 class="text-info">Aryan</h5>
+                                </div>
+                                
                                 <p class="mb-0">
                                     Lagu Pop Indonesia dan Mancanegara (Self Improvement Info-Info Pengembangan Diri dan Skill)
                                 </p>
@@ -394,7 +488,11 @@
                             </span>
                             <div class="flex-grow-1 ps-4 border-start border-3">
                                 <h4>AADR (Ada Apa Di Radio)</h4>
-                                <h5 class="text-info">Faisol</h5>
+                                <div class="d-flex align-items-center">
+                                    <i class="fa-solid fa-headset fa-lg mb-2 mx-1"></i>
+                                    <h5 class="text-info">Faisol</h5>
+                                </div>
+                                
                                 <p class="mb-0">
                                     Lagu Pop Nostalgia + Pop Mancanegara (Berita Ringan, Info, Tips, dan Berita Nasional)
                                 </p>
@@ -406,7 +504,11 @@
                             </span>
                             <div class="flex-grow-1 ps-4 border-start border-3">
                                 <h4>Dangdut + Bollywood</h4>
-                                <h5 class="text-info">Layi</h5>
+                                <div class="d-flex align-items-center">
+                                    <i class="fa-solid fa-headset fa-lg mb-2 mx-1"></i>
+                                    <h5 class="text-info">Layi</h5>
+                                </div>
+                                
                                 <p class="mb-0">
                                 14:00-16:00 WIB (Lagu Dangdut Disco + Rancak + Koplo) <br>
                                 16:00-17:00 WIB (Lagu Bollywood)
@@ -419,7 +521,11 @@
                             </span>
                             <div class="flex-grow-1 ps-4 border-start border-3">
                                 <h4>Syair Pujangga atau Serabi</h4>
-                                <h5 class="text-info">Udin</h5>
+                                <div class="d-flex align-items-center">
+                                    <i class="fa-solid fa-headset fa-lg mb-2 mx-1"></i>
+                                    <h5 class="text-info">Udin</h5>
+                                </div>
+                                
                                 <p class="mb-0">
                                     Lagu Pop Indonesia + Mancanegara (Curhat Wa, IG)
                                 </p>
@@ -436,13 +542,13 @@
     <ul class="menu-list">
       <li class="menu-item">
         <span class="item-icon">
-          <a href=""><i class="fa-regular fa-circle-question fa-xl" style="color: #ffffff;"></i></a>
+          <a href=""><i class="fa-regular fa-circle-question fa-lg" style="color: #ffffff;"></i></a>
         </span>
         <span class="item-text"><a href="">Quetion</a></span></li>
       <li class="menu-item">
         <span class="item-icon">
           <a href="">
-            <i class="fa-solid fa-music fa-xl" style="color: #ffffff;"></i>
+            <i class="fa-solid fa-music fa-lg" style="color: #ffffff;"></i>
           </a>
           
         </span>
@@ -452,8 +558,8 @@
   </div>
   <div class="outer-button">
     <div class="icon-container">
-      <i class="fa-solid fa-xmark close-icon" style="color: #ffffff;"></i>
-      <i class="fa-regular fa-paper-plane arrow-icon" style="color: #ffffff;"></i>
+      <i class="fa-solid fa-xmark close-icon fa-lg" style="color: #ffffff;"></i>
+      <i class="fa-regular fa-paper-plane arrow-icon fa-lg" style="color: #ffffff;"></i>
     </div>
   </div>
 </div>
@@ -581,6 +687,19 @@
           activeTab.setAttribute("aria-selected", "true");
       }
   });
+  // Mendapatkan tanggal hari ini
+  var today = new Date();
+
+  // Opsi format tanggal
+  var options = { 
+    weekday: 'short', 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric' 
+  };
+
+  // Menampilkan tanggal di elemen dengan id 'current-date'
+  document.getElementById('current-date').textContent = today.toLocaleDateString('id-ID', options);
 
 </script>
 @endsection

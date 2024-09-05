@@ -76,6 +76,9 @@
             <cite>Suara Bangkalan FM</cite>
           </div>
           <p style="text-align: justify;">Dengan tagline "Satu Suara, Berjuta Telinga", kami berharap Suara Bangkalan Fm dapat diterima oleh khalayak luas sebagai media rujukan informasi yang valid dan faktual yang juga memberikan alternatif hiburan dan media edukasi interaktif bagi masyarakat. </p>
+          <p class="text-center fs-5 fw-medium">Mari Stay Tuned di 92,1 MHz Suara Bangkalan Fm, <br>
+          Satu Suara, Berjuta Telinga.
+          </p>
         </div>
       </div>
     </div>

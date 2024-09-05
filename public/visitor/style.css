@@ -672,19 +672,20 @@ nav .navbar .links li:hover .js-sub-menu {
   display: flex;
   justify-content: space-between;
   padding-top: 20px;
+  align-items: center;
 }
 
 .play i {
   font-size: 1.23rem;
   height: 50px;
   width: 50px;
-  background: #ff9900;
+  background: linear-gradient(310deg, #2152ff, #21d4fd);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
   border-radius: 50%;
   cursor: pointer;
   line-height: 50px;
   text-align: center;
-  color: black;
+  color: white;
 }
 
 .volume-slider {
@@ -708,7 +709,7 @@ nav .navbar .links li:hover .js-sub-menu {
   appearance: none;
   width: 15px;
   height: 15px;
-  background: #ff9900; /* Warna thumb */
+  background: linear-gradient(310deg, #2152ff, #21d4fd); /* Warna thumb */
   cursor: pointer;
   border-radius: 50%;
 }
@@ -1073,7 +1074,7 @@ h1 {
   --menu-height: 150px;
   --menu-width: 245px;
   --menu-border-radius: 10px;
-  --menu-bg-color: #141622;
+  --menu-bg-color: #2779fc;
   --menu-timing-function: var(--primary-timing-func);
   --menu-icon-size: 30px;
 /*   Close Icon */
