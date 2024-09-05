@@ -7,6 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.118.2">
+    <link rel="icon" type="image/png" sizes="76x76" href="{{ asset('visitor/img/sbfm.png') }}">
     <title>Radio | SBFM Bangkalan</title>
     
 

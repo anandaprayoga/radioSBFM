@@ -21,108 +21,124 @@
   <div class="album py-2.5 bg-body-white">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
         <div class="col">
-          <div class="card shadow border-0 ">
-            <img src="{{ asset('visitor/img/news.webp') }}" width="100%" height="230" class="card-img-top" alt="Your Image Alt Text">
-            <div class="card-body">
-              <strong class="d-inline-block mb-2 text-success-emphasis">Design</strong>
-              <h3 class="mb-1">Post title</h3>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <small class="text-body-secondary">10 November 2024</small>
+          <a class="text-decoration-none" href="">
+            <div class="card shadow border-0 ">
+              <img src="{{ asset('visitor/img/trump.jpg') }}" class="card-img-top img-berita" alt="Your Image Alt Text">
+              <div class="card-body">
+                <strong class="d-inline-block mb-2 text-info">Design</strong>
+                <h5 class="mb-1">Post title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-body-secondary">10 November 2024</small>
+                </div>
               </div>
             </div>
-          </div>
+          </a>
         </div>
         <div class="col">
-          <div class="card shadow border-0 ">
-            <img src="{{ asset('visitor/img/news.webp') }}" width="100%" height="230" class="card-img-top" alt="Your Image Alt Text">
-            <div class="card-body">
-              <strong class="d-inline-block mb-2 text-success-emphasis">Design</strong>
-              <h3 class="mb-1">Post title</h3>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <small class="text-body-secondary">10 November 2024</small>
+          <a class="text-decoration-none" href="">
+            <div class="card shadow border-0 ">
+              <img src="{{ asset('visitor/img/trump.jpg') }}" class="card-img-top img-berita" alt="Your Image Alt Text">
+              <div class="card-body">
+                <strong class="d-inline-block mb-2 text-info">Design</strong>
+                <h5 class="mb-1">Post title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-body-secondary">10 November 2024</small>
+                </div>
               </div>
             </div>
-          </div>
+          </a>
         </div>
         <div class="col">
-          <div class="card shadow border-0 ">
-            <img src="{{ asset('visitor/img/news.webp') }}" width="100%" height="230" class="card-img-top" alt="Your Image Alt Text">
-            <div class="card-body">
-              <strong class="d-inline-block mb-2 text-success-emphasis">Design</strong>
-              <h3 class="mb-1">Post title</h3>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <small class="text-body-secondary">10 November 2024</small>
+          <a class="text-decoration-none" href="">
+            <div class="card shadow border-0 ">
+              <img src="{{ asset('visitor/img/trump.jpg') }}" class="card-img-top img-berita" alt="Your Image Alt Text">
+              <div class="card-body">
+                <strong class="d-inline-block mb-2 text-info">Design</strong>
+                <h5 class="mb-1">Post title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-body-secondary">10 November 2024</small>
+                </div>
               </div>
             </div>
-          </div>
+          </a>
         </div>
         <div class="col">
-          <div class="card shadow border-0 ">
-            <img src="{{ asset('visitor/img/news.webp') }}" width="100%" height="230" class="card-img-top" alt="Your Image Alt Text">
-            <div class="card-body">
-              <strong class="d-inline-block mb-2 text-success-emphasis">Design</strong>
-              <h3 class="mb-1">Post title</h3>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <small class="text-body-secondary">10 November 2024</small>
+          <a class="text-decoration-none" href="">
+            <div class="card shadow border-0 ">
+              <img src="{{ asset('visitor/img/trump.jpg') }}" class="card-img-top img-berita" alt="Your Image Alt Text">
+              <div class="card-body">
+                <strong class="d-inline-block mb-2 text-info">Design</strong>
+                <h5 class="mb-1">Post title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-body-secondary">10 November 2024</small>
+                </div>
               </div>
             </div>
-          </div>
+          </a>
         </div>
         <div class="col">
-          <div class="card shadow border-0 ">
-            <img src="{{ asset('visitor/img/news.webp') }}" width="100%" height="230" class="card-img-top" alt="Your Image Alt Text">
-            <div class="card-body">
-              <strong class="d-inline-block mb-2 text-success-emphasis">Design</strong>
-              <h3 class="mb-1">Post title</h3>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <small class="text-body-secondary">10 November 2024</small>
+          <a class="text-decoration-none" href="">
+            <div class="card shadow border-0 ">
+              <img src="{{ asset('visitor/img/trump.jpg') }}" class="card-img-top img-berita" alt="Your Image Alt Text">
+              <div class="card-body">
+                <strong class="d-inline-block mb-2 text-info">Design</strong>
+                <h5 class="mb-1">Post title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-body-secondary">10 November 2024</small>
+                </div>
               </div>
             </div>
-          </div>
+          </a>
         </div>
         <div class="col">
-          <div class="card shadow border-0 ">
-            <img src="{{ asset('visitor/img/news.webp') }}" width="100%" height="230" class="card-img-top" alt="Your Image Alt Text">
-            <div class="card-body">
-              <strong class="d-inline-block mb-2 text-success-emphasis">Design</strong>
-              <h3 class="mb-1">Post title</h3>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <small class="text-body-secondary">10 November 2024</small>
+          <a class="text-decoration-none" href="">
+            <div class="card shadow border-0 ">
+              <img src="{{ asset('visitor/img/trump.jpg') }}" class="card-img-top img-berita" alt="Your Image Alt Text">
+              <div class="card-body">
+                <strong class="d-inline-block mb-2 text-info">Design</strong>
+                <h5 class="mb-1">Post title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-body-secondary">10 November 2024</small>
+                </div>
               </div>
             </div>
-          </div>
+          </a>
         </div>
         <div class="col">
-          <div class="card shadow border-0 ">
-            <img src="{{ asset('visitor/img/news.webp') }}" width="100%" height="230" class="card-img-top" alt="Your Image Alt Text">
-            <div class="card-body">
-              <strong class="d-inline-block mb-2 text-success-emphasis">Design</strong>
-              <h3 class="mb-1">Post title</h3>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <small class="text-body-secondary">10 November 2024</small>
+          <a class="text-decoration-none" href="">
+            <div class="card shadow border-0 ">
+              <img src="{{ asset('visitor/img/trump.jpg') }}" class="card-img-top img-berita" alt="Your Image Alt Text">
+              <div class="card-body">
+                <strong class="d-inline-block mb-2 text-info">Design</strong>
+                <h5 class="mb-1">Post title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-body-secondary">10 November 2024</small>
+                </div>
               </div>
             </div>
-          </div>
+          </a>
         </div>
         <div class="col">
-          <div class="card shadow border-0 ">
-            <img src="{{ asset('visitor/img/news.webp') }}" width="100%" height="230" class="card-img-top" alt="Your Image Alt Text">
-            <div class="card-body">
-              <strong class="d-inline-block mb-2 text-success-emphasis">Design</strong>
-              <h3 class="mb-1">Post title</h3>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <small class="text-body-secondary">10 November 2024</small>
+          <a class="text-decoration-none" href="">
+            <div class="card shadow border-0 ">
+              <img src="{{ asset('visitor/img/trump.jpg') }}" class="card-img-top img-berita" alt="Your Image Alt Text">
+              <div class="card-body">
+                <strong class="d-inline-block mb-2 text-info">Design</strong>
+                <h5 class="mb-1">Post title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-body-secondary">10 November 2024</small>
+                </div>
               </div>
             </div>
-          </div>
+          </a>
         </div>
 
       </div>

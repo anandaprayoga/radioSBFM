@@ -29,7 +29,7 @@
                   <li class="nav-item mb-2"><a href="{{ url('/about') }}" class="nav-link p-0 text-white">Profil</a></li>
                   <li class="nav-item mb-2"><a href="{{ url('/contact') }}" class="nav-link p-0 text-white">Kontak</a></li>
                   <li class="nav-item mb-2"><a href="{{ url('/galeri') }}" class="nav-link p-0 text-white">Galeri</a></li>
-                  <li class="nav-item mb-2"><a href="{{ url('/radio') }}" class="nav-link p-0 text-white">Radio</a></li>
+                  <li class="nav-item mb-2"><a href="{{ url('/radio') }}" class="nav-link p-0 text-white">Streaming</a></li>
                 </ul>
               </div>
               <div class="col-md-2 mb-3">

@@ -22,7 +22,7 @@
         <li><a href="{{ url('/about') }}">Profil</a></li>
         <li><a href="{{ url('/contact') }}">Kontak</a></li>
         <li><a href="{{ url('/galeri') }}">Galeri</a></li>
-        <li><a href="{{ url('/radio') }}">Radio</a></li>
+        <li><a href="{{ url('/radio') }}">Streaming</a></li>
       </ul>
     </div>
     <div class="search-box">
