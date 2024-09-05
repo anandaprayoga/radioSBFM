@@ -12,6 +12,8 @@ use App\Http\Controllers\BroadcasterController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\InformasiController;
+use App\Http\Controllers\GaleriController;
+use App\Http\Controllers\AdminController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
@@ -67,6 +69,8 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('/admin/event', [EventController::class, 'index'])->name('events.index')->middleware('ip.whitelist');
 	Route::get('/admin/kategori', [KategoriController::class, 'index'])->name('kategoris.index')->middleware('ip.whitelist');
 	Route::get('/admin/informasi', [InformasiController::class, 'index'])->name('informasis.index')->middleware('ip.whitelist');
+	Route::get('/admin/galeri', [GaleriController::class, 'index'])->name('galeris.index')->middleware('ip.whitelist');
+	Route::get('/admin/admin', [AdminController::class, 'index'])->name('admins.index')->middleware('ip.whitelist');
 
 	Route::get('/logout', [SessionsController::class, 'destroy'])->middleware('ip.whitelist');
 	Route::get('admin/user-profile', [InfoUserController::class, 'create'])->middleware('ip.whitelist');
@@ -121,3 +125,19 @@ Route::put('/admin/event/{id}', [EventController::class, 'update'])->name('event
 Route::post('/informasi/insert', [InformasiController::class, 'insertInformasi'])->name('informasi.insertInformasi');
 Route::delete('/admin/informasi/{id}', [InformasiController::class, 'destroy'])->name('informasi.destroy');
 Route::put('/admin/informasi/{id}', [InformasiController::class, 'update'])->name('informasi.update');
+
+Route::post('/galeri/insert', [GaleriController::class, 'insertGaleri'])->name('galeri.insertGaleri');
+Route::delete('/admin/galeri/{id}', [GaleriController::class, 'destroy'])->name('galeri.destroy');
+Route::put('/admin/galeri/{id}', [GaleriController::class, 'update'])->name('galeri.update');
+
+Route::middleware('role:Superadmin')->group(function() {
+	Route::get('/admin/broadcaster', [BroadcasterController::class, 'index'])->name('broadcasters.index');
+	Route::get('/admin/event', [EventController::class, 'index'])->name('events.index');
+	Route::get('/admin/kategori', [KategoriController::class, 'index'])->name('kategoris.index');
+	Route::get('/admin/informasi', [InformasiController::class, 'index'])->name('informasis.index');
+	Route::get('/admin/galeri', [GaleriController::class, 'index'])->name('galeris.index');
+	Route::get('/admin/admin', [AdminController::class, 'index'])->name('admins.index');
+	Route::post('/admin/insert', [AdminController::class, 'insertAdmin'])->name('admin.insertAdmin');
+	Route::delete('/admin/admin/{id}', [AdminController::class, 'destroy'])->name('admin.destroy');
+	Route::put('/admin/admin/{id}', [AdminController::class, 'update'])->name('admin.update');
+});

@@ -21,9 +21,9 @@
                                 <h5 class="mb-0">Data Broadcast</h5>
                             </div>
                             <!-- <div class="bg- border-radius-lg d-flex" style="margin-left: 550px;">
-                                                <input type="text" class="form-control border-0 ps-3" style="height: 40px; margin-top:5px; margin-right: 5px;" placeholder="Type here...">
-                                                <button class="btn bg-gradient-primary my-1 me-1">Search</button>
-                                            </div> -->
+                                                    <input type="text" class="form-control border-0 ps-3" style="height: 40px; margin-top:5px; margin-right: 5px;" placeholder="Type here...">
+                                                    <button class="btn bg-gradient-primary my-1 me-1">Search</button>
+                                                </div> -->
 
                             {{-- Search --}}
                             <form action="{{ route('broadcasters.index') }}" method="GET" class="d-flex mb-3">
@@ -61,6 +61,11 @@
                                                         Bergabung</label>
                                                     <input type="date" class="form-control" id="tanggal_bergabung" name="tanggal_bergabung" required>
                                                 </div>
+                                                <div class="mb-3">
+                                                    <label for="broadcaster_image" class="form-label">
+                                                        Foto</label>
+                                                    <input type="file" class="form-control" id="broadcaster_image" name="broadcaster_image" required>
+                                                </div>
                                                 <button type="submit" class="btn btn-primary">Tambah</button>
                                             </form>
                                         </div>
@@ -73,10 +78,16 @@
                     <div class="card-body px-0 pt-0 pb-2">
                         <div class="table-responsive p-0">
                             <table class="table align-items-center mb-0">
+                                @foreach ($errors->all() as $error)
+                                    {{ $error }} <br>
+                                @endforeach
                                 <thead>
                                     <tr>
                                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                             No
+                                        </th>
+                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            Foto
                                         </th>
                                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                             Nama
@@ -86,6 +97,9 @@
                                         </th>
                                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                             Tanggal Bergabung
+                                        </th>
+                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                            Status Siaran
                                         </th>
                                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                             Action
@@ -102,6 +116,9 @@
                                                 <p class="text-xs font-weight-bold mb-0">{{ $i++ }}</p>
                                             </td>
                                             <td class="text-center">
+                                                <img src="{{ asset('storage/' . $broadcaster->broadcaster_image) }}" width="100">
+                                            </td>
+                                            <td class="text-center">
                                                 <p class="text-xs font-weight-bold mb-0">
                                                     {{ $broadcaster->nama_broadcaster }}</p>
                                             </td>
@@ -112,7 +129,10 @@
                                                 <span class="text-secondary text-xs font-weight-bold">{{ $broadcaster->tanggal_bergabung }}</span>
                                             </td>
                                             <td class="text-center">
-                                                <a href="#" data-bs-toggle="modal" data-bs-target="#editBroadcasterModal" data-id="{{ $broadcaster->id }}" data-nama="{{ $broadcaster->nama_broadcaster }}" data-nohp="{{ $broadcaster->no_hp }}" data-tanggal="{{ $broadcaster->tanggal_bergabung }}" class="mx-3 edit-button" data-bs-toggle="tooltip" data-bs-original-title="Edit user">
+                                                <span class="text-secondary text-xs font-weight-bold">{{ $broadcaster->status }}</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="#" data-bs-toggle="modal" data-bs-target="#editBroadcasterModal" data-id="{{ $broadcaster->id }}" data-nama="{{ $broadcaster->nama_broadcaster }}" data-nohp="{{ $broadcaster->no_hp }}" data-tanggal="{{ $broadcaster->tanggal_bergabung }}" data-broadcaster_image="{{ $broadcaster->broadcaster_image }}" class="mx-3 edit-button" data-bs-toggle="tooltip" data-bs-original-title="Edit user">
                                                     <i class="fas fa-user-edit text-secondary"></i>
                                                 </a>
                                                 <form action="{{ route('broadcaster.destroy', $broadcaster->id) }}" method="POST" style="display:inline;">
@@ -157,7 +177,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="editBroadcasterForm" action="{{ route('broadcaster.update', 0) }}" method="POST">
+                    <form id="editBroadcasterForm" action="{{ route('broadcaster.update', 0) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         {{-- <div class="mb-3">
@@ -175,10 +195,15 @@
                         </div>
                         <div class="mb-3">
                             <label for="edit_tanggal_bergabung" class="form-label">Tanggal Bergabung</label>
-                            <input type="date" class="form-control" id="edit_tanggal_bergabung" name="tanggal_bergabung" value="{{ old('tanggal_bergabung') }}" required>
+                            <input type="date" class="form-control" id="edit_tanggal_bergabung" name="tanggal_bergabung" value="{{ old('tanggal_bergabung', $broadcaster->tanggal_bergabung) }}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit_broadcaster_image" class="form-label">Foto</label>
+                            <input type="file" class="form-control" id="edit_broadcaster_image" name="broadcaster_image" value="{{ old('broadcaster_image') }}">
+                            {{-- <input type="hidden" id="edit_event_id" name="event_id"> --}}
+                            <button type="submit" class="btn btn-primary">Update</button>
                         </div>
                         {{-- <input type="hidden" id="edit_broadcaster_id" name="broadcaster_id"> --}}
-                        <button type="submit" class="btn btn-primary">Update</button>
                     </form>
                 </div>
             </div>
@@ -193,7 +218,8 @@
                     const id = this.getAttribute('data-id');
                     const nama = this.getAttribute('data-nama');
                     const nohp = this.getAttribute('data-nohp');
-                    const tanggal = this.getAttribute('data-tanggal');
+                    const tanggal = this.getAttribute('data-tanggal').substring(0, 10);
+                    const broadcaster_iamge = this.getAttribute('data-broadcaster_image');
 
                     // Update form action URL
                     const form = document.getElementById('editBroadcasterForm');
@@ -204,6 +230,7 @@
                     document.getElementById('edit_no_hp').value = nohp;
                     document.getElementById('edit_tanggal_bergabung').value = tanggal;
                     document.getElementById('edit_broadcaster_id').value = id;
+                    document.getElementById('edit_broadcaster_image').value = broadcaster_iamge;
                 });
             });
         });

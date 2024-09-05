@@ -33,7 +33,7 @@ class EventController extends Controller
             'tanggal_mulai' => 'required|date',
             'tanggal_selesai' => 'date|nullable',
             'keterangan' => 'string|nullable',
-            'gambar_event' => 'required|image|mimes:jpeg,jpg,png|max:2048',
+            'gambar_event' => 'required|image|mimes:jpeg,jpg,png|max:50000',
         ]);
 
         // Menentukan status event berdasarkan tanggal
@@ -81,7 +81,7 @@ class EventController extends Controller
             'tanggal_mulai' => 'required|date',
             'tanggal_selesai' => 'nullable|date|after_or_equal:tanggal_mulai',
             'keterangan' => 'required|string',
-            'gambar_event' => 'nullable|image|max:2048',
+            'gambar_event' => 'nullable|image|max:50000',
         ]);
 
         // Temukan event berdasarkan ID

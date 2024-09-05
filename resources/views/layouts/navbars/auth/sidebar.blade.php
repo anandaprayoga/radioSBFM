@@ -31,10 +31,12 @@
           <span class="nav-link-text ms-1">Dashboard</span>
         </a>
       </li>
-      <li class="nav-item mt-2">
+
+      {{-- <li class="nav-item mt-2">
         <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Profile Admin</h6>
-      </li>
-      <li class="nav-item">
+      </li> --}}
+
+      {{-- <li class="nav-item">
         <a class="nav-link {{ (Request::is('admin/user-profile') ? 'active' : '') }} " href="{{ url('admin/user-profile') }}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                 <svg width="12px" height="12px" viewBox="0 0 46 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -56,7 +58,8 @@
         </a>
       <li class="nav-item mt-2">
         <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">crud data</h6>
-      </li>
+      </li> --}}
+      
       <li class="nav-item">
         <a class="nav-link {{ (Request::is('admin/broadcaster') ? 'active' : '') }}" href="{{ url('admin/broadcaster') }}">
           <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -97,6 +100,28 @@
           <span class="nav-link-text ms-1">Data Informasi</span>
         </a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link {{ (Request::is('admin/galeri') ? 'active' : '') }}" href="{{ url('admin/galeri') }}">
+          <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+            <svg width="12px" height="12px"  class="color-background" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 515">
+              <path class="color-background" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/>
+            </svg>
+          </div>
+          <span class="nav-link-text ms-1">Data Galeri</span>
+        </a>
+      </li>
+      @if (Auth::user()->peran === 'Superadmin')
+      <li class="nav-item">
+        <a class="nav-link {{ (Request::is('admin/admin') ? 'active' : '') }}" href="{{ url('admin/admin') }}">
+          <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+            <svg width="12px" height="12px"  class="color-background" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 515">
+              <path class="color-background" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/>
+            </svg>
+          </div>
+          <span class="nav-link-text ms-1">Data Admin</span>
+        </a>
+      </li>
+      @endif
     </ul>
   </div>
 </aside>
