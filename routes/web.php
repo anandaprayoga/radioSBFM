@@ -133,7 +133,7 @@ Route::post('/galeri/insert', [GaleriController::class, 'insertGaleri'])->name('
 Route::delete('/admin/galeri/{id}', [GaleriController::class, 'destroy'])->name('galeri.destroy');
 Route::put('/admin/galeri/{id}', [GaleriController::class, 'update'])->name('galeri.update');
 
-Route::middleware('role:Superadmin')->group(function() {
+Route::middleware('peran:Superadmin')->group(function() {
 	Route::get('/admin/broadcaster', [BroadcasterController::class, 'index'])->name('broadcasters.index');
 	Route::get('/admin/event', [EventController::class, 'index'])->name('events.index');
 	Route::get('/admin/kategori', [KategoriController::class, 'index'])->name('kategoris.index');
