@@ -10,17 +10,18 @@
       <ul class="links">
         <li><a href="{{ url('/') }}">Home</a></li>
         <li class="submenu">
-          <a href="#">News</a>
+          <a href="#">Berita</a>
           <i class='bx bxs-chevron-down js-arrow arrow '></i>
           <ul class="js-sub-menu sub-menu">
             <li><a href="{{ url('/category') }}">Category</a></li>
-            <li><a href="#">Form Validation</a></li>
-            <li><a href="#">Card Slider</a></li>
-            <li><a href="#">Complete Website</a></li>
+            <li><a href="{{ url('/category') }}">Category</a></li>
+            <li><a href="{{ url('/category') }}">Category</a></li>
+            <li><a href="{{ url('/category') }}">Category</a></li>
           </ul>
         </li>
-        <li><a href="{{ url('/about') }}">About Us</a></li>
-        <li><a href="{{ url('/contact') }}">Contact</a></li>
+        <li><a href="{{ url('/about') }}">Profil</a></li>
+        <li><a href="{{ url('/contact') }}">Kontak</a></li>
+        <li><a href="{{ url('/galeri') }}">Galeri</a></li>
         <li><a href="{{ url('/radio') }}">Radio</a></li>
       </ul>
     </div>

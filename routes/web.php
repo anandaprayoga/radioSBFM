@@ -49,6 +49,9 @@ Route::get('/search', function () {
 Route::get('/radio', function () {
 	return view('visitor/radio');
 });
+Route::get('/galeri', function () {
+	return view('visitor/galeri');
+});
 
 Route::group(['middleware' => 'auth'], function () {
 

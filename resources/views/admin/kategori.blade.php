@@ -7,21 +7,20 @@
             <div class="col-12">
                 <div class="card mb-4 mx-4">
                     <div class="card-header pb-0">
-                        <div class="d-flex flex-row justify-content-between">
-                            <div>
-                                <h5 class="mb-0">Data Kategori</h5>
+                        <div class="row">
+                            <div class="col-12">
+                                <h5 class="mb-3">Data Broadcast</h5>
                             </div>
-
-                            {{-- Search --}}
-                            <form action="{{ route('kategoris.index') }}" method="GET" class="d-flex mb-3">
-                                <input class="form-control me-2" type="search" name="search" placeholder="Cari kategori..." aria-label="Search" value="{{ request('search') }}">
-                                <button class="btn btn-outline-primary" type="submit">Cari</button>
-                            </form>
-
-                            {{-- New Items --}}
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#updateKategoriModal" class="btn bg-gradient-primary btn-sm mb-0" type="button">
-                                +&nbsp; New
-                            </a>
+                            <div class="col-12 d-flex flex-column flex-md-row justify-content-between align-items-start mb-3">
+                                {{-- Search --}}
+                                <form action="{{ route('kategoris.index') }}" method="GET" class="d-flex mb-3">
+                                    <input style="height: 40px;" class="form-control me-2" type="search" name="search" placeholder="Cari kategori..." aria-label="Search" value="{{ request('search') }}">
+                                    <button style="height: 40px;" class="btn btn-outline-primary" type="submit">Cari</button>
+                                </form>
+                                <a style="height: 40px;" href="#" data-bs-toggle="modal" data-bs-target="#updateKategoriModal" class="btn bg-gradient-primary btn-sm searchtambah1" type="button">
+                                    +&nbsp; New
+                                </a>
+                            </div>
 
                             <!-- Modal untuk Tambah Data Kategori -->
                             <div class="modal fade" id="updateKategoriModal" tabindex="-1" aria-labelledby="updateKategoriLabel" aria-hidden="true">
@@ -83,7 +82,7 @@
                                                 <form action="{{ route('kategori.destroy', $kategori->id) }}" method="POST" style="display:inline;">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-link text-danger p-0" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');">
+                                                    <button type="submit" class="btn btn-link text-danger p-0 my-auto" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');">
                                                         <i class="cursor-pointer fas fa-trash text-secondary"></i>
                                                     </button>
                                                 </form>

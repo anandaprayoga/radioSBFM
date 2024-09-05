@@ -2,7 +2,7 @@
 @section('content')
 <!--=============== Slide ===============-->
 <main class="">
-  <div style="margin-top: 50px;" id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+  <div style="margin-top: 60px;" id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
       <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -11,17 +11,17 @@
     <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="{{ asset('visitor/img/about-us.jpg') }}" class="d-block w-100" alt="First slide">
+          <img src="{{ asset('visitor/img/bersama.jpg') }}" class="d-block w-100 img-slider" alt="First slide">
           <div class="carousel-caption d-flex flex-column justify-content-center align-items-center" style="top: 0; bottom: 0;">
             <h5 class="text-center">First slide label</h5>
             <p class="text-center">Some representative placeholder content for the first slide.</p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="{{ asset('visitor/img/about-us.jpg') }}" class="d-block w-100" alt="Second slide">
+          <img src="{{ asset('visitor/img/narasumber.jpg') }}" class="d-block w-100 img-slider" alt="Second slide">
         </div>
         <div class="carousel-item">
-          <img src="{{ asset('visitor/img/about-us.jpg') }}" class="d-block w-100" alt="Third slide">
+          <img src="{{ asset('visitor/img/studio1.jpg') }}" class="d-block w-100 img-slider" alt="Third slide">
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -115,7 +115,7 @@
               <div class="card shadow-sm">
                 <img src="{{ asset('visitor/img/about-us.jpg') }}" width="100%" height="230" class="card-img-top" alt="Your Image Alt Text">
                 <div class="card-body">
-                  <strong class="d-inline-block mb-2 text-success-emphasis">Design</strong>
+                  <strong class="d-inline-block mb-2 text-info">Design</strong>
                   <h3 class="mb-1"><a class="titleberita" href="{{ url('/berita') }}">Post title</a></h3>
                   <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                   <div class="d-flex justify-content-between align-items-center">
@@ -128,7 +128,7 @@
               <div class="card shadow-sm">
                 <img src="{{ asset('visitor/img/about-us.jpg') }}" width="100%" height="230" class="card-img-top" alt="Your Image Alt Text">
                 <div class="card-body">
-                  <strong class="d-inline-block mb-2 text-success-emphasis">Design</strong>
+                  <strong class="d-inline-block mb-2 text-info">Design</strong>
                   <h3 class="mb-1"><a class="titleberita" href="{{ url('/berita') }}">Post title</a></h3>
                   <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                   <div class="d-flex justify-content-between align-items-center">
@@ -141,7 +141,7 @@
               <div class="card shadow-sm">
                 <img src="{{ asset('visitor/img/about-us.jpg') }}" width="100%" height="230" class="card-img-top" alt="Your Image Alt Text">
                 <div class="card-body">
-                  <strong class="d-inline-block mb-2 text-success-emphasis">Design</strong>
+                  <strong class="d-inline-block mb-2 text-info">Design</strong>
                   <h3 class="mb-1"><a class="titleberita" href="{{ url('/berita') }}">Post title</a></h3>
                   <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                   <div class="d-flex justify-content-between align-items-center">
@@ -154,7 +154,7 @@
               <div class="card shadow-sm">
                 <img src="{{ asset('visitor/img/about-us.jpg') }}" width="100%" height="230" class="card-img-top" alt="Your Image Alt Text">
                 <div class="card-body">
-                  <strong class="d-inline-block mb-2 text-success-emphasis">Design</strong>
+                  <strong class="d-inline-block mb-2 text-info">Design</strong>
                   <h3 class="mb-1"><a class="titleberita" href="{{ url('/berita') }}">Post title</a></h3>
                   <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                   <div class="d-flex justify-content-between align-items-center">
@@ -163,8 +163,6 @@
                 </div>
               </div>
             </div>
-            
-
           </div>
         </div>
     </div>
@@ -177,11 +175,11 @@
             <div class="card-body p-4">
               <div class="d-flex">
                 <div class="flex-shrink-0">
-                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
+                  <img src="{{ asset('visitor/img/broadcaster/Bang Ithonk.jpg') }}"
                     alt="Generic placeholder image" class="img-fluid" style="width: 140px; border-radius: 10px;">
                 </div>
                 <div class="flex-grow-1 ms-3">
-                  <h5 class="mb-1">Danny McLoan</h5>
+                  <h5 class="mb-1">Bang Ithonk</h5>
                   <p class="mb-2 pb-1">Host</p>
                   <div class="d-flex pt-1">
                     <a href="{{ url('/radio') }}" class="btn flex-grow-1 tombollive">Listen Now!</a>
