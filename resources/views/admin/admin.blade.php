@@ -7,21 +7,25 @@
             <div class="col-12">
                 <div class="card mb-4 mx-4">
                     <div class="card-header pb-0">
-                        <div class="d-flex flex-row justify-content-between">
-                            <div>
-                                <h5 class="mb-0">Data Admin</h5>
+                        <div class="row">
+                            <div class="col-12">
+                                <h5 class="mb-3">Data Admin</h5>
                             </div>
+                            <!-- Form and New Button -->
+                            <div class="col-12 d-flex flex-column flex-md-row justify-content-between align-items-start mb-3">
+                                {{-- Search --}}
+                                <form action="{{ route('admins.index') }}" method="GET" class="d-flex mb-3">
+                                    <input style="height: 40px;" class="form-control me-2" type="search" name="search" placeholder="Cari admin..." aria-label="Search" value="{{ request('search') }}">
+                                    <button style="height: 40px;" class="btn btn-outline-primary" type="submit">Cari</button>
+                                </form>
+                                {{-- New Items --}}
+                                <a style="height: 40px;" href="#" data-bs-toggle="modal" data-bs-target="#updateAdminModal" class="btn bg-gradient-primary btn-sm mb-0" type="button">
+                                    +&nbsp; New
+                                </a>
+                            </div>
+                            
 
-                            {{-- Search --}}
-                            <form action="{{ route('admins.index') }}" method="GET" class="d-flex mb-3">
-                                <input class="form-control me-2" type="search" name="search" placeholder="Cari admin..." aria-label="Search" value="{{ request('search') }}">
-                                <button class="btn btn-outline-primary" type="submit">Cari</button>
-                            </form>
-
-                            {{-- New Items --}}
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#updateAdminModal" class="btn bg-gradient-primary btn-sm mb-0" type="button">
-                                +&nbsp; New
-                            </a>
+                            
 
                             <!-- Modal untuk Tambah Data Admin -->
                             <div class="modal fade" id="updateAdminModal" tabindex="-1" aria-labelledby="updateAdminLabel" aria-hidden="true">
@@ -178,7 +182,7 @@
                                                 <form action="{{ route('admin.destroy', $admin->id) }}" method="POST" style="display:inline;">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-link text-danger p-0" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');">
+                                                    <button type="submit" class="btn btn-link text-danger p-0 my-auto" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');">
                                                         <i class="cursor-pointer fas fa-trash text-secondary"></i>
                                                     </button>
                                                 </form>
@@ -196,8 +200,8 @@
 
                                 </tbody>
                             </table>
-                            <div class="d-flex justify-content-center mt-3">
-                                {{ $admins->links() }}
+                            <div class="d-flex justify-content-center mt-3 custom-pagination">
+                                {{ $admins->links('pagination::bootstrap-5') }}
                             </div>
                         </div>
                     </div>
@@ -220,7 +224,7 @@
                         @method('PUT')
                         <div class="mb-3">
                             <label for="edit_username" class="form-label">Username</label>
-                            <input type="text" class="form-control" id="edit_username" name="username" value="{{ old('username', $admin->username) }}" required>
+                            <input type="text" class="form-control" id="edit_username" name="username" value="{{ old($admin->username) }}" required>
                         </div>
                         <div class="mb-3">
                             <label for="edit_password" class="form-label">Password</label>

@@ -112,7 +112,7 @@
                                                 <form action="{{ route('event.destroy', $event->id) }}" method="POST" style="display:inline;">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-link text-danger p-0 my_auto" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');">
+                                                    <button type="submit" class="btn btn-link text-danger p-0 my-auto" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?');">
                                                         <i class="cursor-pointer fas fa-trash text-secondary"></i>
                                                     </button>
                                                 </form>
@@ -129,8 +129,8 @@
                                     @endforelse
                                 </tbody>
                             </table>
-                            <div class="d-flex justify-content-center mt-3">
-                                {{ $events->links() }}
+                            <div class="d-flex justify-content-center mt-3 custom-pagination">
+                                {{ $events->links('pagination::bootstrap-5') }}
                             </div>
                         </div>
                     </div>
