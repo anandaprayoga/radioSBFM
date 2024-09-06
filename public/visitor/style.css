@@ -599,7 +599,7 @@ nav .navbar .links li:hover .js-sub-menu {
 
 .image-container {
   width: 100%;
-  height: 400px; /* Set a fixed height for the image container */
+  padding: 15px;
   overflow: hidden; /* Ensures the image doesn't overflow outside the container */
 }
 
@@ -611,7 +611,7 @@ nav .navbar .links li:hover .js-sub-menu {
 
 @media (max-width: 767px) {
   .image-container {
-    height: 400px; /* Reduce height for smaller screens */
+    padding: 15px; /* Reduce height for smaller screens */
     margin-bottom: 10px;
   }
 }

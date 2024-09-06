@@ -31,7 +31,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [InformasiController::class, 'dashboard'])->name('informasis.dashboard')->middleware('ip.whitelist');
-Route::get('/', [EventController::class, 'index1']);
+Route::get('/', [EventController::class, 'index1'])->name('visitor.index1');
 Route::get('/category', function () {
 	return view('visitor/category');
 });
@@ -50,9 +50,7 @@ Route::get('/search', function () {
 Route::get('/radio', function () {
 	return view('visitor/radio');
 });
-Route::get('/galeri', function () {
-	return view('visitor/galeri');
-});
+Route::get('/galeri', [GaleriController::class, 'index1'])->name('admin.insertAdmin');
 
 Route::group(['middleware' => 'auth'], function () {
 

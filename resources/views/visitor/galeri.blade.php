@@ -3,52 +3,32 @@
 <div class="container px-3 py-5 position-relative" style="margin-top: 50px;" id="custom-cards">
     <div class="sectionEvent">Gallery Foto</div>
     <div class="lightbox">
-      <div class="wrapper1">
-        <header>
-          <div class="details">
-            <i class="uil uil-camera"></i>
-            <span>Image Preview</span>
-          </div>
-          <div class="buttons"><i class="fa-solid fa-xmark"></i></div>
-        </header>
-        <div class="preview-img">
-          <div class="img"><img src="" alt="preview-img"></div>
+        <div class="wrapper1">
+            <header>
+                <div class="details">
+                    <i class="uil uil-camera"></i>
+                    <span>Image Preview</span>
+                </div>
+                <div class="buttons"><i class="fa-solid fa-xmark"></i></div>
+            </header>
+            <div class="preview-img">
+                <div class="img"><img src="" alt="preview-img"></div>
+            </div>
         </div>
-      </div>
     </div>
     <section class="gallery">
-      <ul class="images">
-        <li class="img"><img src="{{ asset('visitor/img/event.jpeg') }}" alt="img"></li>
-        <li class="img"><img src="{{ asset('visitor/img/event.jpeg') }}" alt="img"></li>
-        <li class="img"><img src="{{ asset('visitor/img/event.jpeg') }}" alt="img"></li>
-        <li class="img"><img src="{{ asset('visitor/img/event.jpeg') }}" alt="img"></li>
-        <li class="img"><img src="{{ asset('visitor/img/event.jpeg') }}" alt="img"></li>
-        <li class="img"><img src="{{ asset('visitor/img/trump.jpg') }}" alt="img"></li>
-        <li class="img"><img src="{{ asset('visitor/img/podcast.png') }}" alt="img"></li>
-        <li class="img"><img src="{{ asset('visitor/img/about-us.jpg') }}" alt="img"></li>
-        <li class="img"><img src="{{ asset('visitor/img/event.jpeg') }}" alt="img"></li>
-        <li class="img"><img src="{{ asset('visitor/img/trump.jpg') }}" alt="img"></li>
-        <li class="img"><img src="{{ asset('visitor/img/podcast.png') }}" alt="img"></li>
-        <li class="img"><img src="{{ asset('visitor/img/about-us.jpg') }}" alt="img"></li>
-        <li class="img"><img src="{{ asset('visitor/img/event.jpeg') }}" alt="img"></li>
-        <li class="img"><img src="{{ asset('visitor/img/trump.jpg') }}" alt="img"></li>
-        <li class="img"><img src="{{ asset('visitor/img/podcast.png') }}" alt="img"></li>
-        <li class="img"><img src="{{ asset('visitor/img/about-us.jpg') }}" alt="img"></li>
-      </ul>
-    </section>
-    <div class="py-5">
-      <ul class="pagination justify-content-center">
-          <li class="page-item">
-            <a class="page-link" href="#">Previous</a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#">Next</a>
-          </li>
+        <ul class="images">
+            @foreach($galeri as $gambar)
+                <li class="img">
+                    <img src="{{ asset('storage/' . $gambar->gambar) }}" alt="img">
+                </li>
+            @endforeach
         </ul>
-    </div>
+        
+    </section>
+</div>
+<div class="container py-5">
+  {{ $galeri->links('') }}
 </div>
 <script>
     const allImages = document.querySelectorAll(".images .img");
