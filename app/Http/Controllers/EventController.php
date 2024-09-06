@@ -24,6 +24,12 @@ class EventController extends Controller
         // Mengirim data ke view
         return view('admin.event', compact('events'));
     }
+    public function index1()
+    {
+        // Ambil semua data event
+        $events = Event::whereIn('status_event', ['Segera Datang', 'Sedang Berlangsung'])->get();
+        return view('visitor.dashboard', compact('events'));
+    }
 
     public function insertEvent(Request $request)
     {

@@ -52,55 +52,29 @@
         <div class="sectionEvent">Event Program</div>
         <div class="slideevent py-4">
           <div class="wrapper">
-            <i class="fas fa-angle-left" id="left"></i>
-            <ul class="carousel1">
-              <li class="card1" style="background-image: url('{{ asset('visitor/img/event.jpeg') }}');">
-                <div class="overlay">
-                  <div class="text-container">
-                      <h2>This is a second title</h2>
-                      <p>This is a second description</p>
-                  </div>
-                  <button class="detail-button" data-bs-toggle="modal" data-bs-target="#viewdetail">View Details</button>
-                </div>
-              </li>
-              <li class="card1" style="background-image: url('{{ asset('visitor/img/event.jpeg') }}');">
-                <div class="overlay">
-                  <div class="text-container">
-                      <h2>This is a second title</h2>
-                      <p>This is a second description</p>
-                  </div>
-                  <button class="detail-button" data-bs-toggle="modal" data-bs-target="#viewdetail">View Details</button>
-                </div>
-              </li>
-              <li class="card1" style="background-image: url('{{ asset('visitor/img/event.jpeg') }}');">
-                <div class="overlay">
-                  <div class="text-container">
-                      <h2>This is a second title</h2>
-                      <p>This is a second description</p>
-                  </div>
-                  <button class="detail-button" data-bs-toggle="modal" data-bs-target="#viewdetail">View Details</button>
-                </div>
-              </li>
-              <li class="card1" style="background-image: url('{{ asset('visitor/img/event.jpeg') }}');">
-                <div class="overlay">
-                  <div class="text-container">
-                      <h2>This is a second title</h2>
-                      <p>This is a second description</p>
-                  </div>
-                  <button class="detail-button" data-bs-toggle="modal" data-bs-target="#viewdetail"l>View Details</button>
-                </div>
-              </li>
-              <li class="card1" style="background-image: url('{{ asset('visitor/img/event.jpeg') }}');">
-                <div class="overlay">
-                  <div class="text-container">
-                      <h2>This is a second title</h2>
-                      <p>This is a second description</p>
-                  </div>
-                  <button class="detail-button" data-bs-toggle="modal" data-bs-target="#viewdetail">View Details</button>
-                </div>
-              </li>
-            </ul>
-            <i class="fas fa-angle-right" id="right"></i>
+            @if($events->isEmpty())
+                <p class="text-center">Belum ada event dalam waktu dekat</p>
+            @else
+                <i class="fas fa-angle-left" id="left"></i>
+                <ul class="carousel1">
+                    @foreach($events as $event)
+                    <li class="card1" style="background-image: url('{{ asset('storage/' . $event->gambar_event) }}');">
+                        <div class="overlay">
+                            <div class="text-container">
+                                <h2>{{ $event->nama_event }}</h2>
+                                <p>{{ \Carbon\Carbon::parse($event->tanggal_mulai)->format('d M Y') }} - {{ \Carbon\Carbon::parse($event->tanggal_selesai)->format('d M Y') }}</p>
+                                <p>{{ $event->status_event }}</p>
+                            </div>
+                            <button class="detail-button" data-bs-toggle="modal" data-bs-target="#viewdetail{{ $event->id }}">View Details</button>
+                        </div>
+                    </li>
+                    @endforeach
+                </ul>
+                <i class="fas fa-angle-right" id="right"></i>
+            @endif
+
+
+            
           </div>
         </div>
     </div>
@@ -226,30 +200,35 @@
     </div>
   </div>
 </div>
+@foreach($events as $event)
 <!-- Modal -->
-<div class="modal fade" id="viewdetail" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="viewdetail{{ $event->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Event Program</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">{{ $event->nama_event }}</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <div class="row">
           <div class="col-md-6 col-12">
             <div class="image-container">
-              <img src="{{ asset('visitor/img/event.jpeg') }}" class="img-fluid" alt="Event Image">
+              <img src="{{ asset('storage/' . $event->gambar_event) }}" class="img-fluid" alt="Event Image">
             </div>
           </div>
           <div class="col-md-6 col-12">
-            <h3>Event Title</h3>
-            <p>Here is the description of the event. It includes details that are important for the users to know.</p>
+            <h3>{{ $event->nama_event }}</h3>
+            <p>{{ $event->keterangan }}</p>
+            <p><strong>Tanggal Mulai:</strong> {{ \Carbon\Carbon::parse($event->tanggal_mulai)->format('d M Y') }}</p>
+            <p><strong>Tanggal Berakhir:</strong> {{ \Carbon\Carbon::parse($event->tanggal_selesai)->format('d M Y') }} </p>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+@endforeach
+
 
 
 

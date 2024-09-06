@@ -31,6 +31,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [InformasiController::class, 'dashboard'])->name('informasis.dashboard')->middleware('ip.whitelist');
+Route::get('/', [EventController::class, 'index1']);
 Route::get('/category', function () {
 	return view('visitor/category');
 });
