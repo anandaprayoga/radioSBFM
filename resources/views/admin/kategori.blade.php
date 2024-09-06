@@ -100,8 +100,8 @@
 
                                 </tbody>
                             </table>
-                            <div class="d-flex justify-content-center mt-3">
-                                {{ $kategoris->links() }}
+                            <div class="d-flex justify-content-center mt-3 custom-pagination">
+                                {{ $kategoris->links('pagination::bootstrap-5') }}
                             </div>
                         </div>
                     </div>

@@ -1302,3 +1302,19 @@ transform: translateX(calc(var(--button-radius) / -2)) translateY(calc(var(--but
   height: 230px;
   object-fit: cover;
 }
+.custom-pagination {
+  color: #0fb6cc; 
+  border: 1px solid #7e1414; 
+  margin: 0 2px; 
+}
+.custom-pagination  {
+  background-color: #0fb6cc; 
+  border-color: #0fb6cc; 
+  color: white; 
+}
+
+.custom-pagination .pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}

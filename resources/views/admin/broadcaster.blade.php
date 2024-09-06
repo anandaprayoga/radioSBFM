@@ -1,5 +1,4 @@
 @extends('layouts.user_type.auth')
-
 @section('content')
     @if (session('success'))
         <div class="m-3 alert alert-success alert-dismissible fade show" id="alert-success" role="alert">
@@ -154,11 +153,10 @@
                                             </td>
                                         </tr>
                                     @endforelse
-
                                 </tbody>
                             </table>
-                            <div class="d-flex justify-content-center mt-3">
-                                {{ $broadcasters->links() }}
+                            <div class="d-flex justify-content-center mt-3 custom-pagination">
+                                {{ $broadcasters->links('pagination::bootstrap-5') }}
                             </div>
                         </div>
                     </div>
