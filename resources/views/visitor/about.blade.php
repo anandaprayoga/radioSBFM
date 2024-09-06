@@ -71,9 +71,9 @@
       <h2 class="pb-2">Tagline</h2>
       <div class="row">
         <div class="col">
-          <div class="tagline">
-            <blockquote>Satu Suara Berjuta Telinga</blockquote>
-            <cite>Suara Bangkalan FM</cite>
+          <div class="tagline ">
+            <p class="text-center fs-2 fw-medium fst-italic">"Satu Suara Berjuta Telinga"</p>
+            <p class="text-center fst-italic">Suara Bangkalan FM</p>
           </div>
           <p style="text-align: justify;">Dengan tagline "Satu Suara, Berjuta Telinga", kami berharap Suara Bangkalan Fm dapat diterima oleh khalayak luas sebagai media rujukan informasi yang valid dan faktual yang juga memberikan alternatif hiburan dan media edukasi interaktif bagi masyarakat. </p>
           <p class="text-center fs-5 fw-medium">Mari Stay Tuned di 92,1 MHz Suara Bangkalan Fm, <br>

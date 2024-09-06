@@ -905,67 +905,6 @@ header .buttons i:hover {
   }
   
 }
-.tagline {
-	color: #3f3f5a;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-}
-
-blockquote {
-  font-family: 'Special Elite', cursive;
-	font-weight: 100;
-	font-size: 2rem;
-	max-width: 600px;
-	line-height: 1.4;
-	position: relative;
-	margin: 0;
-	padding: .5rem;
-  text-align: center;
-}
-
-blockquote:before,
-blockquote:after {
-	position: absolute;
-	color: #f1efe6;
-	font-size: 7rem;
-	width: 4rem;
-	height: 4rem;
-}
-
-blockquote:before {
-	content: '“';
-	left: -3.5rem;
-	top: -2rem;
-}
-
-blockquote:after {
-	content: '”';
-	right: -3.5rem;
-	bottom: 1rem;
-}
-
-cite {
-	line-height: 3;
-	text-align: left;
-}
-@media (max-width: 700px) {
-  blockquote {
-    font-size: 1.5rem;
-  }
-  blockquote:before {
-    content: '“';
-    left: -1rem;
-    top: -2rem;
-  }
-  
-  blockquote:after {
-    content: '”';
-    right: -1rem;
-    bottom: 1rem;
-  }
-}
 
 .row1 {
   display: flex;
