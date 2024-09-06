@@ -224,7 +224,7 @@
                         @method('PUT')
                         <div class="mb-3">
                             <label for="edit_username" class="form-label">Username</label>
-                            <input type="text" class="form-control" id="edit_username" name="username" value="{{ old($admin->username) }}" required>
+                            <input type="text" class="form-control" id="edit_username" name="username" value="{{ old('username', $admin->username) }}" required>
                         </div>
                         <div class="mb-3">
                             <label for="edit_password" class="form-label">Password</label>
