@@ -17,6 +17,9 @@
         </div>
     </div>
     <section class="gallery">
+      @if($galeri->isEmpty())
+        <p class="text-center">Belum ada Foto yang diunggah</p>
+      @else
         <ul class="images">
             @foreach($galeri as $gambar)
                 <li class="img">
@@ -24,6 +27,7 @@
                 </li>
             @endforeach
         </ul>
+      @endif
         
     </section>
 </div>
