@@ -24,6 +24,12 @@ class GaleriController extends Controller
         // Mengirim data ke view
         return view('admin.galeri', compact('galeris'));
     }
+    public function index1()
+    {
+        // Ambil data gambar dari database dengan pagination
+        $galeri = Galeri::paginate(12); // 12 gambar per halaman
+        return view('visitor.galeri', compact('galeri'));
+    }
 
     public function insertGaleri(Request $request)
     {
