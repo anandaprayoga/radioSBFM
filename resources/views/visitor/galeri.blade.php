@@ -17,17 +17,18 @@
         </div>
     </div>
     <section class="gallery">
-      @if($galeri->isEmpty())
-        <p class="text-center">Belum ada Foto yang diunggah</p>
-      @else
-        <ul class="images">
-            @foreach($galeri as $gambar)
-                <li class="img">
-                    <img src="{{ asset('storage/' . $gambar->gambar) }}" alt="img">
-                </li>
-            @endforeach
-        </ul>
-      @endif
+        <!-- jika tidak ada foto -->
+        @if($galeri->isEmpty())
+            <p class="text-center">Belum ada Foto yang diunggah</p>
+        @else
+            <ul class="images">
+                @foreach($galeri as $gambar)
+                    <li class="img">
+                        <img src="{{ asset('storage/' . $gambar->gambar) }}" alt="img">
+                    </li>
+                @endforeach
+            </ul>
+        @endif
         
     </section>
 </div>
