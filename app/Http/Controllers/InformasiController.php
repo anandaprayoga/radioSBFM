@@ -18,7 +18,8 @@ class InformasiController extends Controller
             $search = $request->input('search');
             $query->where('judul_informasi', 'like', "%{$search}%")->orWhere('isi_informasi', 'like', "%{$search}%");
         }
-        $informasis = $query->paginate(5);
+        // Urutkan berdasarkan created_at dari yang terbaru
+        $informasis = $query->orderBy('created_at', 'desc')->paginate(5);
         $kategoris = Kategori::all();
 
         // Mengirim data ke view
