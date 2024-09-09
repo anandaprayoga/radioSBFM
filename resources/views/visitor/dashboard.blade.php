@@ -154,7 +154,12 @@
                 </div>
                 <div class="flex-grow-1 ms-3">
                   <h5 class="mb-1">Bang Ithonk</h5>
-                  <p class="mb-2 pb-1">Host</p>
+                  <p class="mb-1">Host</p>
+                  <div class="d-flex iconlive">
+                    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+                    <dotlottie-player src="https://lottie.host/f8ff8951-9884-4a21-85e1-0373094dfa7f/d5heYBexrI.json" background="transparent" speed="1" style="width: 30px; height: 30px;" loop autoplay></dotlottie-player>
+                    <p class="my-auto">Live Now</p>
+                  </div>
                   <div class="d-flex pt-1">
                     <a href="{{ url('/radio') }}" class="btn flex-grow-1 tombollive">Listen Now!</a>
                   </div>

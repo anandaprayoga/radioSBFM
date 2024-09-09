@@ -73,17 +73,22 @@
 
   <div class="row mb-2 my-5">
     <div class="container px-4" id="custom-cards">
-      <h2 class="pb-2 text-center">Tagline</h2>
+      <div class="cites">
+        <i class="fa-solid fa-quote-left"></i>
+      </div>
       <div class="row">
         <div class="col">
-          <div class="tagline ">
-            <p class="text-center fs-3 fw-medium fst-italic">"Satu Suara Berjuta Telinga"</p>
+          <div class="tagline py-4">
+            <p class="text-center fs-2 fw-bolder fst-italic">Satu Suara Berjuta Telinga</p>
+            <span class="mx-auto" style="border-bottom: 3px solid; display: block; width: 150px; color: #21d4fd; margin-bottom: 10px;"></span>
             <p class="text-center fst-italic">Suara Bangkalan FM</p>
           </div>
-          <p style="text-align: justify;">Dengan tagline "Satu Suara, Berjuta Telinga", kami berharap Suara Bangkalan Fm dapat diterima oleh khalayak luas sebagai media rujukan informasi yang valid dan faktual yang juga memberikan alternatif hiburan dan media edukasi interaktif bagi masyarakat. </p>
-          <p class="text-center fs-5 fw-medium">Mari Stay Tuned di 92,1 MHz Suara Bangkalan Fm, <br>
-          Satu Suara, Berjuta Telinga.
-          </p>
+          <div class="container">
+            <p style="text-align: justify;">Dengan tagline "Satu Suara, Berjuta Telinga", kami berharap Suara Bangkalan Fm dapat diterima oleh khalayak luas sebagai media rujukan informasi yang valid dan faktual yang juga memberikan alternatif hiburan dan media edukasi interaktif bagi masyarakat. </p>
+            <p class="text-center fs-5 fw-medium">Mari Stay Tuned di 92,1 MHz Suara Bangkalan Fm, <br>
+            Satu Suara, Berjuta Telinga.
+            </p>
+          </div>
         </div>
       </div>
     </div>
