@@ -175,7 +175,7 @@
 
     <!-- Modal untuk Edit Data Informasi -->
     <div class="modal fade" id="editInformasiModal" tabindex="-1" aria-labelledby="editInformasiLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="editInformasiLabel">Edit Data Informasi</h5>
@@ -228,7 +228,7 @@
                             <label for="edit_gambar_informasi" class="form-label">Gambar Informasi</label>
                             <input type="file" class="form-control" id="edit_gambar_informasi" name="gambar_informasi" value="">
                             {{-- <input type="hidden" id="event_id" name="event_id"> --}}
-                            <button type="submit" class="btn btn-primary">Update</button>
+                            <button type="submit" class="btn btn-primary my-2">Update</button>
                         </div>
                     </form>
                 </div>
@@ -237,7 +237,7 @@
     </div>
 
     <div class="modal fade" id="detailInformasiModal" tabindex="-1" aria-labelledby="detailInformasiModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="detailInformasiModalLabel">Detail Informasi</h5>
