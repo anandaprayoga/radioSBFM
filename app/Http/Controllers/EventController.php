@@ -19,16 +19,10 @@ class EventController extends Controller
             $query->where('nama_event', 'like', "%{$search}%")->orWhere('keterangan', 'like', "%{$search}%");
         }
         // Mengambil semua data Events
-        $events = $query->paginate(5);
+        $events = $query->orderBy('created_at', 'desc')->paginate(5);
 
         // Mengirim data ke view
         return view('admin.event', compact('events'));
-    }
-    public function index1()
-    {
-        // Ambil semua data event
-        $events = Event::whereIn('status_event', ['Segera Datang', 'Sedang Berlangsung'])->get();
-        return view('visitor.dashboard', compact('events'));
     }
 
     public function insertEvent(Request $request)

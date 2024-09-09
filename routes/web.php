@@ -14,6 +14,7 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\InformasiController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserDashboardController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
@@ -31,7 +32,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [InformasiController::class, 'dashboard'])->name('informasis.dashboard')->middleware('ip.whitelist');
-Route::get('/', [EventController::class, 'index1'])->name('visitor.index1');
+Route::get('/', [UserDashboardController::class, 'indexUser'])->name('visitor.indexUser');
+Route::get('/berita/{id}', [UserDashboardController::class, 'detailInformasi'])->name('berita.detail');
 Route::get('/category', function () {
 	return view('visitor/category');
 });

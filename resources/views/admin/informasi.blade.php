@@ -145,23 +145,13 @@
                                 @endforeach
                             </select>
                         </div>
-                        {{-- <div class="mb-3">
-                            <label for="tanggal_informasi" class="form-label">Tanggal Informasi</label>
-                            <input type="date" class="form-control" id="tanggal_informasi" name="tanggal_informasi" required>
-                        </div> --}}
-                        {{-- <div class="mb-3">
-                            <label for="status_informasi" class="form-label">Status Informasi</label>
-                            <input type="text" class="form-control" id="status_informasi" name="status_informasi" required>
-                        </div> --}}
-                        {{-- <div class="mb-3">
-                            <label for="tanggal_update" class="form-label">Tanggal Update</label>
-                            <input type="date" class="form-control" id="tanggal_update" name="tanggal_update" required>
-                        </div> --}}
                         <div class="mb-3">
                             <label for="isi_informasi" class="form-label">Isi Informasi</label>
-                            <input type="text" class="form-control" id="editor" name="isi_informasi" required>
+                            <!-- Hidden input to store Quill editor content -->
+                            <input type="hidden" id="isi_informasi" name="isi_informasi" required>
+                            <!-- Quill editor container -->
+                            <div id="quill-editor-container-tambah"></div>
                         </div>
-
                         <div class="mb-3">
                             <label for="gambar_informasi" class="form-label">Gambar Informasi</label>
                             <input type="file" class="form-control" id="gambar_informasi" name="gambar_informasi" required>
@@ -172,6 +162,7 @@
             </div>
         </div>
     </div>
+
 
     <!-- Modal untuk Edit Data Informasi -->
     <div class="modal fade" id="editInformasiModal" tabindex="-1" aria-labelledby="editInformasiLabel" aria-hidden="true">
@@ -349,4 +340,39 @@
             });
         });
     </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const toolbarOptions = [
+                ['bold', 'italic', 'underline', 'strike'],
+                ['blockquote', 'code-block'],
+                ['link', 'image', 'video', 'formula'],
+                [{'header': 1}, {'header': 2}],
+                [{'list': 'ordered'}, {'list': 'bullet'}, {'list': 'check'}],
+                [{'script': 'sub'}, {'script': 'super'}],
+                [{'indent': '-1'}, {'indent': '+1'}],
+                [{'direction': 'rtl'}],
+                [{'size': ['small', false, 'large', 'huge']}],
+                [{'header': [1, 2, 3, 4, 5, 6, false]}],
+                [{'color': []}, {'background': []}],
+                [{'font': []}],
+                [{'align': []}],
+                ['clean']
+            ];
+
+            // Initialize Quill editor for "Tambah Data Informasi" modal
+            const quillEditorTambah = new Quill('#quill-editor-container-tambah', {
+                modules: {
+                    toolbar: toolbarOptions
+                },
+                placeholder: 'Ketik di sini...',
+                theme: 'snow',
+            });
+
+            quillEditorTambah.on('text-change', function() {
+                document.getElementById('isi_informasi').value = quillEditorTambah.root.innerHTML;
+            });
+
+        });
+    </script>
+
 @endsection

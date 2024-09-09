@@ -81,65 +81,35 @@
   </div>
   <!--=============== News ===============-->
   <div class="row g-3 py-4">
-    <div class="col-md-8 ">
-      <div class="section">Berita Terbaru</div>
-      <div class="album py-2.5 bg-body-white">
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-2">
-            <div class="col">
-              <div class="card shadow-sm">
-                <img src="{{ asset('visitor/img/about-us.jpg') }}" width="100%" height="230" class="card-img-top" alt="Your Image Alt Text">
-                <div class="card-body">
-                  <strong class="d-inline-block mb-2 text-info">Design</strong>
-                  <h3 class="mb-1"><a class="titleberita" href="{{ url('/berita') }}">Post title</a></h3>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <small class="text-body-secondary">10 November 2024</small>
-                  </div>
+    <div class="col-md-8">
+        <div class="section">Berita Terbaru</div>
+        <div class="album py-2.5 bg-body-white">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-2">
+                @foreach($informasis as $informasi)
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="{{ asset('storage/' . $informasi->gambar_informasi) }}" width="100%" height="230" class="card-img-top" alt="{{ $informasi->judul_informasi }}">
+                        <div class="card-body">
+                            <strong class="d-inline-block mb-2 text-info">{{ $informasi->kategori->nama_kategori }}</strong>
+                            <h5 class="mb-1">
+                              <a class="titleberita" href="{{ route('berita.detail', $informasi->id) }}">
+                                  {{ Str::limit(strip_tags($informasi->judul_informasi), 40) }}
+                              </a>
+                            </h5>
+                            <p class="card-text">
+                                {{ Str::limit(strip_tags($informasi->isi_informasi), 50) }} <!-- Limit description to 100 characters -->
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <small class="text-body-secondary">{{ $informasi->created_at->format('d F Y') }}</small>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
+                @endforeach
             </div>
-            <div class="col">
-              <div class="card shadow-sm">
-                <img src="{{ asset('visitor/img/about-us.jpg') }}" width="100%" height="230" class="card-img-top" alt="Your Image Alt Text">
-                <div class="card-body">
-                  <strong class="d-inline-block mb-2 text-info">Design</strong>
-                  <h3 class="mb-1"><a class="titleberita" href="{{ url('/berita') }}">Post title</a></h3>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <small class="text-body-secondary">10 November 2024</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card shadow-sm">
-                <img src="{{ asset('visitor/img/about-us.jpg') }}" width="100%" height="230" class="card-img-top" alt="Your Image Alt Text">
-                <div class="card-body">
-                  <strong class="d-inline-block mb-2 text-info">Design</strong>
-                  <h3 class="mb-1"><a class="titleberita" href="{{ url('/berita') }}">Post title</a></h3>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <small class="text-body-secondary">10 November 2024</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card shadow-sm">
-                <img src="{{ asset('visitor/img/about-us.jpg') }}" width="100%" height="230" class="card-img-top" alt="Your Image Alt Text">
-                <div class="card-body">
-                  <strong class="d-inline-block mb-2 text-info">Design</strong>
-                  <h3 class="mb-1"><a class="titleberita" href="{{ url('/berita') }}">Post title</a></h3>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <small class="text-body-secondary">10 November 2024</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
     </div>
+
     <!--=============== Live Streaming ===============-->
     <div class="col-md-4">
       <div class="position-sticky" style="top: 2rem;">
