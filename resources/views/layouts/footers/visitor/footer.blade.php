@@ -19,10 +19,9 @@
                       <i class='bx bxs-chevron-down arrow mt-1'></i>
                     </div>
                     <ul class="js-sub-menu sub-footer" style="margin-left:-20px">
-                      <li class="lifooter"><a class="afooter" href="{{ url('/category') }}">Category</a></li>
-                      <li class="lifooter"><a class="afooter" href="{{ url('/category') }}">Category</a></li>
-                      <li class="lifooter"><a class="afooter" href="{{ url('/category') }}">Category</a></li>
-                      <li class="lifooter"><a class="afooter" href="{{ url('/category') }}">Category</a></li>
+                    @foreach($kategoris as $kategori)
+                      <li class="lifooter"><a class="afooter" href="{{ url('/category/' . $kategori->id) }}">{{ $kategori->nama_kategori }}</a></li>
+                    @endforeach
                     </ul>
                   </li>
                   

@@ -34,6 +34,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [InformasiController::class, 'dashboard'])->name('informasis.dashboard')->middleware('ip.whitelist');
 Route::get('/', [UserDashboardController::class, 'indexUser'])->name('visitor.indexUser');
 Route::get('/berita/{id}', [UserDashboardController::class, 'detailInformasi'])->name('berita.detail');
+Route::get('/category/{id}', [UserDashboardController::class, 'showCategoryNews'])->name('category.news');
+Route::get('/search', [UserDashboardController::class, 'search']);
 Route::get('/category', function () {
 	return view('visitor/category');
 });
@@ -45,9 +47,6 @@ Route::get('/berita', function () {
 });
 Route::get('/about', function () {
 	return view('visitor/about');
-});
-Route::get('/search', function () {
-	return view('visitor/search');
 });
 Route::get('/radio', function () {
 	return view('visitor/radio');
