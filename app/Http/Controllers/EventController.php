@@ -36,15 +36,7 @@ class EventController extends Controller
             'gambar_event' => 'required|image|mimes:jpeg,jpg,png|max:50000',
         ]);
 
-        // Menentukan status event berdasarkan tanggal
-        $today = Carbon::now();
-        if ($today->lt($request->tanggal_mulai)) {
-            $status_event = 'Segera Datang';
-        } elseif ($today->between($request->tanggal_mulai, $request->tanggal_selesai)) {
-            $status_event = 'Sedang Berlangsung';
-        } else {
-            $status_event = 'Selesai';
-        }
+
 
         // Menyimpan data ke database
         $event = new Event();
@@ -52,8 +44,16 @@ class EventController extends Controller
         $event->tanggal_mulai = $request->tanggal_mulai;
         $event->tanggal_selesai = $request->tanggal_selesai;
         $event->keterangan = $request->keterangan;
-        $event->status_event = $status_event;
         $event->gambar_event = $request->file('gambar_event')->store('Events', 'public');
+        
+        $today = now()->toDateString();
+        if ($today < $event->tanggal_mulai) {
+            $event->status_event = 'Segera Datang';
+        } elseif ($today >= $event->tanggal_mulai && $today <= $event->tanggal_selesai) {
+            $event->status_event = 'Sedang Berlangsung';
+        } else {
+            $event->status_event = 'Selesai';
+        }
 
         $event->save();
 

@@ -27,7 +27,7 @@ class GaleriController extends Controller
     public function index1()
     {
         // Ambil data gambar dari database dengan pagination
-        $galeri = Galeri::paginate(12); // 12 gambar per halaman
+        $galeri = Galeri::orderBy('created_at', 'desc')->paginate(12); // 12 gambar per halaman
         return view('visitor.galeri', compact('galeri'));
     }
 

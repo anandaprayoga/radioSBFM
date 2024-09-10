@@ -3,7 +3,7 @@
 @section('content')
 <div class="container py-5">
     <div class="d-flex justify-content-center sectionEvent category">
-        <h3>Search Results:</h3>
+        <h3>Search Results: {{ request()->query('query') }}</h3>
     </div>
     <div class="search py-5">
         @if($informasis->isEmpty())

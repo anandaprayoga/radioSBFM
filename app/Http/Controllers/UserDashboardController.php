@@ -13,7 +13,7 @@ class UserDashboardController extends Controller
     public function indexUser()
     {
         // Ambil semua data event dengan status 'Segera Datang' dan 'Sedang Berlangsung'
-        $events = Event::whereIn('status_event', ['Segera Datang', 'Sedang Berlangsung'])->get();
+        $events = Event::whereIn('status_event', ['Segera Datang', 'Sedang Berlangsung'])->orderBy('created_at', 'desc')->get();
 
         // Ambil 4 berita terbaru
         $informasis = Informasi::with('kategori')->orderBy('created_at', 'desc')->take(4)->get();
@@ -88,7 +88,7 @@ class UserDashboardController extends Controller
         }
 
         // Ambil berita dengan paginasi
-        $informasis = $query->orderBy('created_at', 'desc')->paginate(10);
+        $informasis = $query->orderBy('created_at', 'desc')->paginate(12);
 
         // Ambil tahun-tahun yang tersedia dari berita dalam kategori ini
         $years = Informasi::where('id_kategori', $id)
