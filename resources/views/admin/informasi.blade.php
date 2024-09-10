@@ -71,7 +71,7 @@
                                             </td>
                                             <td class="text-center">
                                                 <p class="text-xs font-weight-bold mb-0">
-                                                    {{ $informasi->judul_informasi }}</p>
+                                                    {{ Str::limit(strip_tags($informasi->judul_informasi), 30) }}</p>
                                             </td>
                                             <td class="text-center">
                                                 <p class="text-xs font-weight-bold mb-0">
