@@ -45,8 +45,7 @@ class EventController extends Controller
         $event->tanggal_selesai = $request->tanggal_selesai;
         $event->keterangan = $request->keterangan;
         $event->gambar_event = $request->file('gambar_event')->store('Events', 'public');
-
-        // Menentukan status event berdasarkan tanggal
+        
         $today = now()->toDateString();
         if ($today < $event->tanggal_mulai) {
             $event->status_event = 'Segera Datang';
