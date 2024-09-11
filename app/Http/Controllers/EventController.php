@@ -11,6 +11,7 @@ class EventController extends Controller
 {
     public function index(Request $request)
     {
+        $this->updateEventStatuses();
         $query = Event::query();
 
         // Jika ada input pencarian, tambahkan filter ke query
@@ -23,6 +24,26 @@ class EventController extends Controller
 
         // Mengirim data ke view
         return view('admin.event', compact('events'));
+    }
+    private function updateEventStatuses()
+    {
+        $events = Event::all();
+        $today = Carbon::today();
+
+        foreach ($events as $event) {
+            if ($today->lt($event->tanggal_mulai)) {
+                $event->status_event = 'Segera Datang';
+            } elseif ($today->between($event->tanggal_mulai, $event->tanggal_selesai)) {
+                $event->status_event = 'Sedang Berlangsung';
+            } else {
+                $event->status_event = 'Selesai';
+            }
+
+            // Simpan hanya jika status berubah
+            if ($event->isDirty('status_event')) {
+                $event->save();
+            }
+        }
     }
 
     public function insertEvent(Request $request)

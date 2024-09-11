@@ -18,12 +18,12 @@
                     <div class="card-header pb-0">
                         <div class="row">
                             <div class="col-12">
-                                <h5 class="mb-3">Data Broadcast</h5>
+                                <h5 class="mb-3">Data Kategori</h5>
                             </div>
                             <div class="col-12 d-flex flex-column flex-md-row justify-content-between align-items-start mb-3">
                                 {{-- Search --}}
                                 <form action="{{ route('kategoris.index') }}" method="GET" class="d-flex mb-3">
-                                    <input style="height: 40px;" class="form-control me-2" type="search" name="search" placeholder="Cari kategori..." aria-label="Search" value="{{ request('search') }}">
+                                    <input style="height: 40px;" class="form-control me-2" type="search" name="search" placeholder="Cari Kategori..." aria-label="Search" value="{{ request('search') }}">
                                     <button style="height: 40px;" class="btn btn-outline-primary" type="submit">Cari</button>
                                 </form>
                                 <a style="height: 40px;" href="#" data-bs-toggle="modal" data-bs-target="#updateKategoriModal" class="btn bg-gradient-primary btn-sm searchtambah1" type="button">
