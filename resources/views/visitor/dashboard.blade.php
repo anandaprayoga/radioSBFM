@@ -116,27 +116,35 @@
         <div class="p-0 mb-2 bg-body-white rounded">
           <div class="section">Live Streaming</div>
           <div class="card" style="border-radius: 15px; border: 0; box-shadow: 0 0 2.4em rgba(25, 0, 58, 0.1);">
-            <div class="card-body p-4">
-              <div class="d-flex">
-                <div class="flex-shrink-0">
-                  <img src="{{ asset('visitor/img/broadcaster/Bang Ithonk.jpg') }}"
-                    alt="Generic placeholder image" class="img-fluid" style="width: 140px; border-radius: 10px;">
-                </div>
-                <div class="flex-grow-1 ms-3">
-                  <h5 class="mb-1">Bang Ithonk</h5>
-                  <p class="mb-1">Host</p>
-                  <div class="d-flex iconlive">
-                    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
-                    <dotlottie-player src="https://lottie.host/f8ff8951-9884-4a21-85e1-0373094dfa7f/d5heYBexrI.json" background="transparent" speed="1" style="width: 30px; height: 30px;" loop autoplay></dotlottie-player>
-                    <p class="my-auto">Live Now</p>
+              <div class="card-body p-4">
+                  <div class="d-flex">
+                      <div class="flex-shrink-0 my-auto">
+                          @if($onAirHost)
+                          <img src="{{ asset('storage/' . $onAirHost->broadcaster_image) }}"
+                              alt="Foto {{ $onAirHost->nama_broadcaster }}" class="img-fluid" style="width: 140px; height: 140px; object-fit: cover; border-radius: 10px;">
+                          @else
+                          <img src="{{ asset('visitor/img/sbfm.jpeg') }}"
+                              alt="No host on air" class="img-fluid" style="width: 140px; border-radius: 10px;">
+                          @endif
+                      </div>
+                      <div class="flex-grow-1 ms-3">
+                          <h5 class="mb-1">{{ $onAirHost ? $onAirHost->nama_broadcaster : 'No Host On Air' }}</h5>
+                          @if($onAirHost)
+                          <p class="mb-1">Host</p>
+                          <div class="d-flex iconlive">
+                              <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+                              <dotlottie-player src="https://lottie.host/f8ff8951-9884-4a21-85e1-0373094dfa7f/d5heYBexrI.json" background="transparent" speed="1" style="width: 30px; height: 30px;" loop autoplay></dotlottie-player>
+                              <p class="my-auto">Live Now</p>
+                          </div>
+                          <div class="d-flex pt-1">
+                              <a href="{{ url('/radio') }}" class="btn flex-grow-1 tombollive">Listen Now!</a>
+                          </div>
+                          @endif
+                      </div>
                   </div>
-                  <div class="d-flex pt-1">
-                    <a href="{{ url('/radio') }}" class="btn flex-grow-1 tombollive">Listen Now!</a>
-                  </div>
-                </div>
               </div>
-            </div>
           </div>
+
         </div>
         <div class="beritapopular py-4">
           <div class="section">Berita Popular</div>

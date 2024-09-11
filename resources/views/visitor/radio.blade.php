@@ -5,17 +5,27 @@
         <div id="player03"  class="player horizontal">
             <div class="container">
                 <div class="info-wrapper">
-                    <img src="{{ asset('visitor/img/broadcaster/Bang Ithonk.jpg') }}" alt="LogoMusicImage">
+                    @if($onAirHost)
+                    <img src="{{ asset('storage/' . $onAirHost->broadcaster_image) }}"
+                        alt="Foto {{ $onAirHost->nama_broadcaster }}" >
+                    @else
+                    <img src="{{ asset('visitor/img/sbfm.jpeg') }}"
+                        alt="No host on air" class="img-fluid" style="width: 200px;height: 140px; border-radius: 10px;">
+                    @endif
                     <div class="info">
                         <h1>Suara Bangkalan FM 92,1 Mhz</h1>
-                        <h5 class="mb-2">Bang Ithonk</h5>
+                        <h5 class="mb-2">{{ $onAirHost ? $onAirHost->nama_broadcaster : 'No Host On Air' }}</h5>
                         <i class="fas fa-calendar-alt mr-2"></i> <span id="current-date"></span>
-                        <div class="controls">
-                            <div class="play" id="play-pause">
-                                <i class="fa-solid fa-play" id="left"></i>
+                        @if($onAirHost)
+                            <div class="controls">
+                                <div class="play" id="play-pause">
+                                    <i class="fa-solid fa-play" id="left"></i>
+                                </div>
+                                <input type="range" class="form-range volume-slider" id="volume-control" min="0" max="1" step="0.01" value="1">
                             </div>
-                            <input type="range" class="form-range volume-slider" id="volume-control" min="0" max="1" step="0.01" value="1">
-                        </div>
+                        @else
+                          <p>Tidak ada Host yang sedang OnAir.</p>
+                        @endif
                     </div>
                 </div>
             </div>

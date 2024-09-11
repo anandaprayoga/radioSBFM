@@ -60,7 +60,27 @@ class BroadcasterController extends Controller
         // Redirect kembali ke halaman broadcasters dengan pesan sukses
         return redirect()->back()->with('success', 'Data Broadcaster berhasil dihapus');
     }
-
+    public function updateStatus(Request $request, $id)
+    {
+        $broadcaster = Broadcaster::findOrFail($id);
+    
+        // Cek jika broadcaster ini ingin onair
+        if ($request->status == 'onair') {
+            // Cek apakah ada broadcaster lain yang sedang onair
+            $onairBroadcaster = Broadcaster::where('status', 'onair')->first();
+            
+            if ($onairBroadcaster && $onairBroadcaster->id != $broadcaster->id) {
+                return redirect()->back()->with('error', 'Hanya satu broadcaster yang bisa onair dalam satu waktu. Matikan yang lain terlebih dahulu.');
+            }
+        }
+    
+        // Update status broadcaster
+        $broadcaster->status = $request->status == 'onair' ? 'onair' : 'offair';
+        $broadcaster->save();
+    
+        return redirect()->back()->with('success', 'Status Broadcaster berhasil diperbarui');
+    }
+    
     public function update(Request $request, $id)
     {
         $request->validate([
