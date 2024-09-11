@@ -69,8 +69,6 @@ class UserDashboardController extends Controller
         return view('visitor.berita', compact('informasi', 'latestNews','berita'));
     }
 
-
-
     public function showCategoryNews(Request $request, $id)
     {
         // Ambil kategori berdasarkan ID

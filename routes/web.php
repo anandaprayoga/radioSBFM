@@ -59,15 +59,6 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('/admin/dashboard', function () {
 		return view('admin/dashboard');
 	})->name('dashboard')->middleware('ip.whitelist');
-
-	Route::get('/admin/billing', function () {
-		return view('admin/billing');
-	})->name('billing')->middleware('ip.whitelist');
-
-	Route::get('/admin/user-management', function () {
-		return view('admin/user-management');
-	})->name('user-management')->middleware('ip.whitelist');
-
 	Route::get('/admin/broadcaster', [BroadcasterController::class, 'index'])->name('broadcasters.index')->middleware('ip.whitelist');
 	Route::get('/admin/event', [EventController::class, 'index'])->name('events.index')->middleware('ip.whitelist');
 	Route::get('/admin/kategori', [KategoriController::class, 'index'])->name('kategoris.index')->middleware('ip.whitelist');
@@ -84,11 +75,16 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('dashboard');
 	})->name('sign-up')->middleware('ip.whitelist');
 });
+Route::middleware('peran:Superadmin')->group(function() {
+	Route::get('/admin/admin', [AdminController::class, 'index'])->name('admins.index');
+	Route::post('/admin/insert', [AdminController::class, 'insertAdmin'])->name('admin.insertAdmin');
+	Route::delete('/admin/admin/{id}', [AdminController::class, 'destroy'])->name('admin.destroy');
+	Route::put('/admin/admin/{id}', [AdminController::class, 'update'])->name('admin.update');
+});
 
 
 
 Route::group(['middleware' => 'guest'], function () {
-
 	Route::get('/register', [RegisterController::class, 'create'])->middleware('ip.whitelist');
 	Route::post('/register', [RegisterController::class, 'store'])->middleware('ip.whitelist');
 	Route::get('/login', [SessionsController::class, 'create'])->middleware('ip.whitelist');
@@ -133,14 +129,3 @@ Route::post('/galeri/insert', [GaleriController::class, 'insertGaleri'])->name('
 Route::delete('/admin/galeri/{id}', [GaleriController::class, 'destroy'])->name('galeri.destroy');
 Route::put('/admin/galeri/{id}', [GaleriController::class, 'update'])->name('galeri.update');
 
-Route::middleware('peran:Superadmin')->group(function() {
-	Route::get('/admin/broadcaster', [BroadcasterController::class, 'index'])->name('broadcasters.index');
-	Route::get('/admin/event', [EventController::class, 'index'])->name('events.index');
-	Route::get('/admin/kategori', [KategoriController::class, 'index'])->name('kategoris.index');
-	Route::get('/admin/informasi', [InformasiController::class, 'index'])->name('informasis.index');
-	Route::get('/admin/galeri', [GaleriController::class, 'index'])->name('galeris.index');
-	Route::get('/admin/admin', [AdminController::class, 'index'])->name('admins.index');
-	Route::post('/admin/insert', [AdminController::class, 'insertAdmin'])->name('admin.insertAdmin');
-	Route::delete('/admin/admin/{id}', [AdminController::class, 'destroy'])->name('admin.destroy');
-	Route::put('/admin/admin/{id}', [AdminController::class, 'update'])->name('admin.update');
-});
