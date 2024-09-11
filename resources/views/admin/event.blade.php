@@ -19,14 +19,14 @@
                         <div class="row">
                             <!-- Title -->
                             <div class="col-12">
-                                <h5 class="mb-3">Data Broadcast</h5>
+                                <h5 class="mb-3">Data Event</h5>
                             </div>
 
                             <!-- Form and New Button -->
                             <div class="col-12 d-flex flex-column flex-md-row justify-content-between align-items-start mb-3">
                                 {{-- Search --}}
                                 <form action="{{ route('events.index') }}" method="GET" class="d-flex mb-3">
-                                    <input style="height: 40px;" class="form-control me-2" type="search" name="search" placeholder="Cari broadcaster..." aria-label="Search" value="{{ request('search') }}">
+                                    <input style="height: 40px;" class="form-control me-2" type="search" name="search" placeholder="Cari Event..." aria-label="Search" value="{{ request('search') }}">
                                     <button style="height: 40px;" class="btn btn-outline-primary" type="submit">Cari</button>
                                 </form>
                                 {{-- New Items --}}
