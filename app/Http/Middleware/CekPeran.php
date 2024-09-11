@@ -21,6 +21,6 @@ class CekPeran
             return $next($request);
         }
 
-        return redirect()->route('home')->with('error', 'You do not have access to this page.');
+        return redirect()->route('dashboard')->with('error', 'You do not have access to this page.');
     }
 }
