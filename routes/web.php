@@ -48,9 +48,7 @@ Route::get('/berita', function () {
 Route::get('/about', function () {
 	return view('visitor/about');
 });
-Route::get('/radio', function () {
-	return view('visitor/radio');
-});
+Route::get('/radio', [UserDashboardController::class, 'indexradio'])->name('visitor.indexradio');
 Route::get('/galeri', [GaleriController::class, 'index1'])->name('admin.insertAdmin');
 
 Route::group(['middleware' => 'auth'], function () {
@@ -80,6 +78,7 @@ Route::middleware('peran:Superadmin')->group(function() {
 	Route::post('/admin/insert', [AdminController::class, 'insertAdmin'])->name('admin.insertAdmin');
 	Route::delete('/admin/admin/{id}', [AdminController::class, 'destroy'])->name('admin.destroy');
 	Route::put('/admin/admin/{id}', [AdminController::class, 'update'])->name('admin.update');
+	
 });
 
 
@@ -112,6 +111,8 @@ Route::post('/user-profile/update-photo', [ProfileController::class, 'updatePhot
 Route::post('/broadcaster/insert', [BroadcasterController::class, 'insertBroadcaster'])->name('broadcaster.insertBroadcaster');
 Route::delete('/admin/broadcaster/{id}', [BroadcasterController::class, 'destroy'])->name('broadcaster.destroy');
 Route::put('/admin/broadcaster/{id}', [BroadcasterController::class, 'update'])->name('broadcaster.update');
+Route::post('/admin/broadcaster/updateStatus/{id}', [BroadcasterController::class, 'updateStatus'])->name('admin.broadcaster.updateStatus');
+
 
 Route::post('/kategori/insert', [KategoriController::class, 'insertKategori'])->name('kategori.insertKategori');
 Route::delete('/admin/kategori/{id}', [KategoriController::class, 'destroy'])->name('kategori.destroy');

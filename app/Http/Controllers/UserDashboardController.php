@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Event;
 use App\Models\Informasi;
 use App\Models\Kategori;
+use App\Models\Broadcaster;
 use Illuminate\Support\Facades\DB;
 
 class UserDashboardController extends Controller
@@ -29,11 +30,16 @@ class UserDashboardController extends Controller
             ->orderBy('view_count', 'desc')
             ->take(3) // Batasi ke 3 berita terpopuler
             ->get();
+        $onAirHost = Broadcaster::where('status', 'onair')->first();
 
 
         // Kirim data event dan informasi ke view
-        return view('visitor.dashboard', compact('events', 'informasis', 'kategoris','popularNews'));
+        return view('visitor.dashboard', compact('events', 'informasis', 'kategoris','popularNews','onAirHost'));
         
+    }
+    public function indexradio(){
+        $onAirHost = Broadcaster::where('status', 'onair')->first();
+        return view('visitor.radio', compact('onAirHost'));
     }
     public function detailInformasi($id)
     {

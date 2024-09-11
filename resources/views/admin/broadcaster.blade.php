@@ -10,6 +10,16 @@
             </button>
         </div>
     @endif
+    @if (session('error'))
+        <div class="m-3 alert alert-danger alert-dismissible fade show" id="alert-success" role="alert">
+            <span class="alert-text text-white">
+                {{ session('error') }}
+            </span>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                <i class="fa fa-close" aria-hidden="true"></i>
+            </button>
+        </div>
+    @endif
     <div>
         <div class="row">
             <div class="col-12">
@@ -127,8 +137,16 @@
                                                 <span class="text-secondary text-xs font-weight-bold">{{ $broadcaster->tanggal_bergabung }}</span>
                                             </td>
                                             <td class="text-center">
-                                                <span class="text-secondary text-xs font-weight-bold">{{ $broadcaster->status }}</span>
+                                                <form action="{{ route('admin.broadcaster.updateStatus', $broadcaster->id) }}" method="POST">
+                                                    @csrf
+                                                    <div class="form-check form-switch mx-auto" style="width: fit-content;">
+                                                        <input class="form-check-input" type="checkbox" name="status" value="onair" role="switch" id="flexSwitchCheck{{ $broadcaster->id }}" {{ $broadcaster->status == 'onair' ? 'checked' : '' }} onchange="this.form.submit()">
+                                                        <label class="form-check-label" for="flexSwitchCheck{{ $broadcaster->id }}">Status</label>
+                                                    </div>
+                                                </form>
                                             </td>
+
+
                                             <td class="text-center">
                                                 <a href="#" data-bs-toggle="modal" data-bs-target="#editBroadcasterModal" data-id="{{ $broadcaster->id }}" data-nama="{{ $broadcaster->nama_broadcaster }}" data-nohp="{{ $broadcaster->no_hp }}" data-tanggal="{{ $broadcaster->tanggal_bergabung }}" data-broadcaster_image="{{ $broadcaster->broadcaster_image }}" class="mx-3 edit-button" data-bs-toggle="tooltip" data-bs-original-title="Edit user">
                                                     <i class="fas fa-user-edit text-secondary"></i>
