@@ -290,9 +290,8 @@
                     form.action = `/admin/admin/${id}`;
 
                     // Update form inputs
-                    document.getElementById('edit_admin_id').value = id;
                     document.getElementById('edit_username').value = username;
-                    document.getElementById('edit_password').value = password;
+                    document.getElementById('edit_password').value = "";
                     document.getElementById('edit_nama_admin').value = nama_admin;
                     document.getElementById('edit_email').value = email;
                     document.getElementById('edit_no_hp').value = no_hp;
