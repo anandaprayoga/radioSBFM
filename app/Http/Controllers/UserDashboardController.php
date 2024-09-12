@@ -8,8 +8,6 @@ use App\Models\Informasi;
 use App\Models\Kategori;
 use App\Models\Broadcaster;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
-
 use GuzzleHttp\Client;
 
 class UserDashboardController extends Controller
@@ -58,18 +56,8 @@ class UserDashboardController extends Controller
         // Eksekusi dan ambil respons
         $response = curl_exec($ch);
         curl_close($ch);
-
-        // Cek apakah ada error
-        if (curl_errno($ch)) {
-            $error_message = curl_error($ch);
-            Log::error('cURL Error: ' . $error_message);
-        }
-
         // Decode JSON response
         $data = json_decode($response, true);
-
-        // Debugging data
-        Log::info('Decoded Data: ' . print_r($data, true));
 
         if (!empty($data['items'])) {
             // Akses item pertama dari livestream
@@ -87,21 +75,6 @@ class UserDashboardController extends Controller
             // Jika tidak ada livestream, tidak kirim variabel livestream
             return view('visitor.dashboard', compact('events', 'informasis', 'kategoris', 'popularNews', 'onAirHost'));
         }
-
-        // // Cek apakah ada livestream yang aktif
-        // if (!empty($data['items'])) {
-        //     $liveStream = $data['items'][0];
-        //     $videoId = $liveStream['id']['videoId'];
-        //     $title = $liveStream['snippet']['title'];
-        //     $description = $liveStream['snippet']['description'];
-        //     $thumbnail = $liveStream['snippet']['thumbnails']['high']['url'];
-
-        //     // Kirim data event dan informasi ke view
-        //     return view('visitor.dashboard', compact('events', 'informasis', 'kategoris', 'popularNews', 'onAirHost', 'videoId', 'title', 'description', 'thumbnail'));
-        // } else {
-        //     return view('visitor.dashboard', compact('events', 'informasis', 'kategoris', 'popularNews', 'onAirHost'));
-
-        // }
     }
     public function indexradio()
     {
