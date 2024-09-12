@@ -31,7 +31,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [InformasiController::class, 'dashboard'])->name('informasis.dashboard')->middleware('ip.whitelist');
+// Route::get('/', [InformasiController::class, 'dashboard'])->name('informasis.dashboard')->middleware('ip.whitelist');
 Route::get('/', [UserDashboardController::class, 'indexUser'])->name('visitor.indexUser');
 Route::get('/berita/{id}', [UserDashboardController::class, 'detailInformasi'])->name('berita.detail');
 Route::get('/category/{id}', [UserDashboardController::class, 'showCategoryNews'])->name('category.news');
@@ -129,4 +129,3 @@ Route::put('/admin/informasi/{id}', [InformasiController::class, 'update'])->nam
 Route::post('/galeri/insert', [GaleriController::class, 'insertGaleri'])->name('galeri.insertGaleri');
 Route::delete('/admin/galeri/{id}', [GaleriController::class, 'destroy'])->name('galeri.destroy');
 Route::put('/admin/galeri/{id}', [GaleriController::class, 'update'])->name('galeri.update');
-
