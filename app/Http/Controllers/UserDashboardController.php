@@ -8,6 +8,9 @@ use App\Models\Informasi;
 use App\Models\Kategori;
 use App\Models\Broadcaster;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+
+use GuzzleHttp\Client;
 
 class UserDashboardController extends Controller
 {
@@ -32,12 +35,76 @@ class UserDashboardController extends Controller
             ->get();
         $onAirHost = Broadcaster::where('status', 'onair')->first();
 
+        // API key YouTube kamu
+        $apiKey = 'AIzaSyCkc8RfdDARxqic01gZQLz1PQoODGKaeLY';
+        // ID channel YouTube yang ingin kamu periksa
+        $channelId = 'UChh-akEbUM8_6ghGVnJd6cQ';
 
-        // Kirim data event dan informasi ke view
-        return view('visitor.dashboard', compact('events', 'informasis', 'kategoris','popularNews','onAirHost'));
-        
+        // Buat client Guzzle
+        $client = new Client();
+        $url = 'https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=' . $channelId . '&eventType=live&type=video&key=' . $apiKey;
+
+        // Inisiasi cURL
+        $ch = curl_init();
+
+        // Set opsi cURL
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        // Tambahkan baris ini untuk menonaktifkan verifikasi SSL
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+
+        // Eksekusi dan ambil respons
+        $response = curl_exec($ch);
+        curl_close($ch);
+
+        // Cek apakah ada error
+        if (curl_errno($ch)) {
+            $error_message = curl_error($ch);
+            Log::error('cURL Error: ' . $error_message);
+        }
+
+        // Decode JSON response
+        $data = json_decode($response, true);
+
+        // Debugging data
+        Log::info('Decoded Data: ' . print_r($data, true));
+
+        if (!empty($data['items'])) {
+            // Akses item pertama dari livestream
+            $liveStream = $data['items'][0];
+
+            // Ambil detail livestream
+            $videoId = $liveStream['id']['videoId'];
+            $title = $liveStream['snippet']['title'];
+            $description = $liveStream['snippet']['description'];
+            $thumbnail = $liveStream['snippet']['thumbnails']['high']['url'];
+
+            // Return ke view dengan variabel yang dibutuhkan
+            return view('visitor.dashboard', compact('events', 'informasis', 'kategoris', 'popularNews', 'onAirHost', 'videoId', 'title', 'description', 'thumbnail'));
+        } else {
+            // Jika tidak ada livestream, tidak kirim variabel livestream
+            return view('visitor.dashboard', compact('events', 'informasis', 'kategoris', 'popularNews', 'onAirHost'));
+        }
+
+        // // Cek apakah ada livestream yang aktif
+        // if (!empty($data['items'])) {
+        //     $liveStream = $data['items'][0];
+        //     $videoId = $liveStream['id']['videoId'];
+        //     $title = $liveStream['snippet']['title'];
+        //     $description = $liveStream['snippet']['description'];
+        //     $thumbnail = $liveStream['snippet']['thumbnails']['high']['url'];
+
+        //     // Kirim data event dan informasi ke view
+        //     return view('visitor.dashboard', compact('events', 'informasis', 'kategoris', 'popularNews', 'onAirHost', 'videoId', 'title', 'description', 'thumbnail'));
+        // } else {
+        //     return view('visitor.dashboard', compact('events', 'informasis', 'kategoris', 'popularNews', 'onAirHost'));
+
+        // }
     }
-    public function indexradio(){
+    public function indexradio()
+    {
         $onAirHost = Broadcaster::where('status', 'onair')->first();
         return view('visitor.radio', compact('onAirHost'));
     }
@@ -72,7 +139,7 @@ class UserDashboardController extends Controller
         $latestNews = Informasi::orderBy('created_at', 'desc')->take(4)->get();
 
         // Kirim data ke view
-        return view('visitor.berita', compact('informasi', 'latestNews','berita'));
+        return view('visitor.berita', compact('informasi', 'latestNews', 'berita'));
     }
 
     public function showCategoryNews(Request $request, $id)
@@ -108,12 +175,9 @@ class UserDashboardController extends Controller
     {
         $query = $request->input('query');
         $informasis = Informasi::where('judul_informasi', 'like', '%' . $query . '%')
-                               ->orderBy('created_at', 'desc')
-                               ->paginate(10);
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
 
         return view('visitor.search', compact('informasis'));
     }
-
-
 }
-
