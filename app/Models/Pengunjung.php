@@ -8,9 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Pengunjung extends Model
 {
     use HasFactory;
+    protected $table = 'news_views';
 
     protected $fillable = [
-        'tanggal_berkunjung',
+        'informasi_id',
         'ip_address',
     ];
+    public function informasi(){
+        return $this->belongsTo(Informasi::class, 'informasi_id');
+    }
+
 }
