@@ -140,13 +140,8 @@
                             <label for="edit_nama_kategori" class="form-label">Nama Kategori</label>
                             <input type="text" class="form-control" id="edit_nama_kategori" name="nama_kategori" value="{{ old('nama_kategori') }}" required>
                         </div>
-                        <div class="form-group">
-                            <label class="font-weight-bold">KONTEN</label>
-                            <div id="editor"></div>
-
-                        </div>
                         {{-- <input type="hidden" id="edit_kategori_id" name="kategori_id"> --}}
-                        <button type="submit" class="btn btn-primary">Update</button>
+                        <button type="submit" class="btn btn-primary my-3">Update</button>
                     </form>
                 </div>
             </div>

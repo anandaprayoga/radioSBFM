@@ -45,9 +45,7 @@ Route::get('/contact', function () {
 Route::get('/berita', function () {
 	return view('visitor/berita');
 });
-Route::get('/about', function () {
-	return view('visitor/about');
-});
+Route::get('/about', [UserDashboardController::class, 'indexabout'])->name('visitor.indexabout');
 Route::get('/radio', [UserDashboardController::class, 'indexradio'])->name('visitor.indexradio');
 Route::get('/galeri', [GaleriController::class, 'index1'])->name('admin.insertAdmin');
 
