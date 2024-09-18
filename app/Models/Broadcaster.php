@@ -21,4 +21,9 @@ class Broadcaster extends Model
     protected $nullable = [
         'status_broadcaster',
     ];
+
+    public function jadwalsiaran()
+    {
+        return $this->belongsToMany(JadwalSiaran::class, 'broadcaster_jadwalsiaran', 'id_broadcaster', 'id_jadwal_siaran');
+    }
 }
