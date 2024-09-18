@@ -552,9 +552,9 @@
     <ul class="menu-list">
       <li class="menu-item">
         <span class="item-icon">
-          <a href=""><i class="fa-regular fa-circle-question fa-lg" style="color: #ffffff;"></i></a>
+          <a href="https://wa.link/280iqh"><i class="fa-regular fa-circle-question fa-lg" style="color: #ffffff;"></i></a>
         </span>
-        <span class="item-text"><a href="">Quetion</a></span></li>
+        <span class="item-text"><a href="">Pertanyaan</a></span></li>
       <li class="menu-item">
         <span class="item-icon">
           <a href="">
@@ -562,7 +562,7 @@
           </a>
           
         </span>
-        <span class="item-text"><a href=""> Request Music</a></span>
+        <span class="item-text"><a href=""> Permintaan Music</a></span>
       </li>
     </ul>
   </div>
