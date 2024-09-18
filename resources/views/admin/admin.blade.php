@@ -1,8 +1,17 @@
 @extends('layouts.user_type.auth')
 
 @section('content')
+    @if (session('success'))
+        <div class="m-3 alert alert-success alert-dismissible fade show" id="alert-success" role="alert">
+            <span class="alert-text text-white">
+                {{ session('success') }}
+            </span>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                <i class="fa fa-close" aria-hidden="true"></i>
+            </button>
+        </div>
+    @endif
     <div>
-
         <div class="row">
             <div class="col-12">
                 <div class="card mb-4 mx-4">
@@ -261,7 +270,7 @@
                         <div class="mb-3">
                             <label for="edit_profile_image" class="form-label">Foto</label>
                             <input type="file" class="form-control" id="edit_profile_image" name="profile_image" value="{{ old('profile_image') }}">
-                            <button type="submit" class="btn btn-primary">Update</button>
+                            <button type="submit" class="btn btn-primary my-3">Update</button>
                         </div>
                     </form>
                 </div>

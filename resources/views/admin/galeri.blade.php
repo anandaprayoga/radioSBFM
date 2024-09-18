@@ -146,7 +146,7 @@
                         <div class="mb-3">
                             <label for="edit_gambar" class="form-label">Gambar</label>
                             <input type="file" class="form-control" id="edit_gambar" name="gambar" value="{{ old('gambar') }}">
-                            <button type="submit" class="btn btn-primary">Update</button>
+                            <button type="submit" class="btn btn-primary my-3">Update</button>
                         </div>
                     </form>
                 </div>

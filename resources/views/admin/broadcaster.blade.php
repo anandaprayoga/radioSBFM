@@ -216,7 +216,7 @@
                             <label for="edit_broadcaster_image" class="form-label">Foto</label>
                             <input type="file" class="form-control" id="edit_broadcaster_image" name="broadcaster_image" value="{{ old('broadcaster_image') }}">
                             {{-- <input type="hidden" id="edit_event_id" name="event_id"> --}}
-                            <button type="submit" class="btn btn-primary">Update</button>
+                            <button type="submit" class="btn btn-primary my-3">Update</button>
                         </div>
                         {{-- <input type="hidden" id="edit_broadcaster_id" name="broadcaster_id"> --}}
                     </form>

@@ -106,7 +106,14 @@ class UserDashboardController extends Controller
     public function indexradio()
     {
         $onAirHost = Broadcaster::where('status', 'onair')->first();
+        $teambroadcast = Broadcaster::all();
         return view('visitor.radio', compact('onAirHost'));
+        return view('visitor.about', compact('teambroadcast'));
+    }
+    public function indexabout()
+    {
+        $teambroadcast = Broadcaster::all();
+        return view('visitor.about', compact('teambroadcast'));
     }
     public function detailInformasi($id)
     {

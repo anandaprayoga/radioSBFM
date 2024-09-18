@@ -227,7 +227,7 @@
                             <label for="edit_gambar_event" class="form-label">Gambar Event</label>
                             <input type="file" class="form-control" id="edit_gambar_event" name="gambar_event" value="{{ old('gambar_event') }}">
                             {{-- <input type="hidden" id="edit_event_id" name="event_id"> --}}
-                            <button type="submit" class="btn btn-primary">Update</button>
+                            <button type="submit" class="btn btn-primary my-3">Update</button>
                         </div>
                     </form>
                 </div>

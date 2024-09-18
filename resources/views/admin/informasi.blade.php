@@ -229,7 +229,7 @@
                             <label for="edit_gambar_informasi" class="form-label">Gambar Informasi</label>
                             <input type="file" class="form-control" id="edit_gambar_informasi" name="gambar_informasi" value="">
                             {{-- <input type="hidden" id="event_id" name="event_id"> --}}
-                            <button type="submit" class="btn btn-primary my-2">Update</button>
+                            <button type="submit" class="btn btn-primary my-3">Update</button>
                         </div>
                     </form>
                 </div>
