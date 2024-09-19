@@ -38,7 +38,7 @@ class UserDashboardController extends Controller
         // API key YouTube kamu
         $apiKey = 'AIzaSyCkc8RfdDARxqic01gZQLz1PQoODGKaeLY';
         // ID channel YouTube yang ingin kamu periksa
-        $channelId = 'UChh-akEbUM8_6ghGVnJd6cQ';
+        $channelId = 'UCdQ5iyJZZkOQQYyGvoyzKRA';
 
         // Buat client Guzzle
         $client = new Client();

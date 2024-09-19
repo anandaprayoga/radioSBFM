@@ -16,7 +16,7 @@
             </div>
         </div>
     </div>
-    <section class="gallery">
+    <section class="gallery" data-aos="fade-up">
         <!-- jika tidak ada foto -->
         @if($galeri->isEmpty())
             <p class="text-center">Belum ada Foto yang diunggah</p>
