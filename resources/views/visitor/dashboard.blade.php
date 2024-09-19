@@ -29,7 +29,7 @@
             <div class="carousel-caption d-flex flex-column justify-content-center align-items-center" style="top: 0; bottom: 0;">
                 <div class="tagline">
                     <h1 class="text-center">"Satu Suara Berjuta Telinga"</h1>
-                    <p class="text-center">Suara Bangkalan FM 92,1 Mhz</p>
+                    <p class="text-center" data-aos="zoom-in-up">Suara Bangkalan FM 92,1 Mhz</p>
                 </div>
             </div>
 
@@ -49,7 +49,7 @@
         <div class="row mb-2">
             <div class="container px-3 py-4 position-relative" id="custom-cards">
                 <div class="sectionEvent">Event Program</div>
-                <div class="slideevent py-4">
+                <div class="slideevent py-4" data-aos="fade-left">
                     <div class="wrapper">
                         @if ($events->isEmpty())
                             <p class="text-center">Belum ada event dalam waktu dekat</p>

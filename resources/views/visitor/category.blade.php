@@ -8,7 +8,7 @@
             <h3 class="text-primary px-1">{{ $kategori->nama_kategori }}</h3>
         </div>
     </div>
-    <div class="dropdown py-3">
+    <div class="dropdown py-3" data-aos="fade-up" data-aos-duration="1000">
         <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Tahun
         </button>
@@ -29,7 +29,7 @@
     <div class="album py-2.5 bg-body-white">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3">
             @foreach($informasis as $informasi)
-                <div class="col">
+                <div class="col" data-aos="fade-up" data-aos-duration="1000">
                     <a class="text-decoration-none" href="{{ route('berita.detail', $informasi->id) }}">
                         <div class="card shadow border-0">
                             <img src="{{ asset('storage/' . $informasi->gambar_informasi) }}" class="card-img-top img-berita" alt="{{ $informasi->judul_informasi }}">

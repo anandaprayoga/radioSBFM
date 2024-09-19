@@ -7,12 +7,12 @@
                 <div class="info-wrapper">
                     @if($onAirHost)
                     <img src="{{ asset('storage/' . $onAirHost->broadcaster_image) }}"
-                        alt="Foto {{ $onAirHost->nama_broadcaster }}" >
+                        alt="Foto {{ $onAirHost->nama_broadcaster }} "data-aos="fade-right" >
                     @else
                     <img src="{{ asset('visitor/img/sbfm.jpeg') }}"
-                        alt="No host on air" class="img-fluid" style="width: 200px;height: 140px; border-radius: 10px;">
+                        alt="No host on air" class="img-fluid" style="width: 200px;height: 140px; border-radius: 10px;" data-aos="fade-right">
                     @endif
-                    <div class="info">
+                    <div class="info" data-aos="fade-left">
                         <h1>Suara Bangkalan FM 92,1 Mhz</h1>
                         <h5 class="mb-2">{{ $onAirHost ? $onAirHost->nama_broadcaster : 'No Host On Air' }}</h5>
                         <i class="fas fa-calendar-alt mr-2"></i> <span id="current-date"></span>
