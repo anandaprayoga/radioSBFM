@@ -562,7 +562,7 @@
           </a>
           
         </span>
-        <span class="item-text"><a href=""> Permintaan Music</a></span>
+        <span class="item-text"><a href=""> Permintaan Musik</a></span>
       </li>
     </ul>
   </div>

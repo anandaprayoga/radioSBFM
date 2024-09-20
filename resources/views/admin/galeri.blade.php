@@ -114,7 +114,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="updateGaleriLabel">Tambah Data Galeri</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn btn-link  my-auto" data-bs-dismiss="modal"><i class="fa-solid fa-xmark fa-2xl"></i></button>
                 </div>
                 <div class="modal-body">
                     <form action="{{ route('galeri.insertGaleri') }}" method="POST" enctype="multipart/form-data">
@@ -137,7 +137,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="editGaleriLabel">Edit Data Galeri</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn btn-link  my-auto" data-bs-dismiss="modal"><i class="fa-solid fa-xmark fa-2xl"></i></button>
                 </div>
                 <div class="modal-body">
                     <form id="editGaleriForm" action="{{ route('galeri.update', 0) }}" method="POST" enctype="multipart/form-data">

@@ -6,7 +6,7 @@
             <div class="row" style="padding-bottom: 100px; display: flex; justify-content:space-around">
               <div class="col-md-4 mb-3">
                 <img width="170px" height="60px" src="{{ asset('visitor/img/sbfm1.png') }}" alt="">
-                <p class="py-3" style="text-align: justify;">Suara Bangkalan FM 92,1 Mhz adalah salah satu stasiun radio yang berapa pada daerah bangkalan</p>
+                <p class="py-3" style="text-align: justify;">Suara Bangkalan Fm telah hadir membersamai masyarakat Bangkalan dan sekitarnya selama lebih dari 30 tahun dengan menyajikan informasi yang aktual dan faktual disertai dengan semangat menyajikan hiburan yang berkualitas bagi para pendengar</p>
               </div>
               <div class="col-md-2  mb-3 px-3">
                 <h5>Menu Halaman</h5>

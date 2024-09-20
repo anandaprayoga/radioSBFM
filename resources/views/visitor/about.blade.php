@@ -41,8 +41,8 @@
   </div>
 </main>
 
-<main class="container my-5">
-    <div class="row featurette my-5">
+<main class="container pb-5">
+    <div class="row featurette py-5">
       <div class="col-md-7 my-auto">
         <h2 class="featurette-heading fw-normal lh-1">Tentang kami</h2>
         <span style="border-bottom: 3px solid; display: block; width: 150px; color: #21d4fd; margin-bottom: 10px;"></span>
@@ -55,7 +55,7 @@
     </div>
 
     <hr class="featurette-divider">
-    <div class="row featurette my-5">
+    <div class="row featurette py-5">
       <div class="col-md-7 order-md-2 my-auto">
         <h2 class="featurette-heading fw-normal lh-1">Napak Tilas Suara Bangkalan Fm</h2>
         <span style="border-bottom: 3px solid; display: block; width: 150px; color: #21d4fd; margin-bottom: 10px;"></span>
@@ -71,7 +71,7 @@
 
     <hr class="featurette-divider">
 
-  <div class="row mb-2 my-5">
+  <div class="row mb-2 py-5">
     <div class="container px-4" id="custom-cards">
       <div class="cites">
         <i class="fa-solid fa-quote-left"></i>
@@ -83,7 +83,7 @@
             <span class="mx-auto" style="border-bottom: 3px solid; display: block; width: 150px; color: #21d4fd; margin-bottom: 10px;"></span>
             <p class="text-center fst-italic">Suara Bangkalan FM</p>
           </div>
-          <div class="container">
+          <div class="container texttagline">
             <p style="text-align: justify;">Dengan tagline "Satu Suara, Berjuta Telinga", kami berharap Suara Bangkalan Fm dapat diterima oleh khalayak luas sebagai media rujukan informasi yang valid dan faktual yang juga memberikan alternatif hiburan dan media edukasi interaktif bagi masyarakat. </p>
             <p class="text-center fs-5 fw-medium">Mari Stay Tuned di 92,1 MHz Suara Bangkalan Fm, <br>
             Satu Suara, Berjuta Telinga.
@@ -97,7 +97,8 @@
 
 
   <section>
-    <h2 class="pb-2 text-center">Team Broadcaster</h2>
+    <h2 class="pb-2 text-center py-5">Team Broadcaster</h2>
+    <span class="mx-auto" style="border-bottom: 3px solid; display: block; width: 150px; color: #21d4fd; margin-bottom: 10px;"></span>
     <div class="row">
     @foreach($teambroadcast as $broadcaster)
         <div class="col-md-4">

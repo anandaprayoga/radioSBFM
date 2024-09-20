@@ -154,7 +154,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="updateEventLabel">Tambah Data Event</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn btn-link  my-auto" data-bs-dismiss="modal"><i class="fa-solid fa-xmark fa-2xl"></i></button>
                 </div>
                 <div class="modal-body">
                     <form action="{{ route('event.insertEvent') }}" method="POST" enctype="multipart/form-data">
@@ -196,7 +196,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="editEventLabel">Edit Data Event</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn btn-link  my-auto" data-bs-dismiss="modal"><i class="fa-solid fa-xmark fa-2xl"></i></button>
                 </div>
                 <div class="modal-body">
                     <form id="editEventForm" action="{{ route('event.update', 0) }}" method="POST" enctype="multipart/form-data">
@@ -240,7 +240,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="detailEventModalLabel">Keterangan Event</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn btn-link  my-auto" data-bs-dismiss="modal"><i class="fa-solid fa-xmark fa-2xl"></i></button>
                 </div>
                 <div class="modal-body">
                     <div id="modalEventContent"></div>
@@ -248,6 +248,7 @@
             </div>
         </div>
     </div>
+
 @endsection
 @section('scripts')
     <script>

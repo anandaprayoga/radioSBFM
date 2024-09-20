@@ -37,7 +37,7 @@
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="updateKategoriLabel">Tambah Data kategori</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            <button type="button" class="btn btn-link  my-auto" data-bs-dismiss="modal"><i class="fa-solid fa-xmark fa-2xl"></i></button>
                                         </div>
                                         <div class="modal-body">
                                             <form action="{{ route('kategori.insertKategori') }}" method="POST" enctype="multipart/form-data">
@@ -125,7 +125,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="editKategoriLabel">Edit Data Kategori</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn btn-link  my-auto" data-bs-dismiss="modal"><i class="fa-solid fa-xmark fa-2xl"></i></button>
                 </div>
                 <div class="modal-body">
                     <form id="editKategoriForm" action="{{ route('kategori.update', 0) }}" method="POST" enctype="multipart/form-data">
