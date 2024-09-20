@@ -17,12 +17,9 @@ class JadwalSiaran extends Model
         'hari',
         'waktu_mulai',
         'waktu_berakhir',
+        'keterangan'
     ];
-
-    protected $nullable = [
-        'keterangan',
-    ];
-
+    
     public function broadcasters()
     {
         return $this->belongsToMany(Broadcaster::class, 'broadcaster_jadwalsiaran', 'id_jadwal_siaran', 'id_broadcaster');

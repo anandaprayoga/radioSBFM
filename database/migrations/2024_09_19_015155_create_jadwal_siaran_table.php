@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('hari');
             $table->time('waktu_mulai');
             $table->time('waktu_berakhir');
-            $table->string('keterangan');
+            $table->text('keterangan')->nullable();
             $table->timestamps();
         });
     }
