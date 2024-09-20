@@ -16,11 +16,9 @@ class Broadcaster extends Model
         'no_hp',
         'tanggal_bergabung',
         'broadcaster_image',
+        'status',
     ];
 
-    protected $nullable = [
-        'status_broadcaster',
-    ];
 
     public function jadwalsiaran()
     {

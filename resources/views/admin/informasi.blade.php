@@ -137,7 +137,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="updateInformasiLabel">Tambah Data Informasi</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn btn-link  my-auto" data-bs-dismiss="modal"><i class="fa-solid fa-xmark fa-2xl"></i></button>
                 </div>
                 <div class="modal-body">
                     <form action="{{ route('informasi.insertInformasi') }}" method="POST" enctype="multipart/form-data">
@@ -180,7 +180,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="editInformasiLabel">Edit Data Informasi</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn btn-link  my-auto" data-bs-dismiss="modal"><i class="fa-solid fa-xmark fa-2xl"></i></button>
                 </div>
                 <div class="modal-body">
                     <form id="editInformasiForm" action="{{ route('informasi.update', 0) }}" method="POST" enctype="multipart/form-data">
@@ -242,7 +242,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="detailInformasiModalLabel">Detail Informasi</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn btn-link  my-auto" data-bs-dismiss="modal"><i class="fa-solid fa-xmark fa-2xl"></i></button>
                 </div>
                 <div class="modal-body">
                     <div id="modalInformasiContent"></div>

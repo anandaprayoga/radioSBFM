@@ -50,7 +50,7 @@
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="updatePhotoLabel">Tambah Data Broadcaster</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            <button type="button" class="btn btn-link  my-auto" data-bs-dismiss="modal"><i class="fa-solid fa-xmark fa-2xl"></i></button>
                                         </div>
                                         <div class="modal-body">
                                             <form action="{{ route('broadcaster.insertBroadcaster') }}" method="POST" enctype="multipart/form-data">
@@ -94,7 +94,7 @@
                                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                             No
                                         </th>
-                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                             Foto
                                         </th>
                                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
@@ -141,7 +141,7 @@
                                                     @csrf
                                                     <div class="form-check form-switch mx-auto" style="width: fit-content;">
                                                         <input class="form-check-input" type="checkbox" name="status" value="onair" role="switch" id="flexSwitchCheck{{ $broadcaster->id }}" {{ $broadcaster->status == 'onair' ? 'checked' : '' }} onchange="this.form.submit()">
-                                                        <label class="form-check-label" for="flexSwitchCheck{{ $broadcaster->id }}">Status</label>
+                                                        <label class="form-check-label" for="flexSwitchCheck{{ $broadcaster->id }}">{{ $broadcaster->status }}</label>
                                                     </div>
                                                 </form>
                                             </td>
@@ -189,7 +189,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="editBroadcasterLabel">Edit Data Broadcaster</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn btn-link  my-auto" data-bs-dismiss="modal"><i class="fa-solid fa-xmark fa-2xl"></i></button>
                 </div>
                 <div class="modal-body">
                     <form id="editBroadcasterForm" action="{{ route('broadcaster.update', 0) }}" method="POST" enctype="multipart/form-data">

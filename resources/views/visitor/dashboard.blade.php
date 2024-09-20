@@ -54,7 +54,9 @@
                         @if ($events->isEmpty())
                             <p class="text-center">Belum ada event dalam waktu dekat</p>
                         @else
-                            <i class="fas fa-angle-left" id="left"></i>
+                            @if ($events->count() > 3)
+                                <i class="fas fa-angle-left" id="left"></i>
+                            @endif
                             <ul class="carousel1">
                                 @foreach ($events as $event)
                                     <li class="card1" style="background-image: url('{{ asset('storage/' . $event->gambar_event) }}');">
@@ -69,8 +71,11 @@
                                     </li>
                                 @endforeach
                             </ul>
-                            <i class="fas fa-angle-right" id="right"></i>
+                            @if ($events->count() > 3)
+                                <i class="fas fa-angle-right" id="right"></i>
+                            @endif
                         @endif
+
 
                     </div>
                 </div>
@@ -84,7 +89,7 @@
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-2">
                         @foreach ($informasis as $informasi)
                             <div class="col">
-                                <div class="card shadow-sm">
+                                <div class="card border-0 shadow-sm">
                                     <img src="{{ asset('storage/' . $informasi->gambar_informasi) }}" width="100%" height="230" class="card-img-top" alt="{{ $informasi->judul_informasi }}">
                                     <div class="card-body">
                                         <strong class="d-inline-block mb-2 text-info">{{ $informasi->kategori->nama_kategori }}</strong>
@@ -153,19 +158,24 @@
 
                     <div class="beritapopular py-4">
                         <div class="section">Berita Popular</div>
-                        <ul class="list-unstyled postterbaru">
-                            @foreach ($popularNews as $news)
-                                <li>
-                                    <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-bottom" href="{{ route('berita.detail', $news->id) }}">
-                                        <img src="{{ asset('storage/' . $news->gambar_informasi) }}" class="recentpost" alt="{{ $news->judul_informasi }}">
-                                        <div class="col-lg-8">
-                                            <h6 class="mb-0">{{ Str::limit(strip_tags($news->judul_informasi), 40) }}</h6>
-                                            <small class="text-body-secondary">{{ \Carbon\Carbon::parse($news->created_at)->format('d F Y') }}</small>
-                                        </div>
-                                    </a>
-                                </li>
-                            @endforeach
-                        </ul>
+                        @if ($popularNews->isEmpty())
+                            <p class="text-center">Belum ada Berita Popular dalam Minggu ini</p>
+                        @else
+                            <ul class="list-unstyled postterbaru">
+                                @foreach ($popularNews as $news)
+                                    <li>
+                                        <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-bottom" href="{{ route('berita.detail', $news->id) }}">
+                                            <img src="{{ asset('storage/' . $news->gambar_informasi) }}" class="recentpost" alt="{{ $news->judul_informasi }}">
+                                            <div class="col-lg-8">
+                                                <h6 class="mb-0">{{ Str::limit(strip_tags($news->judul_informasi), 40) }}</h6>
+                                                <small class="text-body-secondary">{{ \Carbon\Carbon::parse($news->created_at)->format('d F Y') }}</small>
+                                            </div>
+                                        </a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        @endif
+                        
                     </div>
 
                 </div>
