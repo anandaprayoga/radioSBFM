@@ -15,6 +15,7 @@ use App\Http\Controllers\InformasiController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserDashboardController;
+use App\Http\Controllers\JadwalSiaranController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
@@ -61,6 +62,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('/admin/informasi', [InformasiController::class, 'index'])->name('informasis.index')->middleware('ip.whitelist');
 	Route::get('/admin/galeri', [GaleriController::class, 'index'])->name('galeris.index')->middleware('ip.whitelist');
 	Route::get('/admin/admin', [AdminController::class, 'index'])->name('admins.index')->middleware('ip.whitelist');
+	Route::get('/admin/jadwalsiaran', [JadwalsiaranController::class, 'index'])->name('jadwalsiaran.index')->middleware('ip.whitelist');
 
 	Route::get('/logout', [SessionsController::class, 'destroy'])->middleware('ip.whitelist');
 	Route::get('admin/user-profile', [InfoUserController::class, 'create'])->middleware('ip.whitelist');
@@ -127,3 +129,7 @@ Route::put('/admin/informasi/{id}', [InformasiController::class, 'update'])->nam
 Route::post('/galeri/insert', [GaleriController::class, 'insertGaleri'])->name('galeri.insertGaleri');
 Route::delete('/admin/galeri/{id}', [GaleriController::class, 'destroy'])->name('galeri.destroy');
 Route::put('/admin/galeri/{id}', [GaleriController::class, 'update'])->name('galeri.update');
+
+Route::post('/jadwalsiaran/insert', [JadwalSiaranController::class, 'insertJadwal'])->name('jadwalsiaran.insertJadwal');
+Route::delete('/admin/jadwalsiaran/{id}', [JadwalSiaranController::class, 'destroy'])->name('jadwalsiaran.destroy');
+Route::put('/admin/jadwalsiaran/{id}', [JadwalSiaranController::class, 'update'])->name('jadwalsiaran.update');
