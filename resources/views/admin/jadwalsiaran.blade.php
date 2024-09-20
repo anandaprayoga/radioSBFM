@@ -97,7 +97,7 @@
                                             </td>
                                             <td class="text-center">
                                                 <p class="text-xs font-weight-bold mb-0">
-                                                    {{ $jadwal->keterangan }}</p>
+                                                {{ Str::limit(strip_tags($jadwal->keterangan ), 20) }}</p>
                                             </td>
                                             <td class="text-center">
                                                 <p class="text-xs font-weight-bold mb-0">
