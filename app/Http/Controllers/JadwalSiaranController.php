@@ -11,21 +11,29 @@ class JadwalSiaranController extends Controller
 {
     public function index(Request $request)
     {
+        // Buat query awal
         $query = JadwalSiaran::query();
 
-        // Jika ada input pencarian, tambahkan filter ke query
+        // Jika pencarian diisi
         if ($request->filled('search')) {
             $search = $request->input('search');
-            $query->where('judul', 'like', "%{$search}%")->orWhere('keterangan', 'like', "%{$search}%");
+
+            // Lakukan pencarian dengan judul atau keterangan
+            $query->where('judul', 'like', "%{$search}%")
+            ->orWhere('keterangan', 'like', "%{$search}%");
         }
 
-        // Mengambil data jadwalsiaran beserta broadcasters menggunakan eager loading
+        // Ambil data jadwalsiaran beserta broadcasters menggunakan eager loading
         $jadwalsiaran = $query->with('broadcasters')->paginate(10);
 
+        // Ambil semua broadcasters
         $broadcasters = Broadcaster::all();
 
+        // Kembalikan ke view dengan data yang diambil
         return view('admin.jadwalsiaran', compact('jadwalsiaran', 'broadcasters'));
     }
+
+
 
     public function insertJadwal(Request $request)
     {
