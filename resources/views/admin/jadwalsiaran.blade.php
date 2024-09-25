@@ -258,6 +258,7 @@
                     <form id="editJadwalForm" action="{{ route('jadwalsiaran.update', 0) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
+                        @if ($jadwal ?? false)
                         <div class="mb-3">
                             <label for="hari" class="form-label">Hari</label>
                             <select class="form-control" id="edit_hari" name="hari" required>
@@ -314,6 +315,7 @@
                                 </select>
                             </div>
                         </div>
+                        @endif
                         <div class="mb-3">
                             <label for="edit_judul" class="form-label">Judul</label>
                             <input type="text" class="form-control" id="edit_judul" name="judul" value="{{ old('judul') ?? ($jadwal?->judul ?? '') }}" required>
