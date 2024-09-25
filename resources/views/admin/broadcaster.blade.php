@@ -162,7 +162,6 @@
                                         </tr>
 
                                     @empty
-
                                         <tr>
                                             <td colspan="3" class="text-center">
                                                 <div class="alert mb-0">
@@ -210,7 +209,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="edit_tanggal_bergabung" class="form-label">Tanggal Bergabung</label>
-                            <input type="date" class="form-control" id="edit_tanggal_bergabung" name="tanggal_bergabung" value="{{ old('tanggal_bergabung', $broadcaster->tanggal_bergabung) }}" required>
+                            <input type="date" class="form-control" id="edit_tanggal_bergabung" name="tanggal_bergabung" value="{{ old('tanggal_bergabung') }}" required>
                         </div>
                         <div class="mb-3">
                             <label for="edit_broadcaster_image" class="form-label">Foto</label>

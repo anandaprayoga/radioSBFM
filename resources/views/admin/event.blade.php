@@ -95,7 +95,7 @@
                                                     {{ $event->tanggal_selesai }}</p>
                                             </td>
                                             <td class="text-center">
-                                                <button type="button" class="btn btn-info btn-sm detail-button preview-button" data-bs-toggle="modal" data-bs-target="#detailEventModal" data-keterangan="{{ $event->keterangan }}">
+                                                <button type="button" class="btn btn-info btn-sm detail-button preview-button" data-bs-toggle="modal" data-bs-target="#detailEventModal{{ $event->id }}" data-keterangan="{{ $event->keterangan }}">
                                                     Lihat
                                                 </button>
                                             </td>
@@ -164,10 +164,10 @@
                             <input type="text" class="form-control" id="nama_event" name="nama_event" required>
                         </div>
                         <div class="mb-3">
-                            <label for="keterangan" class="form-label">
-                                Detail Event</label>
-                            <input type="text" class="form-control" id="keterangan" name="keterangan" required>
+                            <label for="keterangan" class="form-label">Keterangan</label>
+                            <textarea class="form-control" id="keterangan" name="keterangan" rows="4" required></textarea>
                         </div>
+
                         <div class="mb-3">
                             <label for="tanggal_mulai" class="form-label">
                                 Tanggal Mulai</label>
@@ -221,8 +221,9 @@
                         </div>
                         <div class="mb-3">
                             <label for="edit_keterangan" class="form-label">Keterangan</label>
-                            <input type="text" class="form-control" id="edit_keterangan" name="keterangan" value="{{ old('keterangan') }}" required>
+                            <textarea class="form-control" id="edit_keterangan" name="keterangan" rows="4" required>{{ old('keterangan') }}</textarea>
                         </div>
+
                         <div class="mb-3">
                             <label for="edit_gambar_event" class="form-label">Gambar Event</label>
                             <input type="file" class="form-control" id="edit_gambar_event" name="gambar_event" value="{{ old('gambar_event') }}">
@@ -234,20 +235,21 @@
             </div>
         </div>
     </div>
-
-    <div class="modal fade" id="detailEventModal" tabindex="-1" aria-labelledby="detailEventModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="detailEventModalLabel">Keterangan Event</h5>
-                    <button type="button" class="btn btn-link  my-auto" data-bs-dismiss="modal"><i class="fa-solid fa-xmark fa-2xl"></i></button>
-                </div>
-                <div class="modal-body">
-                    <div id="modalEventContent"></div>
+    @foreach ($events as $event)
+        <div class="modal fade" id="detailEventModal{{ $event->id }}" tabindex="-1" aria-labelledby="detailEventModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="detailEventModalLabel">Keterangan Event</h5>
+                        <button type="button" class="btn btn-link  my-auto" data-bs-dismiss="modal"><i class="fa-solid fa-xmark fa-2xl"></i></button>
+                    </div>
+                    <div class="modal-body">
+                        <div>{{ $event->keterangan }}</div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    @endforeach
 
 @endsection
 @section('scripts')
