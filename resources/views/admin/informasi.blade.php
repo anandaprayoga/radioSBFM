@@ -245,7 +245,7 @@
                     <button type="button" class="btn btn-link  my-auto" data-bs-dismiss="modal"><i class="fa-solid fa-xmark fa-2xl"></i></button>
                 </div>
                 <div class="modal-body">
-                    <div id="modalInformasiContent"></div>
+                    <div></div>
                 </div>
             </div>
         </div>
@@ -339,13 +339,13 @@
                 });
             });
 
-            document.querySelectorAll('.preview-button').forEach(button => {
-                button.addEventListener('click', function() {
-                    const isi_informasi = this.getAttribute('data-isi_informasi');
+            document.querySelectorAll('.detail-button').forEach(button => {
+                button.addEventListener('click', function () {
+                    // Mendapatkan data dari atribut tombol
+                    const isiInformasi = this.getAttribute('data-isi_informasi');
 
-                    document.getElementById('modalInformasiContent').innerHTML = isi_informasi;
-                    const detailModal = new bootstrap.Modal(document.getElementById('detailInformasiModal'));
-                    detailModal.show();
+                    // Mengisi modal dengan data yang sesuai
+                    document.querySelector('#detailInformasiModal .modal-body > div').innerHTML = isiInformasi;
                 });
             });
         });
