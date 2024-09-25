@@ -8,6 +8,7 @@ use App\Models\Informasi;
 use App\Models\Kategori;
 use App\Models\Broadcaster;
 use App\Models\Pengunjung;
+use App\Models\JadwalSiaran;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
@@ -105,9 +106,10 @@ class UserDashboardController extends Controller
     }
     public function indexradio()
     {
+        $jadwals = JadwalSiaran::orderBy('waktu_mulai', 'asc')->get();
         $onAirHost = Broadcaster::where('status', 'onair')->first();
         $teambroadcast = Broadcaster::all();
-        return view('visitor.radio', compact('onAirHost'));
+        return view('visitor.radio', compact('onAirHost','jadwals','teambroadcast'));
         return view('visitor.about', compact('teambroadcast'));
     }
     public function indexabout()

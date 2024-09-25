@@ -233,7 +233,7 @@
                         @method('PUT')
                         <div class="mb-3">
                             <label for="edit_username" class="form-label">Username</label>
-                            <input type="text" class="form-control" id="edit_username" name="username" value="{{ old('username', $admin->username) }}" required>
+                            <input type="text" class="form-control" id="edit_username" name="username" value="{{ old('username') }}" required>
                         </div>
                         <div class="mb-3">
                             <label for="edit_password" class="form-label">Password</label>
@@ -241,23 +241,23 @@
                         </div>
                         <div class="mb-3">
                             <label for="edit_nama_admin" class="form-label">Nama</label>
-                            <input type="text" class="form-control" id="edit_nama_admin" name="nama_admin" value="{{ old('nama_admin', $admin->nama_admin) }}" required>
+                            <input type="text" class="form-control" id="edit_nama_admin" name="nama_admin" value="{{ old('nama_admin') }}" required>
                         </div>
                         <div class="mb-3">
                             <label for="edit_email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="edit_email" name="email" value="{{ old('email', $admin->email) }}" required>
+                            <input type="email" class="form-control" id="edit_email" name="email" value="{{ old('email') }}" required>
                         </div>
                         <div class="mb-3">
                             <label for="edit_no_hp" class="form-label">No HP</label>
-                            <input type="text" class="form-control" id="edit_no_hp" name="no_hp" value="{{ old('no_hp', $admin->no_hp) }}">
+                            <input type="text" class="form-control" id="edit_no_hp" name="no_hp" value="{{ old('no_hp') }}">
                         </div>
                         <div class="mb-3">
                             <label for="edit_alamat" class="form-label">Alamat</label>
-                            <input type="text" class="form-control" id="edit_alamat" name="alamat" value="{{ old('alamat', $admin->alamat) }}">
+                            <input type="text" class="form-control" id="edit_alamat" name="alamat" value="{{ old('alamat') }}">
                         </div>
                         <div class="mb-3">
                             <label for="edit_about_me" class="form-label">Tentang</label>
-                            <input type="text" class="form-control" id="edit_about_me" name="about_me" value="{{ old('about_me', $admin->about_me) }}">
+                            <input type="text" class="form-control" id="edit_about_me" name="about_me" value="{{ old('about_me') }}">
                         </div>
                         <div class="mb-3">
                             <label for="edit_peran" class="form-label">Peran</label>

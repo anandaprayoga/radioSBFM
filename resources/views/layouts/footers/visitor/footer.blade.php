@@ -4,9 +4,58 @@
         <footer  style="padding-top: 70px;">
           <div class="container">
             <div class="row" style="padding-bottom: 100px; display: flex; justify-content:space-around">
-              <div class="col-md-4 mb-3">
+              <div class="col-md-5 mb-3">
                 <img width="170px" height="60px" src="{{ asset('visitor/img/sbfm1.png') }}" alt="">
                 <p class="py-3" style="text-align: justify;">Suara Bangkalan Fm telah hadir membersamai masyarakat Bangkalan dan sekitarnya selama lebih dari 30 tahun dengan menyajikan informasi yang aktual dan faktual disertai dengan semangat menyajikan hiburan yang berkualitas bagi para pendengar</p>
+                <section class="mb-2">
+                  <!-- Facebook -->
+                  <a data-mdb-ripple-init
+                    class="btn text-white btn-floating m-1"
+                    style="background-color: #3b5998;"
+                    href="#!"
+                    role="button">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+
+                  <!-- Twitter -->
+                  <a data-mdb-ripple-init
+                    class="btn text-white btn-floating m-1"
+                    style="background-color: #55acee;"
+                    href="https://x.com/RadioSBFM"
+                    role="button">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+
+                  <!-- Google -->
+                  <a
+                    data-mdb-ripple-init
+                    class="btn text-white btn-floating m-1"
+                    style="background-color: #dd4b39;"
+                    href="#!"
+                    role="button">
+                    <i class="fab fa-google"></i>
+                  </a>
+
+                  <!-- Instagram -->
+                  <a
+                    data-mdb-ripple-init
+                    class="btn text-white btn-floating m-1"
+                    style="background-color: #ac2bac;"
+                    href="https://www.instagram.com/suarabangkalan_fm"
+                    role="button">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+
+                  <!-- Youtube -->
+                  <a
+                    data-mdb-ripple-init
+                    class="btn text-white btn-floating m-1"
+                    style="background-color: #FF0000;"
+                    href="https://www.youtube.com/@suarabangkalan4978"
+                    role="button">
+                    <i class="fa-brands fa-youtube"></i>
+                  </a>
+                </section>
               </div>
               <div class="col-md-2  mb-3 px-3">
                 <h5>Menu Halaman</h5>
@@ -29,16 +78,6 @@
                   <li class="nav-item mb-2"><a href="{{ url('/about') }}" class="nav-link p-0 text-white">Profil</a></li>
                   <li class="nav-item mb-2"><a href="{{ url('/contact') }}" class="nav-link p-0 text-white">Kontak</a></li>
                   
-                </ul>
-              </div>
-              <div class="col-md-2 mb-3">
-                <h5>Media Sosial</h5>
-                <span style="border-bottom: 3px solid; display: block; width: 100px; color: #21d4fd; margin-bottom: 10px;"></span>
-                <ul class="list-unstyled">
-                  <li><a class="link-body-emphasis" href="https://www.instagram.com/suarabangkalan_fm"><i class="fa-brands fa-instagram" style="color: #ffffff;"><span class="ms-1">Instagram</span></i></a></li>
-                  <li><a class="link-body-emphasis" href="https://x.com/RadioSBFM"><i class="fa-brands fa-x-twitter" style="color: #ffffff;"><span class="ms-1">X</span></i></a></li>
-                  <li><a class="link-body-emphasis" href="https://www.youtube.com/@suarabangkalan4978"><i class="fa-brands fa-youtube" style="color: #ffffff;"><span class="ms-1">Youtube</span></i></a></li>
-                  <li><a class="link-body-emphasis" href="#"><i class="fa-brands fa-facebook" style="color: #ffffff;"><span class="ms-1">Facebook</span></i></a></li>
                 </ul>
               </div>
               <div class="col-md-3 mb-3">
