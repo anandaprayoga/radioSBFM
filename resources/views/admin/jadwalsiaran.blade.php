@@ -27,11 +27,11 @@
                                 {{-- Search --}}
                                 <form action="{{ route('jadwalsiaran.index') }}" method="GET" class="d-flex mb-3">
                                     <input style="height: 40px;" class="form-control me-2" type="search" name="search" placeholder="Cari Jadwal Siaran..." aria-label="Search" value="{{ request('search') }}">
-                                    <button style="height: 40px;" class="btn btn-outline-primary" type="submit">Cari</button>
+                                    <button style="height: 40px;" class="btn btn-outline-info" type="submit">Cari</button>
                                 </form>
                                 {{-- New Items --}}
                                 <a style="height: 40px;" href="#" data-bs-toggle="modal" data-bs-target="#updateJadwalModal" class="btn bg-gradient-primary btn-sm mb-0" type="button">
-                                    +&nbsp; New
+                                    +&nbsp; Tambah Jadwal
                                 </a>
                             </div>
                         </div>
