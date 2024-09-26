@@ -24,10 +24,10 @@
                                 {{-- Search --}}
                                 <form action="{{ route('kategoris.index') }}" method="GET" class="d-flex mb-3">
                                     <input style="height: 40px;" class="form-control me-2" type="search" name="search" placeholder="Cari Kategori..." aria-label="Search" value="{{ request('search') }}">
-                                    <button style="height: 40px;" class="btn btn-outline-primary" type="submit">Cari</button>
+                                    <button style="height: 40px;" class="btn btn-outline-info" type="submit">Cari</button>
                                 </form>
                                 <a style="height: 40px;" href="#" data-bs-toggle="modal" data-bs-target="#updateKategoriModal" class="btn bg-gradient-primary btn-sm searchtambah1" type="button">
-                                    +&nbsp; New
+                                    +&nbsp; Tambah Kategori
                                 </a>
                             </div>
 

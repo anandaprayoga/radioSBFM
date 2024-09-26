@@ -2,7 +2,7 @@
 <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
   <div class="sidenav-header" style=" height: 100px;">
     <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
-    <a class="align-items-center d-flex m-0 navbar-brand" href="{{ route('dashboard') }}" style="display:inline-block">
+    <a class="align-items-center d-flex m-0 navbar-brand justify-content-center" href="{{ route('dashboard') }}" style="display:inline-block">
         <img src="../assets/img/sbfm.jpeg" class="navbar-brand-img">
         <!-- <span class="ms-3 font-weight-bold">Soft UI Dashboard Laravel</span> -->
     </a>
@@ -113,7 +113,7 @@
         <li class="nav-item">
           <a class="nav-link {{ (Request::is('admin/jadwalsiaran') ? 'active' : '') }}" href="{{ url('admin/jadwalsiaran') }}">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-              <svg class="color-background" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+              <svg width="12px" height="12px" class="color-background" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                 <path class="color-background" d="M128 0c17.7 0 32 14.3 32 32l0 32 128 0 0-32c0-17.7 14.3-32 32-32s32 14.3 32 32l0 32 48 0c26.5 0 48 21.5 48 48l0 48L0 160l0-48C0 85.5 21.5 64 48 64l48 0 0-32c0-17.7 14.3-32 32-32zM0 192l448 0 0 272c0 26.5-21.5 48-48 48L48 512c-26.5 0-48-21.5-48-48L0 192zm80 64c-8.8 0-16 7.2-16 16l0 64c0 8.8 7.2 16 16 16l288 0c8.8 0 16-7.2 16-16l0-64c0-8.8-7.2-16-16-16L80 256z"/>
               </svg>
             </div>

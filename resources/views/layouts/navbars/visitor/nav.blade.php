@@ -30,7 +30,7 @@
       <form action="{{ url('/search') }}" method="GET">
         <i class='bx bx-search'></i>
         <div class="input-box">
-          <input type="text" name="query" placeholder="Search..." value="{{ request()->query('query') }}">
+          <input type="text" name="query" placeholder="Cari Berita..." value="{{ request()->query('query') }}">
         </div>
       </form>
     </div>

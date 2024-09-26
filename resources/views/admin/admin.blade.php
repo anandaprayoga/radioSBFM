@@ -25,11 +25,11 @@
                                 {{-- Search --}}
                                 <form action="{{ route('admins.index') }}" method="GET" class="d-flex mb-3">
                                     <input style="height: 40px;" class="form-control me-2" type="search" name="search" placeholder="Cari admin..." aria-label="Search" value="{{ request('search') }}">
-                                    <button style="height: 40px;" class="btn btn-outline-primary" type="submit">Cari</button>
+                                    <button style="height: 40px;" class="btn btn-outline-info" type="submit">Cari</button>
                                 </form>
                                 {{-- New Items --}}
                                 <a style="height: 40px;" href="#" data-bs-toggle="modal" data-bs-target="#updateAdminModal" class="btn bg-gradient-primary btn-sm mb-0" type="button">
-                                    +&nbsp; New
+                                    +&nbsp; Tambah Admin
                                 </a>
                             </div>
                             
@@ -199,7 +199,7 @@
                                         </tr>
                                     @empty
                                         <tr>
-                                            <td colspan="3" class="text-center">
+                                            <td colspan="9" class="text-center">
                                                 <div class="alert mb-0">
                                                     Data admin belum tersedia.
                                                 </div>

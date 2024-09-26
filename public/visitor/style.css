@@ -1358,6 +1358,7 @@ transform: translateX(calc(var(--button-radius) / -2)) translateY(calc(var(--but
 @keyframes typewriter {
   from {
     width: 0;
+    height: 70px;
   }
   to {
     width: 800px;
@@ -1390,6 +1391,7 @@ transform: translateX(calc(var(--button-radius) / -2)) translateY(calc(var(--but
   @keyframes typewriter {
     from {
       width: 0;
+      height: 20px; 
     }
     to {
       width: 230px;
