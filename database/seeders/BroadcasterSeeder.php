@@ -56,6 +56,14 @@ class BroadcasterSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now()
         ]
+        // [
+        //     'id' => 5,
+        //     'nama_broadcaster' => 'Makmun A.',
+        //     'no_hp' => '08828666925',
+        //     'tanggal_bergabung' => now(),
+        //     'created_at' => now(),
+        //     'updated_at' => now()
+        // ]
         ]);
     }
 }
