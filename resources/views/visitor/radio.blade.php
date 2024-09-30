@@ -44,32 +44,36 @@
                     </button>
                 @endforeach
             </div>
-
         </div>
-        
+
         <div class="col-lg-8 col-xl-8">
             <div data-aos="fade-up" class="tab-content aos-init aos-animate" id="myTabContent">
                 @foreach (['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'] as $index => $day)
                     <div class="tab-pane fade" id="day{{ $index + 1 }}" role="tabpanel" aria-labelledby="d{{ $index + 1 }}-tab">
                         <ul class="pt-4 list-unstyled mb-0">
-                            @foreach ($jadwals->where('hari', $day) as $jadwal)
-                                <li class="d-flex flex-column flex-md-row py-4">
-                                    <span class="flex-shrink-0 width-13x me-md-4 d-block mb-3 mb-md-0 small text-muted">
-                                        {{ \Carbon\Carbon::parse($jadwal->waktu_mulai)->format('H:i') }} - {{ \Carbon\Carbon::parse($jadwal->waktu_berakhir)->format('H:i') }} WIB
-                                    </span>
-                                    <div class="flex-grow-1 ps-4 border-start border-3">
-                                        <h4>{{ $jadwal->judul }}</h4>
-                                        <div class="d-flex align-items-center">
-                                            <i class="fa-solid fa-headset fa-lg mb-2 mx-1"></i>
-                                            <h5 class="text-info">
-                                                {{ implode(', ', $jadwal->broadcasters->pluck('nama_broadcaster')->toArray()) }}
-
-                                            </h5>
-                                        </div>
-                                        <p class="mb-0">{{ $jadwal->keterangan }}</p>
-                                    </div>
+                            @if ($jadwals->where('hari', $day)->isEmpty())
+                                <li>
+                                    <p class="text-muted">Belum ada jadwal pada hari {{ $day }}.</p>
                                 </li>
-                            @endforeach
+                            @else
+                                @foreach ($jadwals->where('hari', $day) as $jadwal)
+                                    <li class="d-flex flex-column flex-md-row py-4">
+                                        <span class="flex-shrink-0 width-13x me-md-4 d-block mb-3 mb-md-0 small text-muted">
+                                            {{ \Carbon\Carbon::parse($jadwal->waktu_mulai)->format('H:i') }} - {{ \Carbon\Carbon::parse($jadwal->waktu_berakhir)->format('H:i') }} WIB
+                                        </span>
+                                        <div class="flex-grow-1 ps-4 border-start border-3">
+                                            <h4>{{ $jadwal->judul }}</h4>
+                                            <div class="d-flex align-items-center">
+                                                <i class="fa-solid fa-headset fa-lg mb-2 mx-1"></i>
+                                                <h5 class="text-info">
+                                                    {{ implode(', ', $jadwal->broadcasters->pluck('nama_broadcaster')->toArray()) }}
+                                                </h5>
+                                            </div>
+                                            <p class="mb-0">{{ $jadwal->keterangan }}</p>
+                                        </div>
+                                    </li>
+                                @endforeach
+                            @endif
                         </ul>
                     </div>
                 @endforeach
@@ -77,6 +81,7 @@
         </div>
     </div>
 </div>
+
 <div class="sticky-menu-container">
   <div class="inner-menu closed">
     <ul class="menu-list">
