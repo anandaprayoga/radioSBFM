@@ -29,7 +29,7 @@ class UserDashboardController extends Controller
         // Query untuk berita populer berdasarkan views per minggu
         $popularNews = Informasi::select('informasi.id', 'informasi.judul_informasi', 'informasi.gambar_informasi', 'informasi.created_at', DB::raw('COUNT(news_views.id) as view_count'))
             ->leftJoin('news_views', 'informasi.id', '=', 'news_views.informasi_id')
-            ->whereBetween('news_views.created_at', [now()->startOfWeek(), now()->endOfWeek()])
+            ->whereBetween('news_views.created_at', [now()->startOfMonth(), now()->endOfMonth()])
             ->groupBy('informasi.id', 'informasi.judul_informasi', 'informasi.gambar_informasi', 'informasi.created_at')
             ->orderBy('view_count', 'desc')
             ->take(3)
@@ -131,7 +131,7 @@ class UserDashboardController extends Controller
         // Periksa apakah IP ini sudah pernah melihat berita ini dalam minggu ini
         $existingView = Pengunjung::where('informasi_id', $id)
             ->where('ip_address', $ipAddress)
-            ->whereBetween('created_at', [now()->startOfWeek(), now()->endOfWeek()])
+            ->whereBetween('created_at', [now()->startOfMonth(), now()->endOfMonth()])
             ->first();
 
         if (!$existingView) {

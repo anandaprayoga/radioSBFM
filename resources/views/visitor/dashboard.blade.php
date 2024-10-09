@@ -159,7 +159,7 @@
                     <div class="beritapopular py-4">
                         <div class="section">Berita Popular</div>
                         @if ($popularNews->isEmpty())
-                            <p class="text-center">Belum ada Berita Popular dalam Minggu ini</p>
+                            <p class="text-center">Belum ada Berita Popular dalam Bulan ini</p>
                         @else
                             <ul class="list-unstyled postterbaru">
                                 @foreach ($popularNews as $news)
