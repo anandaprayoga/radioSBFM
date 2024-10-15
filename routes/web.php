@@ -52,10 +52,8 @@ Route::get('/galeri', [GaleriController::class, 'index1'])->name('admin.insertAd
 
 Route::group(['middleware' => 'auth'], function () {
 
-	Route::get('/admin', [HomeController::class, 'home'])->middleware('ip.whitelist');
-	Route::get('/admin/dashboard', function () {
-		return view('admin/dashboard');
-	})->name('dashboard')->middleware('ip.whitelist');
+	Route::get('/admin', [HomeController::class, 'index'])->middleware('ip.whitelist');
+	Route::get('/admin/dashboard', [HomeController::class, 'index'])->name('dashboard')->middleware('ip.whitelist');
 	Route::get('/admin/broadcaster', [BroadcasterController::class, 'index'])->name('broadcasters.index')->middleware('ip.whitelist');
 	Route::get('/admin/event', [EventController::class, 'index'])->name('events.index')->middleware('ip.whitelist');
 	Route::get('/admin/kategori', [KategoriController::class, 'index'])->name('kategoris.index')->middleware('ip.whitelist');
