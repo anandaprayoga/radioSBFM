@@ -39,9 +39,18 @@
                     <div class="card-body px-0 pt-0 pb-2">
                         <div class="table-responsive p-0">
                             <table class="table align-items-center mb-0">
-                                @foreach ($errors->all() as $error)
-                                    {{ $error }} <br>
-                                @endforeach
+                                @if ($errors)
+                                    <div class="m-3 alert alert-danger alert-dismissible fade show" id="alert-danger" role="alert">
+                                        <span class="alert-text text-white">
+                                            @foreach ($errors->all() as $error)
+                                                {{ $error }} <br>
+                                            @endforeach
+                                        </span>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                                            <i class="fa fa-close" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                @endif
                                 <thead>
                                     <tr>
                                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
