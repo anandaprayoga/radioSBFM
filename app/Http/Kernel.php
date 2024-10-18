@@ -65,5 +65,6 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'ip.whitelist' => \App\Http\Middleware\IPWhitelist::class,
         'peran' => \App\Http\Middleware\CekPeran::class,
+        'prevent-back-history' => \App\Http\Middleware\PreventBackHistory::class,
     ];
 }
