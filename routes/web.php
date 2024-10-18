@@ -49,37 +49,35 @@ Route::get('/berita', function () {
 Route::get('/about', [UserDashboardController::class, 'indexabout'])->name('visitor.indexabout');
 Route::get('/radio', [UserDashboardController::class, 'indexradio'])->name('visitor.indexradio');
 Route::get('/galeri', [GaleriController::class, 'index1'])->name('admin.insertAdmin');
+Route::group(['middleware' => 'prevent-back-history'],function(){
+	Route::group(['middleware' => 'auth'], function () {
+		Route::get('/admin', [HomeController::class, 'index'])->middleware('ip.whitelist');
+		Route::get('/admin/dashboard', [HomeController::class, 'index'])->name('dashboard')->middleware('ip.whitelist');
+		Route::get('/admin/broadcaster', [BroadcasterController::class, 'index'])->name('broadcasters.index')->middleware('ip.whitelist');
+		Route::get('/admin/event', [EventController::class, 'index'])->name('events.index')->middleware('ip.whitelist');
+		Route::get('/admin/kategori', [KategoriController::class, 'index'])->name('kategoris.index')->middleware('ip.whitelist');
+		Route::get('/admin/informasi', [InformasiController::class, 'index'])->name('informasis.index')->middleware('ip.whitelist');
+		Route::get('/admin/galeri', [GaleriController::class, 'index'])->name('galeris.index')->middleware('ip.whitelist');
+		Route::get('/admin/admin', [AdminController::class, 'index'])->name('admins.index')->middleware('ip.whitelist');
+		Route::get('/admin/jadwalsiaran', [JadwalsiaranController::class, 'index'])->name('jadwalsiaran.index')->middleware('ip.whitelist');
 
-Route::group(['middleware' => 'auth'], function () {
-
-	Route::get('/admin', [HomeController::class, 'index'])->middleware('ip.whitelist');
-	Route::get('/admin/dashboard', [HomeController::class, 'index'])->name('dashboard')->middleware('ip.whitelist');
-	Route::get('/admin/broadcaster', [BroadcasterController::class, 'index'])->name('broadcasters.index')->middleware('ip.whitelist');
-	Route::get('/admin/event', [EventController::class, 'index'])->name('events.index')->middleware('ip.whitelist');
-	Route::get('/admin/kategori', [KategoriController::class, 'index'])->name('kategoris.index')->middleware('ip.whitelist');
-	Route::get('/admin/informasi', [InformasiController::class, 'index'])->name('informasis.index')->middleware('ip.whitelist');
-	Route::get('/admin/galeri', [GaleriController::class, 'index'])->name('galeris.index')->middleware('ip.whitelist');
-	Route::get('/admin/admin', [AdminController::class, 'index'])->name('admins.index')->middleware('ip.whitelist');
-	Route::get('/admin/jadwalsiaran', [JadwalsiaranController::class, 'index'])->name('jadwalsiaran.index')->middleware('ip.whitelist');
-
-	Route::get('/logout', [SessionsController::class, 'destroy'])->middleware('ip.whitelist');
-	Route::get('admin/user-profile', [InfoUserController::class, 'create'])->middleware('ip.whitelist');
-	Route::post('user-profile', [InfoUserController::class, 'store'])->middleware('ip.whitelist');
-	Route::get('/admin/user-profile', [InfoUserController::class, 'create'])->middleware('ip.whitelist');
-	Route::post('/admin/user-profile', [InfoUserController::class, 'store'])->middleware('ip.whitelist');
-	Route::get('/login', function () {
-		return view('dashboard');
-	})->name('sign-up')->middleware('ip.whitelist');
+		Route::get('/logout', [SessionsController::class, 'destroy'])->middleware('ip.whitelist');
+		Route::get('admin/user-profile', [InfoUserController::class, 'create'])->middleware('ip.whitelist');
+		Route::post('user-profile', [InfoUserController::class, 'store'])->middleware('ip.whitelist');
+		Route::get('/admin/user-profile', [InfoUserController::class, 'create'])->middleware('ip.whitelist');
+		Route::post('/admin/user-profile', [InfoUserController::class, 'store'])->middleware('ip.whitelist');
+		Route::get('/login', function () {
+			return view('dashboard');
+		})->name('sign-up')->middleware('ip.whitelist');
+	});
+	Route::middleware('peran:Superadmin')->group(function() {
+		Route::get('/admin/admin', [AdminController::class, 'index'])->name('admins.index');
+		Route::post('/admin/insert', [AdminController::class, 'insertAdmin'])->name('admin.insertAdmin');
+		Route::delete('/admin/admin/{id}', [AdminController::class, 'destroy'])->name('admin.destroy');
+		Route::put('/admin/admin/{id}', [AdminController::class, 'update'])->name('admin.update');
+		
+	});
 });
-Route::middleware('peran:Superadmin')->group(function() {
-	Route::get('/admin/admin', [AdminController::class, 'index'])->name('admins.index');
-	Route::post('/admin/insert', [AdminController::class, 'insertAdmin'])->name('admin.insertAdmin');
-	Route::delete('/admin/admin/{id}', [AdminController::class, 'destroy'])->name('admin.destroy');
-	Route::put('/admin/admin/{id}', [AdminController::class, 'update'])->name('admin.update');
-	
-});
-
-
 
 Route::group(['middleware' => 'guest'], function () {
 	Route::get('/register', [RegisterController::class, 'create'])->middleware('ip.whitelist');
