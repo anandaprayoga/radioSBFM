@@ -13,13 +13,13 @@
                   <h3 class="font-weight-bolder text-info text-gradient">Masuk dashboard admin</h3>
                   {{-- <p class="mb-0">Create a new acount<br></p>
                   <p class="mb-0">OR Sign in with these credentials:</p> --}}
-                  <p class="mb-0">Peran <b>Admin</b></p>
+                  {{-- <p class="mb-0">Peran <b>Admin</b></p>
                   <p class="mb-0">Email <b>admin@gmail.com</b></p>
                   <p class="mb-0">Password <b>secret</b></p>
                   <br>
                   <p class="mb-0">Peran <b>Superadmin</b></p>
                   <p class="mb-0">Email <b>superadmin@gmail.com</b></p>
-                  <p class="mb-0">Password <b>secret</b></p>
+                  <p class="mb-0">Password <b>secret</b></p> --}}
                 </div>
                 <div class="card-body">
                   <form role="form" method="POST" action="/session">
