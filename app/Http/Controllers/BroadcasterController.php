@@ -39,7 +39,7 @@ class BroadcasterController extends Controller
         // Menyimpan data ke database
         $broadcaster = new Broadcaster();
         $broadcaster->nama_broadcaster = $request->nama_broadcaster;
-        $broadcaster->no_hps = $request->no_hp;
+        $broadcaster->no_hp = $request->no_hp;
         $broadcaster->tanggal_bergabung = \Carbon\Carbon::parse($request->tanggal_bergabung)->format('Y-m-d');
 
         $broadcaster->broadcaster_image = $request->file('broadcaster_image')->store('Broadcaster', 'public');

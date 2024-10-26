@@ -41,15 +41,20 @@ class KategoriController extends Controller
 
     public function destroy($id)
     {
-        // Cari data kategori berdasarkan ID
         $kategori = Kategori::findOrFail($id);
 
-        // Hapus data kategori
+        // Cek apakah ada informasi yang terkait dengan kategori ini
+        if ($kategori->informasis()->exists()) {
+            return redirect()->back()->with('error', 'Tidak Dapat Menghapus Dikarenakan Ada informasi yang masih memiliki kategori tersebut.');
+        }
+
+        // Hapus data kategori jika tidak ada informasi terkait
         $kategori->delete();
 
-        // Redirect kembali ke halaman Kategoris dengan pesan sukses
         return redirect()->back()->with('success', 'Data Kategori berhasil dihapus');
     }
+
+
 
     public function update(Request $request, $id)
     {
