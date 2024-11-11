@@ -54,12 +54,19 @@ class BroadcasterController extends Controller
         // Cari data broadcaster berdasarkan ID
         $broadcaster = Broadcaster::findOrFail($id);
 
+        // Cek apakah ada gambar yang terkait dengan broadcaster dan file tersebut ada di penyimpanan
+        if ($broadcaster->broadcaster_image && Storage::exists('public/' . $broadcaster->broadcaster_image)) {
+        // Hapus gambar dari penyimpanan
+        Storage::delete('public/Broadcaster/' . $broadcaster->broadcaster_image);
+        }
+
         // Hapus data broadcaster
         $broadcaster->delete();
 
         // Redirect kembali ke halaman broadcasters dengan pesan sukses
         return redirect()->back()->with('success', 'Data Broadcaster berhasil dihapus');
     }
+
     public function updateStatus(Request $request, $id)
     {
         $broadcaster = Broadcaster::findOrFail($id);

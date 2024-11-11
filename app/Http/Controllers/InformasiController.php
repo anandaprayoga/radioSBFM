@@ -72,12 +72,19 @@ class InformasiController extends Controller
         // Cari data informasi berdasarkan ID
         $informasi = Informasi::findOrFail($id);
 
+        // Cek apakah ada gambar yang terkait dengan informasi dan file tersebut ada di penyimpanan
+        if ($informasi->gambar_informasi && Storage::exists('public/informasis/' . $informasi->gambar_informasi)) {
+        // Hapus gambar dari penyimpanan
+        Storage::delete('public/informasis/' . $informasi->gambar_informasi);
+        }
+
         // Hapus data informasi
         $informasi->delete();
 
         // Redirect kembali ke halaman informasi dengan pesan sukses
         return redirect()->back()->with('success', 'Data informasi berhasil dihapus');
     }
+
 
     public function update(Request $request, $id)
     {
