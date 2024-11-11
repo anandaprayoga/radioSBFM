@@ -49,15 +49,18 @@ class GaleriController extends Controller
 
     public function destroy($id)
     {
-        // Cari data event berdasarkan ID
+        // Cari data galeri berdasarkan ID
         $galeri = Galeri::findOrFail($id);
 
-        // Hapus data event
+        if ($galeri->gambar && Storage::exists('public/' . $galeri->gambar)) {
+        Storage::delete('public/Galeri/' . $galeri->gambar);
+        }
+
         $galeri->delete();
 
-        // Redirect kembali ke halaman event dengan pesan sukses
         return redirect()->back()->with('success', 'Gambar berhasil dihapus');
     }
+
 
     public function update(Request $request, $id)
     {

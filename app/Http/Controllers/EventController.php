@@ -87,12 +87,19 @@ class EventController extends Controller
         // Cari data event berdasarkan ID
         $event = Event::findOrFail($id);
 
+        // Cek apakah ada gambar yang terkait dengan event dan file tersebut ada di penyimpanan
+        if ($event->gambar_event && Storage::exists('public/Events/' . $event->gambar_event)) {
+        // Hapus gambar dari penyimpanan
+        Storage::delete('public/Events/' . $event->gambar_event);
+        }
+
         // Hapus data event
         $event->delete();
 
         // Redirect kembali ke halaman event dengan pesan sukses
         return redirect()->back()->with('success', 'Data Event berhasil dihapus');
     }
+
 
     public function update(Request $request, $id)
     {

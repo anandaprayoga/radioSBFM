@@ -15,11 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('id_kategori')->constrained('kategori');
             $table->string('judul_informasi');
-            $table->date('tanggal_informasi');
             $table->text('isi_informasi');
             $table->string('gambar_informasi');
-            $table->string('status_informasi');
-            $table->timestamp('tanggal_update');
             $table->timestamps();
         });
     }
